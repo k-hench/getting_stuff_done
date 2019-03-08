@@ -1,0 +1,7 @@
+Batch class	max. runtime	cores per node	max. memory	max. nodes
+clexpress	2 hours	32	192 GB	2
+clmedium	48 hours	32	192 GB	120
+cllong	100 hours	32	192 GB	50
+clbigmem	200 hours	32	384 GB	8
+clfo2	200 hours	24	128 GB	18
+feque	1 hour	32	750 GB	1

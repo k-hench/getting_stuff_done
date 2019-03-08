@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-08">
+<meta name="date" content="2019-03-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -139,6 +139,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3" data-path="cluster.html"><a href="cluster.html#working"><i class="fa fa-check"></i><b>4.3</b> Working</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="cluster.html"><a href="cluster.html#software"><i class="fa fa-check"></i><b>4.3.1</b> Software</a></li>
 <li class="chapter" data-level="4.3.2" data-path="cluster.html"><a href="cluster.html#batch-scripts"><i class="fa fa-check"></i><b>4.3.2</b> Batch scripts</a></li>
+<li class="chapter" data-level="4.3.3" data-path="cluster.html"><a href="cluster.html#preparation"><i class="fa fa-check"></i><b>4.3.3</b> Preparation</a></li>
+<li class="chapter" data-level="4.3.4" data-path="cluster.html"><a href="cluster.html#monitor-batch-jobs"><i class="fa fa-check"></i><b>4.3.4</b> Monitor batch jobs</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a></li>
@@ -190,50 +192,259 @@ We have <strong>MANY</strong> jobs and running the on after the other would take
 <p>So the cluster is capable of doing <em>many</em> <em>work heavy</em> jobs <em>for a long time</em>. But to use it we need:</p>
 <ul>
 <li>an account on the cluster (+ password) - lets assume it is smomw000 for now</li>
-<li><code>ssh</code> should allready be installed (check <code>which ssh</code> in the command line)</li>
+<li><code>ssh</code> should already be installed (check <code>which ssh</code> in the command line)</li>
 <li>an internet connection (and access to either the Uni or the GEOMAR network)</li>
 <li>(<code>sshfs</code> for mounting the cluster)</li>
 </ul>
 <p>So, I recommend to check at this point that you check if you have <code>sshfs</code> installed - I guess not. If <code>which sshfs</code> returns a path (eg: <code>/usr/bin/ssh</code>) your all set, if it returns a blank line you need to install the program:</p>
-<p><strong>Ubuntu</strong>:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install sshfs</code></pre></div>
-<p><strong>Mac</strong>:<br />
-You’ll need to download and install two packages (<a href="https://osxfuse.github.io/">osxfuse</a> and the current version of <a href="https://github.com/osxfuse/sshfs/releases">sshfs-x.x.x.pkg</a>)</p>
-<p><strong>Windows</strong><br />
-Honestly, I don’t know. But <a href="https://github.com/billziss-gh/sshfs-win">these instuctions</a> look like they should work. Good luck…</p>
+<ul>
+<li><strong>Ubuntu</strong>: <code>sudo apt-get install sshfs</code></li>
+<li><strong>Mac</strong>: You’ll need to download and install two packages (<a href="https://osxfuse.github.io/">osxfuse</a> and the current version of <a href="https://github.com/osxfuse/sshfs/releases">sshfs-x.x.x.pkg</a>)</li>
+<li><strong>Windows</strong>: Honestly, I don’t know. But <a href="https://github.com/billziss-gh/sshfs-win">these instuctions</a> look like they should work. Good luck…</li>
+</ul>
 <p>Now if you double check <code>which sshfs</code> should return a path.</p>
 <div id="login" class="section level2">
 <h2><span class="header-section-number">4.1</span> Login</h2>
-<p>As mentioned before to use the cluster you need the command line. So to log in, open the terminal and t</p>
+<p>As mentioned before to use the cluster you need the command line - all the work on the cluster is going to happen there. The log in command looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># ssh &lt;username&gt;@&lt;hostadress&gt;</span>
+<span class="fu">ssh</span> smomw000@nesh-fe.rz.uni-kiel.de</code></pre></div>
+<p>When you log in for the first time, you will be asked to confirm that this is a secure connection.<br />
+Then you will need to type in you password and that’s basically it:</p>
+<div class="kclass cluster">
+<pre><code>Last login: Fri Mar  8 20:54:44 2019 from XXX.XXX.XXX.XXX
+*****************************************************************************************
+*                   Welcome to the hybrid NEC HPC-system at RZ CAU Kiel                 *
+*                                                                                       *
+* Documentation:                                                                        *
+* SX-ACE vector system: https://www.rz.uni-kiel.de/de/angebote/hiperf/nec-sx-ace        *
+* Linux-Cluster:        https://www.rz.uni-kiel.de/de/angebote/hiperf/nec-linux-cluster *
+*                                                                                       *
+* Support:              mailto:hpcsupport@rz.uni-kiel.de                                *
+*****************************************************************************************
+* Your current quota on $WORK=/sfs/fs2/work-geomar7/smomw000:                           *
+*                   [used] |       [soft] |       [hard] |     [grace period]           *
+* disk space:        x.xxT |        x.xxT |        x.xxT |          none [-1]           *
+* inodes:            xxxxx |        xxxxx |       xxxxxx |          none [-1]           *
+*****************************************************************************************
+$ |</code></pre>
+<center>
+<em>(As a convention I will use black code blocks when talking about the cluster.</em> <em>The code blocks you are used to will continue to refer to the command line on your laptop.)</em>
+</center>
+<p>Now you are on the cluster and you can work just the same as on the command line on your local machine.<br />
+If you want to leave the cluster, all you need to do is type <code>exit</code>.</p>
+</div>
+<p>At this point it is probably a good idea to look at the <a href="https://www.rz.uni-kiel.de/en/our-portfolio/hiperf/nec-linux-cluster?set_language=en">documentation</a> of the cluster by the HPC-Support team if you have not done so already.</p>
+<p>Most of what I will cover below is actually described there in more depth and up to date (and by people who actually know the system way better).</p>
 <div id="file-system" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> File system</h3>
+<div class="cluster">
+<p>You should be aware that on the cluster you have access to several directories:</p>
+<ul>
+<li><code>$HOME</code>: <code>/sfs/fs6/home-geomar/smomw000</code></li>
+<li><code>$WORK</code>: <code>/sfs/fs2/work-geomar7/smomw000</code></li>
+<li><code>$TAPE_CACHE</code>: <code>/nfs/tape_cache/smomw000</code></li>
+</ul>
+<p>The different directories differ in way they are backuped and by the amount of space you can use. They should be used for different tasks:</p>
+<p>In the <code>$HOME</code> are mostly things that you need to <em>configure</em> your account. On example is the start up script for your cluster account (<code>.bashrc</code>). You might collect configuration content for other programs there as well (eg. <code>R</code>,<code>py</code> or <code>miniconda2</code>). It should not be used to store large amounts of data or to actually do work there.</p>
+<p>The <code>$WORK</code> directory is where you will spend your time. Here you can store your data and do the <em>heavy lifting</em> run your projects. It is also the only directory where you should run <a href="#batch">batch jobs</a>.</p>
+<p>When you are done with a project and don’t need to access your file regularly anymore you can store them on <code>$TAPE_CACHE</code>. This basically the <em>archive</em>.<br />
+You should prepare your data into neat packages (don’t just dump you messy folders with a huge collection of loose scripts here - pack the collection into a single <code>tar</code> file first: <code>tar -zcvf messy_folder.tar.gz messy_folder</code>). Pleas read the recommendations within the cluster <a href="https://www.rz.uni-kiel.de/en/our-portfolio/hiperf/nec-linux-cluster?set_language=en">documentation</a>.</p>
+</div>
 </div>
 </div>
 <div id="mounting" class="section level2">
 <h2><span class="header-section-number">4.2</span> Mounting</h2>
+<p>One of the first things you might ask yourself is how to get you data onto the cluster. For this purpose we installed <code>shhfs</code> at the beginning of this chapter.</p>
+<p>I like to think of the usage of <code>shhfs</code> like plugging in a flash drive. But before we can use it, we need create an empty folder:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/mnt <span class="co"># Remember: This is on your local machine.</span></code></pre></div>
+<div class="cluster">
+<p>This out virtual <em>USB slot</em> - after mounting the cluster the files of the cluster are going to show up here on your laptop.</p>
+<p>We also need to think about which directory of the cluster we want to mount. By default the <code>$HOME</code> directory of the user will be mounted. But as mentioned above, that’s not were we are supposed to dump our data. Also, once we have mounted a directory we will not be able to go <em>up in the path</em>. That means we will not be able to access <code>/sfs/fs6/home-geomar/</code> when mounting <code>/sfs/fs6/home-geomar/smomw000</code>. Because of this, we will need to mount the <code>$WORK</code> directory directly:</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># sshfs &lt;username&gt;@&lt;hostadress&gt;:&lt;/path/on/cluster&gt; &lt;local/path&gt;</span>
+<span class="ex">sshfs</span> smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 <span class="va">$HOME</span>/mnt</code></pre></div>
+<div class="cluster">
+<p>Now, the content of your <code>$WORK</code> directory should show up in your finder/windows explorer.</p>
+</div>
+<p>You can now copy data either by <em>copy &amp; paste</em> in your finder, or using <code>cp large_data_file.vcf.gz $HOME/mnt</code>.</p>
+<p>To unmount the you can try to <em>eject</em> it (similar to a Flash drive) or type <code>fusermount -u ~/mnt</code>.</p>
 </div>
 <div id="working" class="section level2">
 <h2><span class="header-section-number">4.3</span> Working</h2>
+<p>Working on the cluster is generally not different to working ton the command line locally.</p>
 <div id="software" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Software</h3>
-<ul>
-<li>Modules</li>
-<li>conda</li>
-</ul>
+<p>The one exception to this is when you need new software that is not installed. That is because you do not have admin rights on the cluster - this makes installing new software harder (s. <a href="#3.7">3.7. Installing new software</a>).</p>
+<div class="cluster">
+<p>Luckily, there is more stuff installed than you might realize at first - it is just not activated yet. To see whats available run <code>module avail</code>:</p>
+<pre><code>------------------------------ /sfs/fs5/sw/modules/sxcrosscompiling ------------------------------
+MathKeisan/4.0.3(default) fview                     sxf03/rev061(default)
+crosscompiler             mpisx/10.2.4(default)     sxf90/rev534(default)
+crosscompiler.nec         netcdf_4.1.1_sx
+crosskit/r211(default)    sxc++/rev112(default)
+
+-------------------------------- /sfs/fs5/sw/modules/x86compilers --------------------------------
+gcc5.3.0       intel16.0.4    intelmpi16.0.4 java1.8.0      llvm6.0.0
+gcc7.2.0       intel17.0.4    intelmpi17.0.4 llvm4.0.1
+
+-------------------------------- /sfs/fs5/sw/modules/x86libraries --------------------------------
+boost1.65.0              hdf5-1.8.19intel         pcre2-10.21
+curl7.55.1               hdf5parallel-1.8.19      pcre8.41
+eigen3.3.4               hdf5parallelintel-1.8.19 pnetcdf1.8.1
+fftw3.3.6                jags4.3.0                pnetcdf1.8.1intel
+fftw3.3.6intel           lapack3.8.0              proj4.9.3
+gdal2.2.3                ncurses6.0               readline7.0
+geos3.6.2                netcdf4.4.1              szip2.1.1
+glib2.52.3               netcdf4.4.1intel         udunits2.2.25
+gsl2.4                   netcdf4.4.1paraintel     xz5.2.3
+hdf5-1.8.19              openssl1.0.2             zlib1.2.11
+
+-------------------------------- /sfs/fs5/sw/modules/x86software ---------------------------------
+R3.4.1                 espresso5.4.0          matlab2015a_geomar     petsc3.6.1intel-debug
+R3.5.1                 espresso6.2.1          matlab2017a            petsc3.7.6
+R3.5.2                 espresso6.2plumed      matlab2017a_geomar     petsc3.7.6-debug
+abaqus2018             fastqpair12.2017       matlab2018b            petsc3.7.6intel
+adf2017.110            ferret6.72             matlab2018b_geomar     petsc3.7.6intel-debug
+adf2017.110intel       ferret6.82             megahit1.1.3           plumed2.4.0
+allpathslg52488        ferret7.2              metawrap1.0.2          plumed2.4.0intel
+amos3.1.0              ferret7.4test          molpro2015             pyferret7.4.3
+beat1.0                fomosto-qssp2017       mothur1.39.5           python2.7.13
+blender2.79            g09d01                 mothur1.40.0           python3.6.2
+blender2.79a           g16a03                 mummer3.23             salmon0.12.0
+blender2.79b           glpk4.61               nciplot3.0             samtools1.5
+bowtie2-2.3.3          gmt5.4.2               ncl6.4.0               spades3.12.0
+bwa0.7.17              gnuplot5.0.7           nco4.6.8               specfem3d3.0
+cactus7.2018           grace5.1.9             ncview1.2.7            specfem3d3.0mpi
+cdo1.9.0               grib_api1.23.1         octave4.2.1            star2.6.0a
+comsol5.3a-tetra       hail0.2                octopus7.1             transrate1.0.3
+comsol5.4-tetra        interproscan5.30-69.0  openmolcas4.2017       turbomole7.2
+comsol5.4s-tetra       jasper2.0.14           openmolcas4.2017serial turbomole7.2mpi
+cp2k5.1                lammps17               perl5.26.0             turbomole7.2smp
+cplex                  matlab2011b_geomar     perl5.26.0threads
+cufflinks2.2.1         matlab2015a            petsc3.6.1intel
+
+---------------------------------- /sfs/fs5/sw/modules/x86tools ----------------------------------
+bzip2-1.0.6  cmake3.9.1   imake1.0.7   mc4.8.19     parallel     use.own
+cmake3.12.1  git2.14.1    libtool2.4.6 miniconda3   sensors3.4.0</code></pre>
+<p>You can activate these <em>modules</em> by running eg. <code>module load R3.5.2</code> (and later deactivate it with <code>module unload R3.5.2</code>).</p>
+<p>If you look at the very end of the list you will find <code>miniconda3</code>.</p>
+</div>
+<p>This is quite a relief because this means you should be able to use conda as package manager to install most of the software you need (especially when coupled with <a href="https://bioconda.github.io/">bioconda</a>). (<em>Unfortunately conda apears to be suuuper slow lately. This is annoying but is still works. And I think in most cases it is still way faster than installing all dependencies of your software by hand.</em>)</p>
+<p>If the software is not part of the <em>modules</em> and if you can’t find it using conda you will have to install it manually. Sorry.</p>
 </div>
 <div id="batch-scripts" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Batch scripts</h3>
+<p><a name="batch"></a></p>
+<p>I like to think of the cluster as a kind of hotel - the cluster is a <em>collection of many computers</em> like a hotel is a collection of many rooms. Yet when you enter the hotel, you don’t walk into a room directly but you enter the <em>lobby</em>. On the cluster it is the same: When you log in using <code>ssh</code> you are on the login node (the <em>“front end”</em>). Here you are not alone, but all users of the cluster share it simultaneously.</p>
+<p>It is totally fine to hang out in the lobby as long as don’t block it with 15 busloads of luggage.</p>
+<p>This is supposed to mean that, while you can organize you files on the login node and also to try small paths, as soon as you start to work <em>seriously</em> you should use <em>batch jobs</em> (<em>rent one/several rooms</em>).</p>
+</div>
+<div id="preparation" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Preparation</h3>
+<p>Running a batch job is easy. Instead of running commands interactively, you write them into a script and add a small header. This has the additional benefit that later you will remember exactly what you have done.</p>
+So instead of this:
+<div class="cluster">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
+<span class="fu">mkdir</span> test_folder
+<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre></div>
+</div>
+<p>We write this script (<code>test.sh</code>):</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="co">#PBS -b 1                       # number of threads</span>
+<span class="co">#PBS -l cpunum_job=1            # number of nodes</span>
+<span class="co">#PBS -l elapstim_req=00:00:30   # requested runtime (hh:mm:ss)</span>
+<span class="co">#PBS -l memsz_job=1gb           # requested memory</span>
+<span class="co">#PBS -N testjob                 # job name</span>
+<span class="co">#PBS -o stdstderr.out           # file for standard-output </span>
+<span class="co">#PBS -j o                       # join stdout/stderr</span>
+<span class="co">#PBS -q clexpress               # requested batch class</span>
+
+<span class="bu">cd</span> <span class="va">$WORK</span>
+<span class="fu">mkdir</span> test_folder
+<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre></div>
+<div class="cluster">
+<p>You can write this script either using one of the command line text editors (<code>emacs</code>/<code>nano</code>/<code>vim</code>) or you can prepare it locally (eg. within <strong>atom</strong>) and copy it onto the mounted cluster.</p>
+<p>Once the script is located on the cluster (eg. on <code>$WORK</code>) you can <em>submit</em> the job:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
+<span class="ex">qsub</span> test.sh</code></pre></div>
+</div>
+<p>Depending on the resources needed for the job you submit, you will choose a different <em>batch class</em>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Batch class</th>
+<th align="right">max. runtime</th>
+<th align="right">cores per node</th>
+<th align="right">max. memory</th>
+<th align="right">max. nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">clexpress</td>
+<td align="right">2 hours</td>
+<td align="right">32</td>
+<td align="right">192 GB</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">clmedium</td>
+<td align="right">48 hours</td>
+<td align="right">32</td>
+<td align="right">192 GB</td>
+<td align="right">120</td>
+</tr>
+<tr class="odd">
+<td align="left">cllong</td>
+<td align="right">100 hours</td>
+<td align="right">32</td>
+<td align="right">192 GB</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="left">clbigmem</td>
+<td align="right">200 hours</td>
+<td align="right">32</td>
+<td align="right">384 GB</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">clfo2</td>
+<td align="right">200 hours</td>
+<td align="right">24</td>
+<td align="right">128 GB</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="left">feque</td>
+<td align="right">1 hour</td>
+<td align="right">32</td>
+<td align="right">750 GB</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="monitor-batch-jobs" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Monitor batch jobs</h3>
+<div class="kclass cluster">
+<p>After submitting a batch job you might be interested in its current status. You can get a summary of all your currently queuing and running jobs using <code>qstat</code>:</p>
+<pre><code>RequestID       ReqName  UserName Queue     Pri STT S   Memory      CPU   Elapse R H M Jobs
+--------------- -------- -------- -------- ---- --- - -------- -------- -------- - - - ----
+000000.ace-ssio test     smomw000 clexpress   0 RUN -   00.13G   122.70        1 Y Y Y    1 </code></pre>
+<p>If you want to see what is going on on the entire cluster you can run <code>qstatall</code> to see <em>all</em> currently queuing and running jobs.</p>
+<p>I you want to get a peek into the latest output <em>within</em> the job you ca use:</p>
 <ul>
-<li><p>concept</p></li>
-<li>types</li>
-<li>scrip structure</li>
-<li>submit &amp; mointor</li>
-<li>qsub</li>
-<li>qcat -e/-o</li>
-<li>qdel</li>
-<li>watch</li>
-<li><p>screen (email)</p></li>
+<li><code>qcat -e &lt;jobid&gt;</code>: the latest error messages (the <em>stderr</em> output)</li>
+<li><code>qcat -o &lt;jobid&gt;</code>: the latest output messages (the <em>stdout</em> output)</li>
+<li><code>qcat &lt;jobid&gt;</code>: the original script that was submitted</li>
 </ul>
+<p>If you want to see more lines you can use the flag <code>-n</code>. The <code>&lt;jobid&gt;</code> is the number before <em>“.ace-ssio”</em>. An example would be <code>qcat -n 25 -e 000000</code>.</p>
+<p>If you are impatient (like me) you will find yourself retyping <code>qcat</code> over and over. (<em>If you need to repeat a command use the <code>&lt;arrow up&gt;</code> key on your keyboard!</em>) This can be tiresome. It is way easier to use the command <code>watch</code>. The following line will re-execute <code>qcat</code> every 3 seconds until you interrupt it by pressing <code>&lt;ctrl&gt;&lt;c&gt;</code>:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">watch</span> -n 3 <span class="st">&quot;qstat -n 25 -e 000000&quot;</span></code></pre></div>
+<p>Once your job is done you will find the file <code>stdstderr.out</code> within the directory where you submitted the original script (where you ran <code>qsub script.sh</code>).</p>
+</div>
+<hr />
 
 </div>
 </div>

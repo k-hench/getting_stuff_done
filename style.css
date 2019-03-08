@@ -2,15 +2,22 @@ p.caption {
   color: #777;
   margin-top: 10px;
 }
+
 p code {
   white-space: inherit;
 }
+
 pre {
   word-break: normal;
   word-wrap: normal;
 }
+
 pre code {
   white-space: inherit;
+}
+
+.kclass pre {
+  line-height: normal;
 }
 
 .book .book-body .page-wrapper .page-inner {
@@ -22,6 +29,13 @@ pre code {
   color: #262626;
 }
 
-.notthescript .sourceCode pre {
-  background: #a6a6a6 !important;
+.cluster pre {
+  background: #00020d !important;
+  color: #c2c2c2;
+}
+
+.cluster code {
+    color: #c2c2c2 !important;
+    background: #00020d !important;
+    border-color: #00020d !important;
 }
