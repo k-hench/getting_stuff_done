@@ -1,0 +1,13 @@
+---
+output: html_document
+editor_options:
+  chunk_output_type: console
+---
+
+# Other software
+
+- fastqc
+- multiqc
+- samtools
+- vcftools
+- bedtools

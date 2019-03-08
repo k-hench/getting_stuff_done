@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3 Bash | Getting Stuff Done</title>
+  <meta name="description" content="3 Bash | Getting Stuff Done">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="3 Bash | Getting Stuff Done" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Bash | Getting Stuff Done" />
+  
+  
+  
+
+<meta name="author" content="Kosmas Hench">
+
+
+<meta name="date" content="2019-03-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="basic-setup.html">
+<link rel="next" href="cluster.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="../">Getting Stuff Done</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="basic-setup.html"><a href="basic-setup.html"><i class="fa fa-check"></i><b>2</b> Basic setup</a><ul>
+<li class="chapter" data-level="2.1" data-path="basic-setup.html"><a href="basic-setup.html#organization"><i class="fa fa-check"></i><b>2.1</b> Organization</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-setup.html"><a href="basic-setup.html#tools"><i class="fa fa-check"></i><b>2.2</b> Tools</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="basic-setup.html"><a href="basic-setup.html#the-command-line"><i class="fa fa-check"></i><b>2.2.1</b> The command line</a></li>
+<li class="chapter" data-level="2.2.2" data-path="basic-setup.html"><a href="basic-setup.html#atom-text-editor-project-manager"><i class="fa fa-check"></i><b>2.2.2</b> Atom (Text editor/ project manager)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="basic-setup.html"><a href="basic-setup.html#rstudio"><i class="fa fa-check"></i><b>2.2.3</b> RStudio</a></li>
+<li class="chapter" data-level="2.2.4" data-path="basic-setup.html"><a href="basic-setup.html#disclaimer"><i class="fa fa-check"></i><b>2.2.4</b> Disclaimer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bash.html"><a href="bash.html"><i class="fa fa-check"></i><b>3</b> Bash</a><ul>
+<li class="chapter" data-level="3.1" data-path="bash.html"><a href="bash.html#commandsprograms-iii"><i class="fa fa-check"></i><b>3.1</b> Commands/Programs (I/II)</a></li>
+<li class="chapter" data-level="3.2" data-path="bash.html"><a href="bash.html#paths"><i class="fa fa-check"></i><b>3.2</b> Paths</a></li>
+<li class="chapter" data-level="3.3" data-path="bash.html"><a href="bash.html#variables"><i class="fa fa-check"></i><b>3.3</b> Variables</a></li>
+<li class="chapter" data-level="3.4" data-path="bash.html"><a href="bash.html#scripts"><i class="fa fa-check"></i><b>3.4</b> Scripts</a></li>
+<li class="chapter" data-level="3.5" data-path="bash.html"><a href="bash.html#commandsprograms-iiii"><i class="fa fa-check"></i><b>3.5</b> Commands/Programs (II/II)</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="bash.html"><a href="bash.html#flags"><i class="fa fa-check"></i><b>3.5.1</b> Flags</a></li>
+<li class="chapter" data-level="3.5.2" data-path="bash.html"><a href="bash.html#more-commandsprograms"><i class="fa fa-check"></i><b>3.5.2</b> More commands/programs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="bash.html"><a href="bash.html#loops"><i class="fa fa-check"></i><b>3.6</b> Loops</a></li>
+<li class="chapter" data-level="3.7" data-path="bash.html"><a href="bash.html#installing-new-software"><i class="fa fa-check"></i><b>3.7</b> Installing new software</a></li>
+<li class="chapter" data-level="3.8" data-path="bash.html"><a href="bash.html#appendix-sed-and-awk-examples"><i class="fa fa-check"></i><b>3.8</b> Appendix (<code>sed</code> and <code>awk</code> examples)</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="bash.html"><a href="bash.html#sed"><i class="fa fa-check"></i><b>3.8.1</b> <code>sed</code></a></li>
+<li class="chapter" data-level="3.8.2" data-path="bash.html"><a href="bash.html#awk"><i class="fa fa-check"></i><b>3.8.2</b> <code>awk</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>4</b> Cluster</a></li>
+<li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a></li>
+<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a></li>
+<li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
+<li class="chapter" data-level="8" data-path="other-software.html"><a href="other-software.html"><i class="fa fa-check"></i><b>8</b> Other software</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li> <image src="../logo.svg" alt="Smiley face" style="width:100%; height:100px;"> </li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Stuff Done</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bash" class="section level1">
+<h1><span class="header-section-number">3</span> Bash</h1>
+<p>The <em>Bourne-again shell</em> (<a href="https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a>) is usually the programming language that you will use when running the command line.</p>
+<p>To be efficient you will therefore need some knowledge of this language. I do not intend to rewrite the 1254th tutorial on <em>“How to use bash”</em> since there are <a href="https://www.bash.academy/">allready</a> <a href="https://www.learnshell.org/">lots</a> <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html">of</a> <a href="https://www.shellscript.sh/">tutorials</a> <a href="https://www.codecademy.com/learn/learn-the-command-line">online</a> (again - google is your friend here…).</p>
+<p>Here I will give a small overview and simply list the common patterns/issues/programs and the way I deal with them in bash:</p>
+<div id="commandsprograms-iii" class="section level2">
+<h2><span class="header-section-number">3.1</span> Commands/Programs (I/II)</h2>
+<p>The first thing you need to know is <em>how to navigate</em> using the command line.</p>
+<p>The following commands help you with that:</p>
+<ul>
+<li><code>pwd</code> is short for “print working directory” and reports the location on your file system where the command line is currently operating (this tells you <em>where you are</em>)</li>
+<li><code>ls</code> will print the content (the files &amp; folders) of the current directory (<em>what is around you</em>)</li>
+<li><code>cd</code> is short for “change directory” and allows you to change your working directory (<em>move around</em>)</li>
+<li><code>echo</code> allows you to print some text as output (it allows you to <em>speak</em>)</li>
+<li><code>./</code> is the current directory</li>
+<li><code>..</code> is the <em>parent</em> directory (the directory which contains the current directory)</li>
+</ul>
+<p>With this you can do the most basic navigation. In our assumed project this could look like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">pwd</span>
+<span class="co">#&gt; /home/khench/root_folder</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; analysis_twisst.nf</span>
+<span class="co">#&gt; data</span>
+<span class="co">#&gt; docs</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; py</span>
+<span class="co">#&gt; R</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; sh</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> data
+<span class="bu">pwd</span>
+<span class="co">#&gt; /home/khench/root_folder/data</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
+<span class="co">#&gt; genotypes.vcf.gz</span>
+<span class="co">#&gt; table1.txt</span>
+<span class="co">#&gt; table2.txt</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
+<span class="fu">ls</span>
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; analysis_twisst.nf</span>
+<span class="co">#&gt; data</span>
+<span class="co">#&gt; docs</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; py</span>
+<span class="co">#&gt; R</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; sh</span></code></pre></div>
+</div>
+<div id="paths" class="section level2">
+<h2><span class="header-section-number">3.2</span> Paths</h2>
+<p>A <em>path</em> is a location on your file system - it is quite similar to a URL in your web browser. It can either point to a file or to folder.</p>
+<p>We have seen this before: the command <code>pwd</code> prints the <em>path</em> to the current working directory.</p>
+<p>Generally we need to be aware of two different types - <em>absolute</em> vs. <em>relative</em> paths:</p>
+<p>An absolute path looks something like this:</p>
+<p><code>/home/khench/root_folder</code> (Note the leading slash <code>/home...</code>.)</p>
+<p>This is what the type of path that <code>pwd</code> reports and it will always point to the same location on your file system regardless of the directory you are currently operating in. That is because the leading slash points to the root folder of your file system (not of your project) which is an <em>absolute</em> position.</p>
+<p>The disadvantage of absolute paths is that <em>things can change</em>: you might move your project folder to a different location (backup on external hard drive) or share with collaborators. In these cases your path will point to a file/location that does not exist - it is basically a <em>broken link</em>.</p>
+<p>Therefore in some cases the use of <em>relative paths</em> is useful. Relative paths indicate the location of a file/folder <em>relative to your current working directory</em>.</p>
+<p>We used this for example in the command <code>cd data</code> (short for <code>cd ./data</code>). Here, there is no leading slash - instead the path starts directly with the folder name or with the current directory (<code>./</code>)</p>
+<p>So to get from the <code>root_folder</code> into the <code>data</code> folder we can use either of the two commands:</p>
+<ul>
+<li><code>cd data</code> (relative path)</li>
+<li><code>cd /home/khench/root_folder/data</code> (absolute path)</li>
+</ul>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">3.3</span> Variables</h2>
+<p>Variables are <em>containers for something else</em>. You can for example store some text in a variable. Later you can access this “information”. Therefore you have to address the variable name and put it behind a dollar sign:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">VAR=</span><span class="st">&quot;some text&quot;</span>
+<span class="bu">echo</span> <span class="va">${VAR}</span>
+<span class="co">#&gt; some text</span></code></pre></div>
+<p>(There are two equivalent notations: <code>$VAR</code> and <code>${VAR}</code>. The notation with curly brackets helps if your variable name is more complex since the start and end of the name is exactly defined.)</p>
+<p>Variables are often used to store important paths. You could for example store the (absolute) location of your project folder in a Variable (<code>PROJ=&quot;/home/khench/root_folder&quot;</code>) in some sort of configuration script and then use the variable to navigate (<code>cd $PROJ/data</code>). That way you only need to update the location of the project folder in a single place in case it needs to be updated.</p>
+<p>There are quite a view variables that are already defined on your computer and it is good to be aware of these. Two important ones are <code>$HOME</code> and <code>$PATH</code>.</p>
+<p><code>$HOME</code> directs to the home folder of the user (often you can also use <code>~/</code> as an equivalent to <code>$HOME/</code>):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="va">${HOME}</span>
+<span class="va">test=</span><span class="st">&#39;asre&#39;</span>
+<span class="co">#&gt; /home/khench</span></code></pre></div>
+<p><code>$PATH</code> often not a directory but a collection of directories separated by a colon:</p>
+<pre><code>/usr/bin:/usr/local/bin:/home/khench/bin</code></pre>
+<p>The <code>$PATH</code> is a super important variable - it the register of directories where your computer looks for installed software. Every command that you type into the command line (eg. <code>cd</code> or <code>ls</code>) is a program that is located in one of the folders within your <code>$PATH</code>.</p>
+<p>You can still run programs that are located elsewhere, but if you do so you need to specify the <em>absolute path</em> of this program (<code>/home/khench/own/scripts/weird_script.py</code> instead of just <code>weird_script.py</code>).</p>
+<p>We will discuss <a href="#later">later</a> how to extend the <code>$PATH</code> in case you want to include a custom software folder if you need to install stuff manually.</p>
+</div>
+<div id="scripts" class="section level2">
+<h2><span class="header-section-number">3.4</span> Scripts</h2>
+<p>So far, we have been working interactively on the command line. That is we typed directly into the terminal and observed the direct output. But I claimed before that one of the advantages of the command line is that reproducible and the possibility to protocol the work on the command line. One aspects of this is the ability to store your workflow in scripts. If you use a script to store bash commands the conventional suffix is <code>.sh</code> (eg: <code>script.sh</code>). Additionally it is useful to add a header line that points to the location of bash itself (usually one of the two):</p>
+<pre><code>#!/bin/bash
+or
+#!/usr/bin/env bash</code></pre>
+<p>A full (admittedly quite silly) script might look like this:</p>
+<pre><code>#!/usr/bin/env bash
+
+cd /home/khench/root_folder
+ls
+echo &quot; --------------- &quot;
+pwd</code></pre>
+<p>Provided the script is located in our <code>sh</code> folder you can run it like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> /home/khench/root_folder/sh/script.sh
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; analysis_twisst.nf</span>
+<span class="co">#&gt; data</span>
+<span class="co">#&gt; docs</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; py</span>
+<span class="co">#&gt; R</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; sh</span>
+<span class="co">#&gt;  --------------- </span>
+<span class="co">#&gt; /home/khench/root_folder</span></code></pre></div>
+<p>The big benefit of using bash scripts is that you will be able to remember later what you are doing right now. A workflow that you do interactively is basically <em>gone</em> in the sense that you will never be able to remember it exactly.</p>
+<p>As with the paths there is one script that you should be aware of - your bash start up script. This is a hidden file (<code>.bashrc</code> or <code>.bash_profile</code>)located in your <code>$HOME</code> folder. This script is run every time when you open the terminal and will be important <a href="#later">later</a>.</p>
+</div>
+<div id="commandsprograms-iiii" class="section level2">
+<h2><span class="header-section-number">3.5</span> Commands/Programs (II/II)</h2>
+<div id="flags" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Flags</h3>
+<p>One important feature of most command line programs is the usage of <em>flags</em>. These are (optional) parameters that alter they way a program operates an are invoked with <code>-</code> or <code>--</code> (depending on the program):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -l
+<span class="co">#&gt; total 20</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4096 Mär  8 10:27 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4096 Mär  7 15:47 docs</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4096 Mär  7 15:48 py</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4096 Mär  7 15:48 R</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:48 README.md</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4096 Mär  7 17:25 sh</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -lth
+<span class="co">#&gt; total 20K</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  8 10:27 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:48 README.md</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 py</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:47 docs</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf</span></code></pre></div>
+<p>Arguably one of the most important flags for most programs is <code>-help</code>/<code>--help</code>. As you might guess this will print the documentation for most programs. Often this includes an example of the input the program expects, as well as all the options available.</p>
+</div>
+<div id="more-commandsprograms" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> More commands/programs</h3>
+<p>Apart from the most basic commands needed for <em>navigating</em> within the command line, I want to list the commands I personally use most frequently to actually <em>do stuff</em>:</p>
+<div id="operators" class="section level4">
+<h4><span class="header-section-number">3.5.2.1</span> Operators</h4>
+<pre><code>#     # comment code (stuff here is not executed)
+&gt;     # redirect output into file (overrides existing file)
+&gt;&gt;    # append existing file (creates new file if not yet existent)
+1&gt;    # redirect stdout to file (1&gt;&gt; append)
+2&gt;    # redirect stderr to file (2&gt;&gt; append)
+2&gt;&amp;1  # redirects stderr to stdout
+&amp;&gt;    # redirect both stdout and stderr to file
+|     # the &#39;pipe&#39;: combine commands 
+*     # wildcard/joker: ls *.txt lists all files ending int &#39;.txt&#39;
+\     # linebreak: continue a command on a new line (to avoid horribly long comands)</code></pre>
+<p>It is important to be aware of several <a href="http://tldp.org/LDP/abs/html/io-redirection.html"><em>channels</em></a> that are being used within bash:</p>
+<ul>
+<li><strong>stdin</strong>: usually what you type into the terminal</li>
+<li><strong>stdout</strong>: output created by a program</li>
+<li><strong>stderr</strong>: errors created by a program</li>
+</ul>
+<p>You can use the operators described above to log for example errors and/or output of a program in a log file.</p>
+</div>
+<div id="reading-text" class="section level4">
+<h4><span class="header-section-number">3.5.2.2</span> Reading Text</h4>
+<pre><code>echo (-e, &quot;\n&quot;, &quot;\t&quot; )     # print text to stdout, -e allows special chracters eg newline &amp; tab
+cat                        # read a text file and print to stdout
+zcat                       # read a gz-compressed text file and print to stdout
+less (&quot;/&quot;)                 # read a text interactively (type &quot;/&quot; to search for a pattern)
+head (-n,  -n -1)          # print the first (-n) lines of a text file (-1: everything but the last (1) lines)
+tail (-n , -n +2)          # print the last (-n) lines of a text file (2+: everything starting at line (2))
+grep (-v, -w, -i, &#39;a\|b&#39;)  # search for line (-v not) containing pattern within text file (a &quot;or&quot; b)
+wc (-l, -c)                # count lines/chracters within text file</code></pre>
+</div>
+<div id="text-manipulation-table-like-text-files" class="section level4">
+<h4><span class="header-section-number">3.5.2.3</span> Text manipulation (table like text files)</h4>
+<pre><code>paste         # combine columns 
+sort          # sort textfiles based on specific column</code></pre>
+</div>
+<div id="text-manipulation-table-like-text-files-1" class="section level4">
+<h4><span class="header-section-number">3.5.2.4</span> Text manipulation (table like text files)</h4>
+<pre><code>sed           # search and replace
+awk           # power horse: filter rows, combines culumns, complex operations
+cut (-c, -f)  # print selective columns/charaters of each row</code></pre>
+<p>In my opinion especially <code>sed</code> &amp; <code>awk</code> are extremely powerful commands. I will give a few usage examples at the very <a href="#end">end</a> of this section.</p>
+</div>
+<div id="text-editors" class="section level4">
+<h4><span class="header-section-number">3.5.2.5</span> Text editors</h4>
+<p>There are several actual text editors for the command line:</p>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/">emacs</a></li>
+<li><a href="https://www.nano-editor.org/">nano</a></li>
+<li><a href="https://www.vim.org/">vim</a></li>
+</ul>
+<p>All have their own <em>fan base</em>. It makes sense to learn how to use at least one of those - basically all will require to learn a handful of key-combinations.</p>
+</div>
+<div id="organizing-files" class="section level4">
+<h4><span class="header-section-number">3.5.2.6</span> Organizing files</h4>
+<pre><code>mkdir              # create new directory
+ln (-s)            # create link to file/directory
+rm (-r)            # delete file/directory
+mv                 # move/rename file/directory
+gzip               # compress file (file.txt -&gt; file.txt.gz)
+gunzip             # decompress file (file.txt.gz -&gt; file.txt)
+tar (-zcvf/-zxvf)  # (de)compress folder (folder -&gt; folder.tar.gz)</code></pre>
+</div>
+<div id="organizing-software" class="section level4">
+<h4><span class="header-section-number">3.5.2.7</span> Organizing software</h4>
+<pre><code>which (programm_name)  # look for the programm called &quot;programm_name&quot; and print its path
+bash (script.sh)       # run &quot;script.sh&quot; within own bash session 
+source (script.sh)     # run &quot;script.sh&quot; within current bash session </code></pre>
+</div>
+</div>
+</div>
+<div id="loops" class="section level2">
+<h2><span class="header-section-number">3.6</span> Loops</h2>
+<p>Sometimes you need to do one thing multiple times. Or almost the same thing and just modify a single parameter. In this case you can use loops instead of manual copy-and-paste. There are two loops that you should know:</p>
+<ul>
+<li><code>for</code></li>
+<li><code>while</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in A B C<span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
+<span class="co">#&gt; A</span>
+<span class="co">#&gt; B</span>
+<span class="co">#&gt; C</span></code></pre></div>
+<p>You and use bash commands to create the sequence to loop over by using <code>$(command)</code> (eg: <code>$(ls *.txt)</code>).</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">seq</span> -w 9 11<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;LG&quot;</span><span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
+<span class="co">#&gt; LG09</span>
+<span class="co">#&gt; LG10</span>
+<span class="co">#&gt; LG11</span></code></pre></div>
+<p>You can also loop over the content of a file:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
+<span class="co">#&gt; line1</span>
+<span class="co">#&gt; line2</span>
+<span class="co">#&gt; line3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">cat</span> data/table1.txt<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>;  <span class="kw">done</span>
+<span class="co">#&gt; --- 1 ----</span>
+<span class="co">#&gt; line1</span>
+<span class="co">#&gt; --- 2 ----</span>
+<span class="co">#&gt; line2</span>
+<span class="co">#&gt; --- 3 ----</span>
+<span class="co">#&gt; line3</span></code></pre></div>
+<p>Yet this might give unexpected results when your file contains whitespaces (looping over a table):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table2.txt
+<span class="co">#&gt; A    1</span>
+<span class="co">#&gt; B    2</span>
+<span class="co">#&gt; C    3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">cat</span> data/table2.txt<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>;  <span class="kw">done</span>
+<span class="co">#&gt; --- 1 ----</span>
+<span class="co">#&gt; A</span>
+<span class="co">#&gt; --- 2 ----</span>
+<span class="co">#&gt; 1</span>
+<span class="co">#&gt; --- 3 ----</span>
+<span class="co">#&gt; B</span>
+<span class="co">#&gt; --- 4 ----</span>
+<span class="co">#&gt; 2</span>
+<span class="co">#&gt; --- 5 ----</span>
+<span class="co">#&gt; C</span>
+<span class="co">#&gt; --- 6 ----</span>
+<span class="co">#&gt; 3</span></code></pre></div>
+<p>In this case you can switch to <code>while</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<span class="kw">while</span> <span class="bu">read</span> <span class="va">k</span>; <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>; <span class="kw">done</span> <span class="op">&lt;</span> <span class="ex">data/table2.txt</span>
+<span class="co">#&gt; --- 1 ----</span>
+<span class="co">#&gt; A 1</span>
+<span class="co">#&gt; --- 2 ----</span>
+<span class="co">#&gt; B 2</span>
+<span class="co">#&gt; --- 3 ----</span>
+<span class="co">#&gt; C 3</span></code></pre></div>
+<p>I use this pattern to read in parameters eg. for a function call within the loop:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">while</span> <span class="bu">read</span> <span class="va">k</span>; <span class="kw">do</span> 
+<span class="va">P1=$(</span><span class="bu">echo</span> <span class="va">$k</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span>;
+<span class="va">P2=$(</span><span class="bu">echo</span> <span class="va">$k</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span><span class="va">)</span>;
+<span class="bu">echo</span> <span class="st">&quot;parameter 1: </span><span class="va">${P1}</span><span class="st">, parameter 2: </span><span class="va">${P2}</span><span class="st">&quot;</span>
+<span class="kw">done</span> <span class="op">&lt;</span> <span class="ex">data/table2.txt</span>
+<span class="co">#&gt; parameter 1: A, parameter 2: 1</span>
+<span class="co">#&gt; parameter 1: B, parameter 2: 2</span>
+<span class="co">#&gt; parameter 1: C, parameter 2: 3</span></code></pre></div>
+</div>
+<div id="installing-new-software" class="section level2">
+<h2><span class="header-section-number">3.7</span> Installing new software</h2>
+<p><a name="later"></a> <strong>This is hell!</strong> Installing new software is what can take up a huge portion of your time &amp; sanity. That is because most new programs that you want to install will not work straight <em>out of the box</em> but depend on 17 other programs, packages and libraries and all of course in specific versions winch contradict each other. These dependencies will then of course not work straight <em>out of the box</em> but depend on … (You get the idea - right?)</p>
+<p>Ok, I might exaggerate a little here but not much…</p>
+<p>Therefore, whenever possible try to use package managers. These are programs that try to keep track of your software and - well - to <em>manage</em> the whole dependency hell for you.</p>
+<p>Depending on your OS, there are different package managers available for you:</p>
+<ul>
+<li>Mac: <a href="https://brew.sh/">homebrew</a></li>
+<li>Ubuntu: apt-get (comes with the OS)</li>
+<li>Universal: <a href="https://conda.io/en/latest/">conda</a>/<a href="https://bioconda.github.io/">bioconda</a></li>
+</ul>
+<p>(Conda &amp; especially bioconda are generally pretty useful, but lately they seem a little <em>buggy</em>. That is, lately the take ages to load and their ‘catalog’ might not contain the <em>bleding edge</em> version of the program you’re looking for.)</p>
+<p>Yet, sometimes the program you need is not available using package managers. In those cases you will have to bite the bullet and install the manually. How to do this exactly varies case by case, but a common theme to <em>compile a program from source</em> is the following:</p>
+<ul>
+<li><code>./configure</code></li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+</ul>
+<p>One example here would be the installation of <a href="http://catchenlab.life.illinois.edu/stacks/manual/#install">Stacks</a>:</p>
+<pre><code>wget http://catchenlab.life.illinois.edu/stacks/source/stacks-2.3d.tar.gz # downloading the software
+tar xfvz stacks-2.3d.tar.gz                                               # decompressing the folder
+cd stacks-2.3d                                                            # navigate into the folder
+./configure
+make
+sudo make install</code></pre>
+<p>You might notice that here we used <code>sudo make install</code> instead of <code>make install</code>. This means that to execute this command we need admin rights - no problem on your laptop, but on the cluster this is a no-go. We’ll talk about this later.</p>
+<p>The (naive) way I like to picture the installation is by comparing it to building IKEA furniture:</p>
+<ul>
+<li><code>./configure</code>: Your computer <em>reads the IKEA manual</em> and checks that is has all the tools needed to build the piece</li>
+<li><code>make</code>: Your computer unpacks the pieces and <em>puts the closet together</em> (it is now standing in your workshop)</li>
+<li><code>make install</code>: You put the closet into the bedroom (which is where you will be looking for your <em>cloths</em>)</li>
+</ul>
+<p>The point with <code>make install</code> is that it puts the compiled software into one of the standard folders within your <code>$PATH</code> so that the computer can find it. But since these folders are quite important the average user is not allowed to modify them - you need <em>admin rights</em> (<code>sudo ...</code>,<em>“become root”</em>) to do this.</p>
+<p>As mentioned before , this is possible if you own the computer, but on the cluster this will not be the case.</p>
+<p>The work-around is to create a custom folder that you <em>can acess</em> and to collect the manually installed software there instead.</p>
+<p>Lets say your software folder is <code>/home/khench/software</code>. This would change your installation procedure to the following:</p>
+<pre><code>./configure --prefix=&quot;/home/khench/software&quot;
+make
+make install # no &#39;sudo&#39; needed since I &#39;own&#39; the target folder</code></pre>
+<p>This will place the compiled software into <code>/home/khench/software</code> or <code>/home/khench/software/bin</code>. Our problem is only half solved at this point, since the computer still does not find the software. Assuming the program is called <code>new_program</code>, running <code>which new_program</code> will still return a blank line at this point.</p>
+<p>Therefore, we need to add <code>/home/khench/software</code> &amp; <code>/home/khench/software/bin</code> to our <code>$PATH</code>. To do this we add the following line to our bash start-up script (<code>$HOME/.bashrc</code> or <code>$HOME/.bash_profile</code>):</p>
+<pre><code>export PATH=$PATH:/home/khench/software:/home/khench/software/bin</code></pre>
+<p>We append the existing <code>$PATH</code> with our two custom directories. Note that the start-up script is a <em>start-up</em> script - the changes will come into effect once we restart the terminal but they will not effect the running session. To update the current session we need to run the start-up script manually (<code>source $HOME/.bashrc</code> or <code>source $HOME/.bash_profile</code>).</p>
+<p>At this point the following should work:</p>
+<pre><code>which new_program
+#&gt; /home/khench/software/bin/new_program</code></pre>
+<p>I usually like to double check that the program will open properly by calling the program help after installing.</p>
+<pre><code>new_program -help
+#&gt; Program: new_program (Program for demonstation purposes)
+#&gt; Version: 0.1.2
+#&gt; 
+#&gt; Usage:   new_program &lt;options&gt; input_file 
+#&gt; 
+#&gt; Options: -option1        program option 1
+#&gt;          -option2        program option 1
+#&gt;          -help           display this help text</code></pre>
+<p>If this does not produce an error but displays the help text, the program should generally work.</p>
+<hr />
+</div>
+<div id="appendix-sed-and-awk-examples" class="section level2">
+<h2><span class="header-section-number">3.8</span> Appendix (<code>sed</code> and <code>awk</code> examples)</h2>
+<p><a name="end"></a></p>
+<p>A large portion of bioinformatics is dealing with plain text files. The programs <code>sed</code> and <code>awk</code> are very powerful for this and can really help you working efficiently. I sure you can do way more using these two commands if you dig into their manuals, but here is how I usually use them:</p>
+<div id="sed" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> <code>sed</code></h3>
+<p>This is my go-to <em>search &amp; replace</em> function. I use it to reformat sample names from genotype files (<sampleid><species><population> -&gt; <sampleid>), reformat variable within a bash pipeline, transform whitespaces (“” -&gt; “”; &quot; &quot; -&gt; “”) and similar tasks:</p>
+<p>The basic structure looks like <code>sed 's/pattern/replace/g' &lt;input file&gt;</code>. Here the <code>s/</code> activates the <em>search &amp; replace mode</em>, the <code>/pattern/</code> is the old content (<em>search</em>), the <code>/replace/</code> is the new content (<em>replace</em>) and the <code>/g</code> indicates that you want to replace <em>all occurences</em> (<em>globally</em>) of the patterns within every line of the text. In contrast <code>sed 's/pattern/replace/'</code> would only replace the first occurrence of the pattern within each line.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
+<span class="co">#&gt; line1</span>
+<span class="co">#&gt; line2</span>
+<span class="co">#&gt; line3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/line/fancy new content\t/g&#39;</span> data/table1.txt
+<span class="co">#&gt; fancy new content    1</span>
+<span class="co">#&gt; fancy new content    2</span>
+<span class="co">#&gt; fancy new content    3</span></code></pre></div>
+<p>In cases where you need to replace a slash (“/”) you can use a different delimiter. The following commands are equivalent and I believe there are many more options:</p>
+<ul>
+<li><code>s/pattern/replace/g</code></li>
+<li><code>s=pattern=replace=g</code></li>
+<li><code>s#pattern#replace#g</code></li>
+</ul>
+<p>You can also replace several patterns in one command (one after ther other) by seperating them with a semicolon (<code>sed 's/pattern1/replace1/g; s/pattern2/replace2/g'</code>).</p>
+<p>When using sed in a bash pipeline is looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;sequence1:\tATGCATAGACATA&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">sed</span> <span class="st">&#39;s/^/&gt;/; s/:\t/\n/&#39;</span> <span class="kw">|</span>
+<span class="fu">gzip</span> <span class="op">&gt;</span> data/test.fa.gz
+
+<span class="fu">zcat</span> data/test.fa.gz <span class="kw">&amp;</span> <span class="fu">rm</span> data/test.fa.gz
+<span class="co">#&gt; gzip: data/test.fa.gz: No such file or directory</span></code></pre></div>
+<p>Generally (also eg. when using <code>grep</code>), there are two important special characters:</p>
+<ul>
+<li><code>^</code>: the <em>start</em> of a line</li>
+<li><code>$</code>: the <em>end</em> of a line</li>
+</ul>
+<p>So, in the example above (<code>sed 's/^/&gt;/'</code>) we introduced a “&gt;” at the start of each line (before crating <em>new</em> lines by introducing a linebreak <code>\n</code>)</p>
+<p>So far we have <em>replaced</em> patterns in a destructive manner. By this I mean that after using <code>sed</code> the pattern is <em>replaced</em> and thus gone. But sometimes you don’t want to <em>delete</em> the pattern you are looking for but to merely <em>modify</em> it. Of course you could argue that all you need to do is to write eg:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;pattern1234 &amp; pattern3412 &amp; pattern1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">sed</span> <span class="st">&#39;s/pattern/pattern replace/g&#39;</span>
+<span class="co">#&gt; pattern replace1234 &amp; pattern replace3412 &amp; pattern replace1643</span></code></pre></div>
+<p>But this only works when we know <em>exactly</em> what we are llokin for. To be more precise so far we did not really do <code>s/pattern/replace/g</code> but more something like <code>s/name/replace/g</code>. By this I mean that we searched for an exact string (wat I call a <em>name</em>), while a <em>pattern</em> can be more ambiguos by using <em>wildcards</em> and <em>regular expressions</em> (<code>.*</code>,<code>[123]</code> ,<code>[0-9]</code>, <code>[0-9]*</code>, <code>[A-Z]*</code>,<code>[a-z]*</code>):</p>
+<p>We could for example replace all (lowercase) words followed the combination of numbers starting with “1”:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">sed</span> <span class="st">&#39;s/[a-z][a-z]*1[0-9]*/---/g&#39;</span>
+<span class="co">#&gt; --- &amp; name3412 &amp; --- &amp; strinG1643</span></code></pre></div>
+<p>Now in this case, we <em>don’t</em> know the exact string that we are going to replace - we only know the <em>pattern</em>. So if we want to modify but avoid deleting it we need a different method to capture the detected pattern. To do this we fragment the search pattern using <code>\(pattern\)</code> or <code>\(pat\)\(tern\)</code>. The patterns declared like <code>s/\(pattern\)/</code> will still be found juust like in <code>s/pattern/</code>, but now we can acess the matched pattern using <code>\1</code> (<em>pattern</em>) or <code>\1</code> (<em>pat</em>) &amp; <code>\2</code> (<em>tern</em>) in the replace section:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">sed</span> <span class="st">&#39;s/\([a-z][a-z]*\)1\([0-9]*\)/\1--&gt;1\2/g&#39;</span>
+<span class="co">#&gt; word--&gt;1234 &amp; name3412 &amp; string--&gt;1643 &amp; strinG1643</span></code></pre></div>
+</div>
+<div id="awk" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> <code>awk</code></h3>
+<p>I feel like <code>awk</code> is more like its own programming language than just a unix command - it can be super useful. I usually use it whe <em>“I need to work with columns”</em> within a bash pipeline. This could be eg. add in two columns or add a string to a column based on a condition. I’m afraid this is almost an insult to the programm because I sure you can do waaay cooler things that this - alas, so far I could not get past <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a>.</p>
+<p>The basic structure of <code>awk</code> looks like:</p>
+<pre><code>awk &lt;definig variables&gt; &#39;condition {action} condition {action}...&#39; input_file</code></pre>
+<p>The most simple (and useless) version is to emulate <code>cat</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print}&#39;</span> data/table2.txt
+<span class="co">#&gt; A    1</span>
+<span class="co">#&gt; B    2</span>
+<span class="co">#&gt; C    3</span></code></pre></div>
+<p>The first thing to know about <code>awk</code> is how to address the individual columns. By default <code>awk</code> uses any whitespace (<code>&quot; &quot;</code> &amp; <code>&quot;\t&quot;</code>) as column delimiter. <code>$0</code> is the whole line, <code>$1</code> is the first column, <code>$2</code> is the second …</p>
+<p>Reading a <code>&quot;\t&quot;</code> delimited table:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span> data/table2.txt
+<span class="co">#&gt; 1</span>
+<span class="co">#&gt; 2</span>
+<span class="co">#&gt; 3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2&quot;-input-&quot;$1}&#39;</span> data/table2.txt
+<span class="co">#&gt; 1-input-A</span>
+<span class="co">#&gt; 2-input-B</span>
+<span class="co">#&gt; 3-input-C</span></code></pre></div>
+<p>Space <code>&quot; &quot;</code> is also delimiter:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/^/new_first_column /&#39;</span> data/table2.txt <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">awk</span> <span class="st">&#39;{print $2&quot;-input-&quot;$1}&#39;</span>
+<span class="co">#&gt; A-input-new_first_column</span>
+<span class="co">#&gt; B-input-new_first_column</span>
+<span class="co">#&gt; C-input-new_first_column</span></code></pre></div>
+<p>The second thing to know is how to add a condition to a action:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 {print}&#39;</span> data/table2.txt
+<span class="co">#&gt; B    2</span>
+<span class="co">#&gt; C    3</span></code></pre></div>
+<p>Combining conditions with logical <em>and</em>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 &amp;&amp; $1 == &quot;C&quot; {print}&#39;</span> data/table2.txt
+<span class="co">#&gt; C    3</span></code></pre></div>
+<p>Combining conditions with logical <em>or</em>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 || $1 == &quot;A&quot; {print}&#39;</span> data/table2.txt
+<span class="co">#&gt; A    1</span>
+<span class="co">#&gt; B    2</span>
+<span class="co">#&gt; C    3</span></code></pre></div>
+<p>Different actions for different cases:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $1&quot;\t&quot;$2*-1} $2 &gt;= 2 {print $1&quot;\t&quot;$2*10}&#39;</span> data/table2.txt
+<span class="co">#&gt; A    -1</span>
+<span class="co">#&gt; B    20</span>
+<span class="co">#&gt; C    30</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $0&quot;\tFAIL&quot;} $2 &gt;= 2 {print $0&quot;\tPASS&quot;}&#39;</span> data/table2.txt
+<span class="co">#&gt; A    1   FAIL</span>
+<span class="co">#&gt; B    2   PASS</span>
+<span class="co">#&gt; C    3   PASS</span></code></pre></div>
+<p>In <code>awk</code>, <code>&quot;NR&quot;</code> stands for the <em>row number</em> and <code>&quot;NF&quot;</code> stands for the <em>numbers of fields</em> (columns) within that row:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;1\n1 2\n1 2 3\n1 2 3 4\n1 2 3&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="fu">awk</span> <span class="st">&#39;NR &gt; 2 {print NF}&#39;</span>
+<span class="co">#&gt; 3</span>
+<span class="co">#&gt; 4</span>
+<span class="co">#&gt; 3</span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cluster.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

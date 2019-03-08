@@ -1,7 +1,7 @@
 ---
 title: "Getting Stuff Done"
 author: "Kosmas Hench"
-date: "`r Sys.Date()`"
+date: "2019-03-08"
 documentclass: book
 bibliography: [bibliography.bib]
 biblio-style: apalike
