@@ -223,7 +223,7 @@ ls -l
 #> total 20
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf
-#> drwxrwxr-x 2 khench khench 4096 Mär  8 14:25 data
+#> drwxrwxr-x 2 khench khench 4096 Mär  8 17:15 data
 #> drwxrwxr-x 2 khench khench 4096 Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config
 #> drwxrwxr-x 2 khench khench 4096 Mär  7 15:48 py
@@ -236,7 +236,7 @@ ls -l
 ```bash
 ls -lth
 #> total 20K
-#> drwxrwxr-x 2 khench khench 4,0K Mär  8 14:25 data
+#> drwxrwxr-x 2 khench khench 4,0K Mär  8 17:15 data
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:48 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R
