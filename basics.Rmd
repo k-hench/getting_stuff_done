@@ -41,17 +41,17 @@ root_folder
 ## Tools
 
 When it comes to the working environment many decisions are ultimately a question of personal taste.
-Nevertheless, in the following I want to recommend three main pillars of my working environment that I think are essential for bioinformatics.  
+Nevertheless, in the following I want to recommend three main pillars of my working environment that I think are essential for bioinformatics.
 
 ### The command line
 
-![](cl.svg) 
+![](cl.svg)
 
 If you're doing bioinformatics you *will* need to use *the command line* - this is where all the interesting stuff happens.
 Many programs that are commonly used can only be run from *the command line*.
 And if you want to do serious computations using a computer cluster they require that you use *the command line*.
 
-When using the command line, you simply change the way you communicate with your computer: 
+When using the command line, you simply change the way you communicate with your computer:
 The basic Idea here is to replace your mouse with your keyboard - instead of clicking things you write commands.
 Yet there are many things that you can do both using the command line or the mouse (eg. creating/ managing folders & files), so the need to write down everything into a "black box" might seem a little tedious at first. Still we use the command line because there are some things that you can only do there. A second huge benefit is that you can protocol everything you do.
 
@@ -91,7 +91,7 @@ I use it when I want to work with R *interactively* - that is for data explorati
 My ultimate goal for *shareable*/*reproducible* content (eg. scripts for figures in publications) are standalone R scripts.
 These are executable from the command line and run from start to end without interactive fiddling, eg:
 
-```
+```sh
 Rscript --vanilla script.R
 or
 Rscript --vanilla script.R input_file.txt output_figure.pdf

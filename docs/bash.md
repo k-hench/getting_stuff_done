@@ -78,6 +78,14 @@ ls
 ```
 
 
+One thing that makes your life easier when using the command line is the <tab> key on your keyboard.
+If you don't know what it does *try it*.
+It's basically an auto-complete for your input.
+
+If eg. you are sitting in the `root_folder` and want to move to `root_folder/data` all you need to type is `root_folder/da<tab>` and it will auto-complete to `root_folder/data`.
+Typing `root_folder/d<tab>` will not be enough since this is ambiguous since it might complete to either `root_folder/data` or `root_folder/docs`.
+Of course, in this example we only saved a single key stroke, but in *real life* <tab> can save you a lot of (mis-)typing.
+
 ## Paths
 
 A *path* is a location on your file system - it is quite similar to a URL in your web browser.
@@ -140,7 +148,7 @@ test='asre'
 
 `$PATH` often not a directory but a collection of directories separated by a colon:
 
-```
+```sh
 /usr/bin:/usr/local/bin:/home/khench/bin
 ```
 
@@ -160,7 +168,7 @@ One aspects of this is the ability to store your workflow in scripts.
 If you use a script to store bash commands the conventional suffix is `.sh` (eg: `script.sh`).
 Additionally it is useful to add a header line that points to the location of bash itself (usually one of the two):
 
-```
+```sh
 #!/bin/bash
 or
 #!/usr/bin/env bash
@@ -168,7 +176,7 @@ or
 
 A full (admittedly quite silly) script might look like this:
 
-```
+```sh
 #!/usr/bin/env bash
 
 cd /home/khench/root_folder
@@ -215,7 +223,7 @@ ls -l
 #> total 20
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf
-#> drwxrwxr-x 2 khench khench 4096 Mär  8 10:27 data
+#> drwxrwxr-x 2 khench khench 4096 Mär  8 14:25 data
 #> drwxrwxr-x 2 khench khench 4096 Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config
 #> drwxrwxr-x 2 khench khench 4096 Mär  7 15:48 py
@@ -228,7 +236,7 @@ ls -l
 ```bash
 ls -lth
 #> total 20K
-#> drwxrwxr-x 2 khench khench 4,0K Mär  8 10:27 data
+#> drwxrwxr-x 2 khench khench 4,0K Mär  8 14:25 data
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:48 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R
@@ -250,7 +258,7 @@ Apart from the most basic commands needed for *navigating* within the command li
 
 #### Operators
 
-```
+```sh
 #     # comment code (stuff here is not executed)
 >     # redirect output into file (overrides existing file)
 >>    # append existing file (creates new file if not yet existent)
@@ -258,9 +266,9 @@ Apart from the most basic commands needed for *navigating* within the command li
 2>    # redirect stderr to file (2>> append)
 2>&1  # redirects stderr to stdout
 &>    # redirect both stdout and stderr to file
-|     # the 'pipe': combine commands 
+|     # the 'pipe': combine commands (THIS ONE IS IMPORTANT)
 *     # wildcard/joker: ls *.txt lists all files ending int '.txt'
-\     # linebreak: continue a command on a new line (to avoid horribly long comands)
+\     # linebreak: continue a command on a new line (to avoid horribly long commands)
 ```
 
 It is important to be aware of several [*channels*](http://tldp.org/LDP/abs/html/io-redirection.html) that are being used within bash:
@@ -272,7 +280,7 @@ It is important to be aware of several [*channels*](http://tldp.org/LDP/abs/html
 You can use the operators described above to log for example errors and/or output of a program in a log file. 
 
 #### Reading Text
-```
+```sh
 echo (-e, "\n", "\t" )     # print text to stdout, -e allows special chracters eg newline & tab
 cat                        # read a text file and print to stdout
 zcat                       # read a gz-compressed text file and print to stdout
@@ -283,13 +291,13 @@ grep (-v, -w, -i, 'a\|b')  # search for line (-v not) containing pattern within 
 wc (-l, -c)                # count lines/chracters within text file
 ```
 #### Text manipulation (table like text files)
-```
+```sh
 paste         # combine columns 
 sort          # sort textfiles based on specific column
 ```
 
 #### Text manipulation (table like text files)
-```
+```sh
 sed           # search and replace
 awk           # power horse: filter rows, combines culumns, complex operations
 cut (-c, -f)  # print selective columns/charaters of each row
@@ -310,18 +318,19 @@ All have their own *fan base*.
 It makes sense to learn how to use at least one of those - basically all will require to learn a handful of key-combinations.
 
 #### Organizing files
-```
+```sh
 mkdir              # create new directory
 ln (-s)            # create link to file/directory
 rm (-r)            # delete file/directory
 mv                 # move/rename file/directory
+wget <URL>         # download file
 gzip               # compress file (file.txt -> file.txt.gz)
 gunzip             # decompress file (file.txt.gz -> file.txt)
 tar (-zcvf/-zxvf)  # (de)compress folder (folder -> folder.tar.gz)
 ```
 
 #### Organizing software
-```
+```sh
 which (programm_name)  # look for the programm called "programm_name" and print its path
 bash (script.sh)       # run "script.sh" within own bash session 
 source (script.sh)     # run "script.sh" within current bash session 
@@ -460,7 +469,7 @@ How to do this exactly varies case by case, but a common theme to *compile a pro
 
 One example here would be the installation of [Stacks](http://catchenlab.life.illinois.edu/stacks/manual/#install):
 
-```
+```sh
 wget http://catchenlab.life.illinois.edu/stacks/source/stacks-2.3d.tar.gz # downloading the software
 tar xfvz stacks-2.3d.tar.gz                                               # decompressing the folder
 cd stacks-2.3d                                                            # navigate into the folder
@@ -489,7 +498,7 @@ The work-around is to create a custom folder that you *can acess* and to collect
 Lets say your software folder is `/home/khench/software`.
 This would change your installation procedure to the following:
 
-```
+```sh
 ./configure --prefix="/home/khench/software"
 make
 make install # no 'sudo' needed since I 'own' the target folder
@@ -502,7 +511,7 @@ Assuming the program is called `new_program`, running `which new_program` will s
 Therefore, we need to add `/home/khench/software` & `/home/khench/software/bin` to our `$PATH`.
 To do this we add the following line to our bash start-up script (`$HOME/.bashrc` or `$HOME/.bash_profile`):
 
-```
+```sh
 export PATH=$PATH:/home/khench/software:/home/khench/software/bin
 ```
 
@@ -512,14 +521,14 @@ To update the current session we need to run the start-up script manually (`sour
 
 At this point the following should work:
 
-```
+```sh
 which new_program
 #> /home/khench/software/bin/new_program
 ```
 
 I usually like to double check that the program will open properly by calling the program help after installing.
 
-```
+```sh
 new_program -help
 #> Program: new_program (Program for demonstation purposes)
 #> Version: 0.1.2
@@ -547,6 +556,8 @@ I sure you can do way more using these two commands if you dig into their manual
 This is my go-to *search & replace* function.
 I use it to reformat sample names from genotype files (<sampleid><species><population> -> <sampleid>), reformat variable within a bash pipeline, transform whitespaces ("\t" -> "\n"; " " -> "\t") and similar tasks:
 
+#### Basics
+
 The basic structure looks like `sed 's/pattern/replace/g' <input file>`.
 Here the `s/` activates the *search & replace mode*, the `/pattern/` is the old content (*search*), the `/replace/` is the new content (*replace*) and the `/g` indicates that you want to replace *all occurences* (*globally*) of the patterns within every line of the text.
 In contrast  `sed 's/pattern/replace/'` would only replace the first occurrence of the pattern within each line.
@@ -573,9 +584,9 @@ The following commands are equivalent and I believe there are many more options:
 - `s=pattern=replace=g`
 - `s#pattern#replace#g`
 
-You can also replace several patterns in one command (one after ther other) by seperating them with a semicolon (`sed 's/pattern1/replace1/g; s/pattern2/replace2/g'`). 
+You can also replace several patterns in one command (one after the other) by separating them with a semicolon (`sed 's/pattern1/replace1/g; s/pattern2/replace2/g'`). 
 
-When using sed in a bash pipeline is looks like this:
+When using `sed` in a bash pipeline is looks like this:
 
 
 ```bash
@@ -592,7 +603,9 @@ Generally (also eg. when using `grep`), there are two important special characte
 - `^`: the *start* of a line 
 - `$`: the *end* of a line
 
-So, in the example above (`sed 's/^/>/'`) we introduced a ">" at the start of each line (before crating *new* lines by introducing a linebreak `\n`)
+So, in the example above (`sed 's/^/>/'`) we introduced a ">" at the start of each line (before crating *new* lines by introducing a line break `\n`)
+
+#### Wildcards
 
 So far we have *replaced* patterns in a destructive manner.
 By this I mean that after using `sed` the pattern is *replaced* and thus gone.
@@ -606,9 +619,9 @@ sed 's/pattern/pattern replace/g'
 #> pattern replace1234 & pattern replace3412 & pattern replace1643
 ```
 
-But this only works when we know *exactly* what we are llokin for.
+But this only works when we know *exactly* what we are looking for.
 To be more precise so far we did not really do `s/pattern/replace/g` but more something like `s/name/replace/g`.
-By this I mean that we searched for an exact string (wat I call a *name*), while a *pattern* can be more ambiguos by using *wildcards* and *regular expressions* (`.*`,`[123]` ,`[0-9]`, `[0-9]*`, `[A-Z]*`,`[a-z]*`):
+By this I mean that we searched for an exact string (what I call a *name*), while a *pattern* can be more ambiguous by using *wildcards* and *regular expressions* (`.*`,`[123]` ,`[0-9]`, `[0-9]*`, `[A-Z]*`,`[a-z]*`):
 
 We could for example replace all (lowercase) words followed the combination of numbers starting with "1":
 
@@ -619,10 +632,12 @@ sed 's/[a-z][a-z]*1[0-9]*/---/g'
 #> --- & name3412 & --- & strinG1643
 ```
 
+#### Modifying matches
+
 Now in this case, we *don't* know the exact string that we are going to replace - we only know the *pattern*.
 So if we want to modify but avoid deleting it we need a different method to capture the detected pattern.
 To do this we fragment the search pattern using `\(pattern\)` or  `\(pat\)\(tern\)`.
-The patterns declared like `s/\(pattern\)/` will still be found juust like in `s/pattern/`, but now we can acess the matched pattern using `\1` (*pattern*) or `\1` (*pat*) & `\2` (*tern*) in the replace section:
+The patterns declared like `s/\(pattern\)/` will still be found just like in `s/pattern/`, but now we can access the matched pattern using `\1` (*pattern*) or `\1` (*pat*) & `\2` (*tern*) in the replace section:
 
 
 ```bash
@@ -634,13 +649,15 @@ sed 's/\([a-z][a-z]*\)1\([0-9]*\)/\1-->1\2/g'
 ### `awk`
 
 I feel like `awk` is more like its own programming language than just a unix command - it can be super useful.
-I usually use it whe *"I need to work with columns"* within a bash pipeline.
+I usually use it when *"I need to work with columns"* within a bash pipeline.
 This could be eg. add in two columns or add a string to a column based on a condition.
-I'm afraid this is almost an insult to the programm because I sure you can do waaay cooler things that this - alas, so far I could not get past [RTFM](https://en.wikipedia.org/wiki/RTFM).
+I'm afraid this is almost an insult to the program because I sure you can do waaay cooler things that this - alas, so far I could not get past [RTFM](https://en.wikipedia.org/wiki/RTFM).
+
+#### Basics
 
 The basic structure of `awk` looks like:
 
-```
+```sh
 awk <definig variables> 'condition {action} condition {action}...' input_file
 ```
 
@@ -684,6 +701,8 @@ awk '{print $2"-input-"$1}'
 #> B-input-new_first_column
 #> C-input-new_first_column
 ```
+
+#### Conditions
 
 The second thing to know is how to add a condition to a action:
 
@@ -737,3 +756,84 @@ awk 'NR > 2 {print NF}'
 #> 4
 #> 3
 ```
+
+#### Variables
+
+One to be aware of is the use of variables within `awk`.
+You might have noticed that the columns within `awk` look like bash variables ( eg. `$1`).
+But if you try to use a bash variable within `awk` this will fail:
+
+
+```bash
+echo "test" | \
+awk '{print $HOME"--"$1}'
+#> test--test
+```
+
+This is not what we expected - that would have been:
+
+
+```bash
+echo "$HOME--test"
+#> /home/khench--test
+```
+
+The issue here is the use of different quotation marks (single `''` vs. double `""`).
+In short - the `awk` command needs to be wrapped in single quotes, but within these, bash variables don't work:
+
+
+```bash
+echo '$HOME'
+#> $HOME
+```
+
+vs.
+
+
+```bash
+echo "$HOME"
+#> /home/khench
+```
+
+To get around this we can pass the variable to `awk` *before* the use of the single quotes:
+
+
+```bash
+echo "test" | \
+awk -v h=$HOME '{print h"--"$1}'
+#> /home/khench--test
+```
+
+Basically you can store anything within a `awk` variable and use it within `awk`:
+
+
+```bash
+awk -v x=9 -v y="bla" '$2 < 2 {print $0"\t"x} $2 >= 2 {print $0"\t"y}' data/table2.txt
+#> A	1	9
+#> B	2	bla
+#> C	3	bla
+```
+
+One special `awk` variable is "OFS".
+This is the field delimiter and it can be set like any other variable.
+The following two examples are equivalent (but one is way easier to read/write).
+
+
+```bash
+echo "A" | \
+awk '{print $1"\t"$1"_second_column\tmore_content\t"$1"_last_column"}'
+#> A	A_second_column	more_content	A_last_column
+```
+
+
+```bash
+echo "A" | \
+awk -v OFS="\t" '{print $1,$1"_second_column","more_content",$1"_last_column"}'
+#> A	A_second_column	more_content	A_last_column
+```
+
+### Bash one-liners
+
+By combining the programs `awk`, `cat`, `cut`, `grep` and `sed` using the pipe `|` you can build quite concise and specific commands (*one-liners*) to deal with properly formatted data.
+Over the years I collected some combinations that I regularly use to deal with different types of bioinformatic data.
+You can find them together with some more useful bash examples within the `oneliners.md` file in the [source repository of this document](https://github.com/k-hench/getting_stuff_done/oneliners.md).

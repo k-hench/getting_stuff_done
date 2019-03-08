@@ -128,13 +128,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.8" data-path="bash.html"><a href="bash.html#appendix-sed-and-awk-examples"><i class="fa fa-check"></i><b>3.8</b> Appendix (<code>sed</code> and <code>awk</code> examples)</a><ul>
 <li class="chapter" data-level="3.8.1" data-path="bash.html"><a href="bash.html#sed"><i class="fa fa-check"></i><b>3.8.1</b> <code>sed</code></a></li>
 <li class="chapter" data-level="3.8.2" data-path="bash.html"><a href="bash.html#awk"><i class="fa fa-check"></i><b>3.8.2</b> <code>awk</code></a></li>
+<li class="chapter" data-level="3.8.3" data-path="bash.html"><a href="bash.html#bash-one-liners"><i class="fa fa-check"></i><b>3.8.3</b> Bash one-liners</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>4</b> Cluster</a></li>
 <li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a></li>
 <li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a></li>
 <li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
-<li class="chapter" data-level="8" data-path="other-software.html"><a href="other-software.html"><i class="fa fa-check"></i><b>8</b> Other software</a></li>
+<li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
+<li class="chapter" data-level="8.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#file-types"><i class="fa fa-check"></i><b>8.1</b> File types</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#genetic-data"><i class="fa fa-check"></i><b>8.1.1</b> Genetic data</a></li>
+<li class="chapter" data-level="8.1.2" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#code"><i class="fa fa-check"></i><b>8.1.2</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#software"><i class="fa fa-check"></i><b>8.2</b> Software</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 <li> <image src="../logo.svg" alt="Smiley face" style="width:100%; height:100px;"> </li>
@@ -209,9 +216,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">2.2.3</span> RStudio</h3>
 <p>By now I think <strong>R</strong> and <a href="https://www.rstudio.com/"><strong>RStudio</strong></a> are almost synonymous for most users. In my opinion there is no reason not to use Rstudio to develop your R scripts.</p>
 <p>That said, I view RStudio as a workshop. I use it when I want to work with R <em>interactively</em> - that is for data exploration or to <em>devellop</em> R scripts. My ultimate goal for <em>shareable</em>/<em>reproducible</em> content (eg. scripts for figures in publications) are standalone R scripts. These are executable from the command line and run from start to end without interactive fiddling, eg:</p>
-<pre><code>Rscript --vanilla script.R
-or
-Rscript --vanilla script.R input_file.txt output_figure.pdf</code></pre>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
+<span class="ex">or</span>
+<span class="ex">Rscript</span> --vanilla script.R input_file.txt output_figure.pdf</code></pre></div>
 <p>So much for now, we’re going to talk more about R later….</p>
 </div>
 <div id="disclaimer" class="section level3">
