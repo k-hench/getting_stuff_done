@@ -143,7 +143,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3.4" data-path="cluster.html"><a href="cluster.html#monitor-batch-jobs"><i class="fa fa-check"></i><b>4.3.4</b> Monitor batch jobs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a></li>
+<li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a><ul>
+<li class="chapter" data-level="5.1" data-path="git.html"><a href="git.html#get-started"><i class="fa fa-check"></i><b>5.1</b> Get started</a></li>
+<li class="chapter" data-level="5.2" data-path="git.html"><a href="git.html#gitignore"><i class="fa fa-check"></i><b>5.2</b> gitignore</a></li>
+<li class="chapter" data-level="5.3" data-path="git.html"><a href="git.html#conecting-to-github"><i class="fa fa-check"></i><b>5.3</b> Conecting to <em>github</em></a></li>
+<li class="chapter" data-level="5.4" data-path="git.html"><a href="git.html#using-git-with-atom"><i class="fa fa-check"></i><b>5.4</b> Using git with Atom</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a></li>
 <li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
 <li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
@@ -176,7 +181,124 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="git" class="section level1">
 <h1><span class="header-section-number">5</span> Git</h1>
+<p>This chapter should actually simply read <em>“use <a href="https://en.wikipedia.org/wiki/Version_control">version control</a>”</em>. <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"><em>Git</em></a> just happens to be the most commonly used software to implement version control. Again, I do not intend to write another redundant git tutorial but simply want to show how I currently use git. (<em>Honestly, I’m still learning this myself and I’m sure peaple who actually know this stuff are likely to get a temper tantrum or a fit of laughter when reading this…</em>)</p>
+<p>If you want to get a proper git introduction, please read the <a href="https://git-scm.com/doc">manual</a> and/or do <a href="https://git-scm.com/docs/gittutorial">an</a> <a href="https://www.tutorialspoint.com/git/index.htm">actual</a> <a href="https://try.github.io/">tutorial</a>.</p>
+<p>So, how do I integrate git into my work? In the introduction I recommended to keep your whole project within a single folder. We will now turn this folder into a <em>git repository</em>. This means, we’ll use <strong>git</strong> to keep track of the changes that happen within this project folder. To do this, we will take <em>snapshots</em> of our project every time we feel like we made some progress. Later, we will be able to come back to any time point of which we have a snapshot (it’s a little like saving a computer game…).</p>
+<div id="get-started" class="section level2">
+<h2><span class="header-section-number">5.1</span> Get started</h2>
+<p>We are going back to our example project folder (<code>~/root_folder</code>) of the chapter 2. All of the git commands have the structure <code>git [command] &lt;options&gt;</code>. To turn the folder into a git repository we run:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
+<span class="fu">git</span> init
+<span class="co">#&gt; Initialized empty Git repository in /home/khench/root_folder/.git/</span></code></pre></div>
+<p>No, we can check the current status of the repository:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt; Initial commit</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt; Untracked files:</span>
+<span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;     .gitignore</span>
+<span class="co">#&gt;     README.md</span>
+<span class="co">#&gt;     analysis.Rproj</span>
+<span class="co">#&gt;     analysis_twisst.nf</span>
+<span class="co">#&gt;     data/</span>
+<span class="co">#&gt;     nextflow.config</span>
+<span class="co">#&gt;     sh/</span></code></pre></div>
+</div>
+<p>You’ll see that git is aware of all the files (empty folders are omitted) in the folder. But at this stage the filed are not tracked yet.</p>
+</div>
+<div id="gitignore" class="section level2">
+<h2><span class="header-section-number">5.2</span> gitignore</h2>
+<p>At this point it makes sense to talk about why we need the file <code>.gitignore</code>. As I mentioned before, the huge benefit of git is that it will enable us later to come back to previous versions of our project since we <em>save</em> snapshots throughout the development of the project.</p>
+<p>Of course this means that all these versions (or at least the <em>changes</em> within the files) need to be stored at some place. So basically we have to deal with a trade-of where we have to choose between tracking as much as possible keeping our repository at a manageable size.<br />
+Luckily the most important files to keep track of (in my opinion) are also the smallest, while the largest files might actually be omitted without any issue. That is because your actual work - the scripts that you develop for your analysis are small text files. In contrast to this, you raw data might be huge - but it is static and does not necessarily need to be tracked. You will very likely deposit this data anyways at an external data base like eg. <a href="https://www.datadryad.org/">dryad</a>, <a href="https://www.ncbi.nlm.nih.gov/sra">SRA</a> or <a href="https://www.ebi.ac.uk/ena">ENA</a>. And after all, the whole point of our efforts is to provide <em>reproducible scripts</em> to get to our <em>final results</em> starting with the <em>raw data</em>.</p>
+<p>I therefore recommend to exclude the data folder from the list of files that git keeps track of. We still want to keep them within the project folder because things get messy when you address directories outside the repository. Other people would not be able to recreate your file structure anymore. Because of this we simply add the data folder to the <code>.gitignore</code> file (using a text editor). This is basically a blacklist of files &amp; directories that <em>“git ignores”</em>.</p>
+<p>I want to do this at the very beginning to not have any traces of the huge files within the history of the repository.</p>
+<p><code>.gitignore</code> now looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cat</span> .gitignore 
+<span class="co">#&gt; data</span></code></pre></div>
+<p>Now we first add the <code>.gitignore</code> to the tracked files and only add the rest later. We need to have the <code>.gitignore</code> in effect first - otherwise the <code>data</code> folder will not be omitted:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> add .gitignore
+<span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Initial commit</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Changes to be committed:</span>
+<span class="co">#&gt;   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  new file:   .gitignore</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Untracked files:</span>
+<span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  README.md</span>
+<span class="co">#&gt;  analysis.Rproj</span>
+<span class="co">#&gt;  analysis_twisst.nf</span>
+<span class="co">#&gt;  nextflow.config</span>
+<span class="co">#&gt;  sh/</span></code></pre></div>
+</div>
+<p>So, now the changes in <code>.gitignore</code> are <em>staged for a commit</em> - the file is ready for a snapshot. To save this snapshot we run:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> commit -m <span class="st">&quot;init gitignore&quot;</span>
+<span class="co">#&gt; [master (root-commit) 575e91f] init gitignore</span>
+<span class="co">#&gt;  1 file changed, 1 insertion(+)</span>
+<span class="co">#&gt;  create mode 100644 .gitignore</span>
+<span class="fu">git</span> status 
+<span class="co">#&gt;  On branch master</span>
+<span class="co">#&gt;  Untracked files:</span>
+<span class="co">#&gt;    (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="co">#&gt;  </span>
+<span class="co">#&gt;      README.md</span>
+<span class="co">#&gt;      analysis.Rproj</span>
+<span class="co">#&gt;      analysis_twisst.nf</span>
+<span class="co">#&gt;      nextflow.config</span>
+<span class="co">#&gt;      sh/</span>
+<span class="co">#&gt;  </span>
+<span class="co">#&gt;  nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span></code></pre></div>
+</div>
+<p>Now we see two things:</p>
+<ul>
+<li><code>.gitignore</code> does not show up in the <code>git status</code> report. There are no changes in this file since the last commit.</li>
+<li>The <code>data</code> folder does not show up in the <code>git status</code> report. Our <code>.gitignore</code> apears to be in effect.</li>
+</ul>
+<p>So, at this point we can add and commit the rest of the files:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Changes to be committed:</span>
+<span class="co">#&gt;   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  new file:   README.md</span>
+<span class="co">#&gt;  new file:   analysis.Rproj</span>
+<span class="co">#&gt;  new file:   analysis_twisst.nf</span>
+<span class="co">#&gt;  new file:   nextflow.config</span>
+<span class="co">#&gt;  new file:   sh/script.sh</span>
+<span class="fu">git</span> commit -m <span class="st">&quot;init repo&quot;</span>
+<span class="co">#&gt; [master a9f87c1] init repo</span>
+<span class="co">#&gt;  5 files changed, 6 insertions(+)</span>
+<span class="co">#&gt;  create mode 100644 README.md</span>
+<span class="co">#&gt;  create mode 100644 analysis.Rproj</span>
+<span class="co">#&gt;  create mode 100644 analysis_twisst.nf</span>
+<span class="co">#&gt;  create mode 100644 nextflow.config</span>
+<span class="co">#&gt;  create mode 100644 sh/script.sh</span>
+<span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; nothing to commit, working directory clean</span></code></pre></div>
+</div>
+</div>
+<div id="conecting-to-github" class="section level2">
+<h2><span class="header-section-number">5.3</span> Conecting to <em>github</em></h2>
+</div>
+<div id="using-git-with-atom" class="section level2">
+<h2><span class="header-section-number">5.4</span> Using git with Atom</h2>
 
+</div>
 </div>
             </section>
 
