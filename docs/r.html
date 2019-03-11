@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-09">
+<meta name="date" content="2019-03-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -146,10 +146,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a><ul>
 <li class="chapter" data-level="5.1" data-path="git.html"><a href="git.html#get-started"><i class="fa fa-check"></i><b>5.1</b> Get started</a></li>
 <li class="chapter" data-level="5.2" data-path="git.html"><a href="git.html#gitignore"><i class="fa fa-check"></i><b>5.2</b> gitignore</a></li>
-<li class="chapter" data-level="5.3" data-path="git.html"><a href="git.html#conecting-to-github"><i class="fa fa-check"></i><b>5.3</b> Conecting to <em>github</em></a></li>
+<li class="chapter" data-level="5.3" data-path="git.html"><a href="git.html#conecting-to-github"><i class="fa fa-check"></i><b>5.3</b> Conecting to <em>github</em></a><ul>
+<li class="chapter" data-level="5.3.1" data-path="git.html"><a href="git.html#move-the-repository-to-github"><i class="fa fa-check"></i><b>5.3.1</b> Move the repository to <em>github</em></a></li>
+<li class="chapter" data-level="5.3.2" data-path="git.html"><a href="git.html#get-the-repository-from-github"><i class="fa fa-check"></i><b>5.3.2</b> Get the repository from <em>github</em></a></li>
+<li class="chapter" data-level="5.3.3" data-path="git.html"><a href="git.html#update-the-repository"><i class="fa fa-check"></i><b>5.3.3</b> Update the repository</a></li>
+</ul></li>
 <li class="chapter" data-level="5.4" data-path="git.html"><a href="git.html#using-git-with-atom"><i class="fa fa-check"></i><b>5.4</b> Using git with Atom</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a></li>
+<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r.html"><a href="r.html#read"><i class="fa fa-check"></i><b>6.1</b> Read</a></li>
+<li class="chapter" data-level="6.2" data-path="r.html"><a href="r.html#know"><i class="fa fa-check"></i><b>6.2</b> Know</a></li>
+<li class="chapter" data-level="6.3" data-path="r.html"><a href="r.html#run"><i class="fa fa-check"></i><b>6.3</b> Run</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
 <li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
 <li class="chapter" data-level="8.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#file-types"><i class="fa fa-check"></i><b>8.1</b> File types</a><ul>
@@ -181,7 +189,89 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="r" class="section level1">
 <h1><span class="header-section-number">6</span> R</h1>
+<p>I could probably write 30 pages about my opinion on different <strong>R</strong> topics but I’ll spare you the pain of going over this here. All I want to do at this point, is to point out some of the excellent texts &amp; tutorials that really push my own coding in <strong>R</strong>.</p>
+<p>Then I need to mention 1/4 packages that anyone writing in R these days should be aware of. If you know them and choose not to use them - well that’s your issue. But if you have not looked at them so far - <em>do it now!</em> (Otherwise you’ll have serious issues when trying to follow any of my R code…)</p>
+<p>The last issue I want to highlight is the use of <em>standalone R scripts</em> that are meant for used from the command line/ within a pipe. For me this is my attempt to create reproducible analysis that removes as much subjectivity as possible from the last part of the <em>from raw data to figures</em> journey.</p>
+<div id="read" class="section level2">
+<h2><span class="header-section-number">6.1</span> Read</h2>
+<p>Anything written by Hadley Wickham will improve your R. He has written three great books (which are all <em>publicly available for free</em>)</p>
+<ul>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li><a href="http://r-pkgs.had.co.nz/">R packages</a></li>
+<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
+</ul>
+<p>If just start to get going with <strong>ggplot2</strong>:</p>
+<ul>
+<li>the <a href="http://www.cookbook-r.com/Graphs/">R Graphics cook book</a></li>
+<li>a <a href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction">tutorial by the Harvad University</a></li>
+<li>this <a href="http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/">page by Zev Ross</a></li>
+</ul>
+<p>Also, this platform of <a href="http://www.ggplot2-exts.org/"><strong>ggplot</strong> extensions</a> is definitively worth a look.</p>
+</div>
+<div id="know" class="section level2">
+<h2><span class="header-section-number">6.2</span> Know</h2>
+<p>You should know the <strong>tidyverse</strong>. It not <em>one</em>, but actually <em>a collection</em> of packages which make working in R just so much more pleasant, streamlined readable, fun…</p>
+<p>The biggest impact so far on my own coding came from four packages that are part of the <strong>tidyverse</strong>. I list them below together with those functions from these packages which really made a difference.</p>
+<ul>
+<li><strong>magrittr</strong>: the pipe operator (<code>%&gt;%</code>) is a <em>game changer</em> for R</li>
+<li><strong>ggplot2</strong>: simply the best way of data visualization I have used so far</li>
+<li><strong>dplyr</strong>: does for tables what ggplot2 does for plots (<code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarise()</code>,<code>left_join()</code>, <a href="http://genomicsclass.github.io/book/pages/dplyr_tutorial.html">tutorial</a>)</li>
+<li><strong>purrr</strong>: this package changed the way I thought about code. Since I saw the beauty of <code>map()</code>/<code>map2()</code>/<code>pmap()</code> I pack most of my code into neat small functions. This saves soooooooo much typing/sources of error/confusion.</li>
+</ul>
+<p>Of course there is many more great packages out there on <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://github.com/">github</a> or <a href="https://bioconductor.org/">bioconductor</a>. But the last package that I’m going to mention here is <strong>devtools</strong>. With this package you can easily install R packages from all different kinds of sources.</p>
+</div>
+<div id="run" class="section level2">
+<h2><span class="header-section-number">6.3</span> Run</h2>
+<p>Rstudio is a great environment to develop R code. I spend days using it the idea of running plain R seems almost archaic to me. So during most of the time I will use R code throughout a project.</p>
+<p>But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility. I already keep this in mind during the process of my scripts. This means that every script should run from start to end without interactive intervention. No manual loading of data, interaction with other scripts basically only using <code>source()</code> (outsourcing definition of needed custom functions might actually be a good idea).</p>
+<p>So, after polishing my R scripts to their final version they should be able to be run from the command line:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
+<span class="co"># or</span>
+<span class="ex">Rscript</span> --vanilla script.R input_file.tsv input_value external_script.R</code></pre></div>
+<p>For this I provide the scripts that are meant for execution with a small header &amp; config section (not the ones which I <code>source()</code>). Here is an example for the script that takes input from the command line.</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#!/usr/bin/env Rscript</span>
+<span class="co"># run from terminal:</span>
+<span class="co"># Rscript --vanilla script.R input_file.tsv input_value external_script.R</span>
+<span class="co"># ===============================================================</span>
+<span class="co"># This script provides an example of an executable R script.</span>
+<span class="co"># It takes thee inputs and parses them into R variables</span>
+<span class="co"># ---------------------------------------------------------------</span>
+<span class="co"># The produced output contains:</span>
+<span class="co">#   - nothing, it&#39;s just a demo</span>
+<span class="co"># ===============================================================</span>
+<span class="co"># args contails everything thats typed into the command line -</span>
+<span class="co"># Our input start with the 7th element.</span>
+<span class="co"># Careful: if you need more input fields youalso need to adjust the subsetting</span>
 
+args =<span class="st"> </span><span class="kw">commandArgs</span>(<span class="dt">trailingOnly=</span><span class="ot">FALSE</span>)
+args =<span class="st"> </span>args[<span class="dv">7</span><span class="op">:</span><span class="dv">9</span>]
+<span class="kw">print</span>(args)
+
+<span class="co"># Quick copy &amp; paste section for devellopment phase</span>
+<span class="co"># args &lt;- c(&#39;input_file.tsv&#39;,&#39;input_value&#39;, &#39;external_script.R&#39;)</span>
+<span class="co"># ------------------------------------</span>
+<span class="co"># Config:</span>
+<span class="co"># Set seed if your script uses any element of randomnes (sample(), rnorm(),...)</span>
+
+<span class="kw">set.seed</span>(<span class="dv">1000</span>)                         
+input_file &lt;-<span class="st"> </span><span class="kw">as.character</span>(args[<span class="dv">1</span>])
+input_value &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(args[<span class="dv">2</span>])
+config_script &lt;-<span class="st"> </span><span class="kw">as.character</span>(args[<span class="dv">3</span>])
+
+<span class="co"># ------------------------------------</span>
+<span class="co"># Here, the content of the original script starts </span>
+
+<span class="kw">library</span>(tidyverse)
+<span class="kw">source</span>(config_script)
+
+data &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(input_file)
+
+<span class="co"># The code continues....</span></code></pre></div>
+</div>
+<hr />
+
+</div>
 </div>
             </section>
 

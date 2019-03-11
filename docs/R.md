@@ -5,3 +5,116 @@ editor_options:
 ---
 
 # R
+
+I could probably write 30 pages about my opinion on different **R** topics but I'll spare you the pain of going over this here.
+All I want to do at this point, is to point out some of the excellent texts & tutorials that really push my own coding in **R**.
+
+Then I need to mention 1/4 packages that anyone writing in R these days should be aware of.
+If you know them and choose not to use them - well that's your issue.
+But if you have not looked at them so far - *do it now!*
+(Otherwise you'll have serious issues when trying to follow any of my R code...)
+
+The last issue I want to highlight is the use of *standalone R scripts* that are meant for used from the command line/ within a pipe.
+For me this is my attempt to create reproducible analysis that removes as much subjectivity as possible from the last part of the *from raw data to figures* journey.
+
+## Read
+
+Anything written by Hadley Wickham will improve your R.
+He has written three great books (which are all *publicly available for free*)
+
+- [R for Data Science](https://r4ds.had.co.nz/)
+- [R packages](http://r-pkgs.had.co.nz/)
+- [Advanced R](https://adv-r.hadley.nz/)
+
+If just start to get going with **ggplot2**:
+
+- the [R Graphics cook book](http://www.cookbook-r.com/Graphs/)
+- a [tutorial by the Harvad University](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction)
+- this [page by Zev Ross](http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/)
+
+Also, this platform of [**ggplot** extensions](http://www.ggplot2-exts.org/) is definitively worth a look.
+
+## Know
+
+You should know the **tidyverse**.
+It not *one*, but actually *a collection* of packages which make working in R just so much more pleasant, streamlined readable, fun...
+
+The biggest impact so far on my own coding came from four packages that are part of the **tidyverse**.
+I list them below together with those functions from these packages which really made a difference.
+
+- **magrittr**: the pipe operator (`%>%`) is a *game changer* for R
+- **ggplot2**: simply the best way of data visualization I have used so far
+- **dplyr**: does for tables what ggplot2 does for plots  (`filter()`, `select()`, `mutate()`, `group_by()`, `summarise()`,`left_join()`, [tutorial](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html))
+- **purrr**: this package changed the way I thought about code. Since I saw the beauty of `map()`/`map2()`/`pmap()` I pack most of my code into neat small functions. This saves soooooooo much typing/sources of error/confusion.
+
+Of course there is many more great packages out there on [CRAN](https://cran.r-project.org/), [github](https://github.com/) or [bioconductor](https://bioconductor.org/).
+But the last package that I'm going to mention here is **devtools**.
+With this package you can easily install R packages from all different kinds of sources.
+
+
+## Run
+
+Rstudio is a great environment to develop R code.
+I spend days using it the idea of running plain R seems almost archaic to me.
+So during most of the time I will use R code throughout a project.
+
+But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility.
+I already keep this in mind during the process of my scripts.
+This means that every script should run from start to end without interactive intervention.
+No manual loading of data, interaction with other scripts basically only using `source()` (outsourcing definition of needed custom functions might actually be a good idea).
+
+So, after polishing my R scripts to their final version they should be able to be run from the command line:
+
+```sh
+Rscript --vanilla script.R
+# or
+Rscript --vanilla script.R input_file.tsv input_value external_script.R
+```
+
+For this I provide the scripts that are meant for execution with a small header & config section (not the ones which I `source()`).
+Here is an example for the script that takes input from the command line.
+
+<div class="kclass">
+```r
+#!/usr/bin/env Rscript
+# run from terminal:
+# Rscript --vanilla script.R input_file.tsv input_value external_script.R
+# ===============================================================
+# This script provides an example of an executable R script.
+# It takes thee inputs and parses them into R variables
+# ---------------------------------------------------------------
+# The produced output contains:
+#   - nothing, it's just a demo
+# ===============================================================
+# args contails everything thats typed into the command line -
+# Our input start with the 7th element.
+# Careful: if you need more input fields youalso need to adjust the subsetting
+
+args = commandArgs(trailingOnly=FALSE)
+args = args[7:9]
+print(args)
+
+# Quick copy & paste section for devellopment phase
+# args <- c('input_file.tsv','input_value', 'external_script.R')
+# ------------------------------------
+# Config:
+# Set seed if your script uses any element of randomnes (sample(), rnorm(),...)
+
+set.seed(1000)                         
+input_file <- as.character(args[1])
+input_value <- as.numeric(args[2])
+config_script <- as.character(args[3])
+
+# ------------------------------------
+# Here, the content of the original script starts 
+
+library(tidyverse)
+source(config_script)
+
+data <- read_tsv(input_file)
+
+# The code continues....
+```
+</div>
+
+--------

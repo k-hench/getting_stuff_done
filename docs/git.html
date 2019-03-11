@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-09">
+<meta name="date" content="2019-03-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -146,10 +146,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>5</b> Git</a><ul>
 <li class="chapter" data-level="5.1" data-path="git.html"><a href="git.html#get-started"><i class="fa fa-check"></i><b>5.1</b> Get started</a></li>
 <li class="chapter" data-level="5.2" data-path="git.html"><a href="git.html#gitignore"><i class="fa fa-check"></i><b>5.2</b> gitignore</a></li>
-<li class="chapter" data-level="5.3" data-path="git.html"><a href="git.html#conecting-to-github"><i class="fa fa-check"></i><b>5.3</b> Conecting to <em>github</em></a></li>
+<li class="chapter" data-level="5.3" data-path="git.html"><a href="git.html#conecting-to-github"><i class="fa fa-check"></i><b>5.3</b> Conecting to <em>github</em></a><ul>
+<li class="chapter" data-level="5.3.1" data-path="git.html"><a href="git.html#move-the-repository-to-github"><i class="fa fa-check"></i><b>5.3.1</b> Move the repository to <em>github</em></a></li>
+<li class="chapter" data-level="5.3.2" data-path="git.html"><a href="git.html#get-the-repository-from-github"><i class="fa fa-check"></i><b>5.3.2</b> Get the repository from <em>github</em></a></li>
+<li class="chapter" data-level="5.3.3" data-path="git.html"><a href="git.html#update-the-repository"><i class="fa fa-check"></i><b>5.3.3</b> Update the repository</a></li>
+</ul></li>
 <li class="chapter" data-level="5.4" data-path="git.html"><a href="git.html#using-git-with-atom"><i class="fa fa-check"></i><b>5.4</b> Using git with Atom</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a></li>
+<li class="chapter" data-level="6" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>6</b> R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r.html"><a href="r.html#read"><i class="fa fa-check"></i><b>6.1</b> Read</a></li>
+<li class="chapter" data-level="6.2" data-path="r.html"><a href="r.html#know"><i class="fa fa-check"></i><b>6.2</b> Know</a></li>
+<li class="chapter" data-level="6.3" data-path="r.html"><a href="r.html#run"><i class="fa fa-check"></i><b>6.3</b> Run</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
 <li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
 <li class="chapter" data-level="8.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#file-types"><i class="fa fa-check"></i><b>8.1</b> File types</a><ul>
@@ -264,7 +272,7 @@ Luckily the most important files to keep track of (in my opinion) are also the s
 <p>Now we see two things:</p>
 <ul>
 <li><code>.gitignore</code> does not show up in the <code>git status</code> report. There are no changes in this file since the last commit.</li>
-<li>The <code>data</code> folder does not show up in the <code>git status</code> report. Our <code>.gitignore</code> apears to be in effect.</li>
+<li>The <code>data</code> folder does not show up in the <code>git status</code> report. Our <code>.gitignore</code> appears to be in effect.</li>
 </ul>
 <p>So, at this point we can add and commit the rest of the files:</p>
 <div class="kclass">
@@ -294,9 +302,243 @@ Luckily the most important files to keep track of (in my opinion) are also the s
 </div>
 <div id="conecting-to-github" class="section level2">
 <h2><span class="header-section-number">5.3</span> Conecting to <em>github</em></h2>
+<p>So far everything is good and well - we do have version control implemented for our project and know how to commit changes after we have developed the project further. Yet, ultimately we want to share the code with other people (or at least make it available to the public.) This means we want to provide the repository to the public online and for this we need a platform. Chances are you have heard of <a href="https://github.com/"><em>github</em></a> even if you have not heard of git itself. That is because it is likely the larges platform where many programs (in their form as git repositories) are being shared by their developers. There are other such platforms such as <a href="https://bitbucket.org">bitbucket</a> or <a href="https://about.gitlab.com/">gitlab</a> (which <a href="https://git.geomar.de/explore">Geomar</a> is using internally). Yet here I will stick to <em>github</em> since this is also what I am using personally (and where this page is hosted).</p>
+<p>To use github you have to create an account first. The basic (public) account is for free, but if you want to use github for super secret stuff, you will need to get a payed account (which is about 85$ / year I think).</p>
+<div id="move-the-repository-to-github" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Move the repository to <em>github</em></h3>
+<p>Now, how do we get the the new repository onto github?</p>
+<p>First, we log onto github and create an empty repository there by clicking the <em>+</em> in the upper right corner:</p>
+<div class="figure">
+<img src="img/new_repo.png" />
+
+</div>
+<p>We choose a name, a small description and toggle public/private (here for an ongoing project I would likely choose ‘private’) and click <em>(Create reopsitory)</em>.</p>
+<div class="figure">
+<img src="img/new_repo2.png" />
+
+</div>
+<p>Then we switch back to the <em>command line</em>:</p>
+<p>Within the <code>root_folder</code> we now create a connection to the new <em>github repository</em> which we set to be the <em>origin</em> of our local project:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> remote add origin https://github.com/k-hench/demo_root_folder.git
+<span class="fu">git</span> push -u origin master
+<span class="co">#&gt; Counting objects: 8, done.</span>
+<span class="co">#&gt; Delta compression using up to 4 threads.</span>
+<span class="co">#&gt; Compressing objects: 100% (4/4), done.</span>
+<span class="co">#&gt; Writing objects: 100% (8/8), 652 bytes | 0 bytes/s, done.</span>
+<span class="co">#&gt; Total 8 (delta 0), reused 0 (delta 0)</span>
+<span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span>
+<span class="co">#&gt;  * [new branch]      master -&gt; master</span>
+<span class="co">#&gt; Branch master set up to track remote branch master from origin.</span></code></pre></div>
+</div>
+<p>Now we can see the content of our <code>root_folder</code> showing up on our github account:</p>
+<div class="figure">
+<img src="img/new_repo3.png" />
+
+</div>
+<p>By clicking the <em>“commits”</em> tab:<br />
+<img src="img/new_repo4.png" />,<br />
+we can see the history of our repository. These are all the snapshots we took so far, so we find the changes to the <code>.gitignore</code> and the subsequent import of the folder content:</p>
+<div class="figure">
+<img src="img/new_repo5.png" />
+
+</div>
+</div>
+<div id="get-the-repository-from-github" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Get the repository from <em>github</em></h3>
+<p>At this point we can import the repository to other locations from github. This could be to your collaborators computer, to a reviewer of your paper or to <em>the cluster</em>.</p>
+<p>In my opinion, the beauty of using github it that we can use it for different purposes depending on the stage of our project:</p>
+<ul>
+<li>Moving content (new scripts) from your machine to the cluster (<em>devellopment phase</em>)</li>
+<li>Backup &amp; documentation of the project (<em>constatntly from beginning to end</em>)</li>
+<li>Publication of the workflow (<em>after/at publication of the study</em>)</li>
+</ul>
+<p>Actually that’s probably even the more lame aspects of using git, for as far as I understand the <em>actual</em> benefits start to kick in once you work collaboratively on a single project with other people.</p>
+<p>Importing the repository to the cluster is easy now. We simply copy the repository URL from github:</p>
+<div class="figure">
+<img src="img/new_repo6.png" />
+
+</div>
+<p>Then we log in to the cluster and <em>clone</em> the repository. This will download it to the current directory on the cluster:</p>
+<div class="cluster kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
+<span class="fu">git</span> clone https://github.com/k-hench/demo_root_folder.git
+<span class="co">#&gt; Cloning into &#39;demo_root_folder&#39;...</span>
+<span class="co">#&gt; remote: Enumerating objects: 8, done.</span>
+<span class="co">#&gt; remote: Counting objects: 100% (8/8), done.</span>
+<span class="co">#&gt; remote: Compressing objects: 100% (4/4), done.</span>
+<span class="co">#&gt; remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0</span>
+<span class="co">#&gt; Unpacking objects: 100% (8/8), done.</span>
+
+<span class="bu">cd</span> demo_root_folder/
+<span class="fu">ls</span> -1a
+<span class="co">#&gt; .</span>
+<span class="co">#&gt; ..</span>
+<span class="co">#&gt; .git</span>
+<span class="co">#&gt; .gitignore</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; analysis_twisst.nf</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; sh</span></code></pre></div>
+</div>
+<p>You might notice that not all the files &amp; folders made it to the cluster though:</p>
+<div class="row kclass">
+<div class="column">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">tree</span>
+<span class="co">#&gt; .</span>
+<span class="co">#&gt; |-- analysis.Rproj</span>
+<span class="co">#&gt; |-- analysis_twisst.nf</span>
+<span class="co">#&gt; |-- data</span>
+<span class="co">#&gt; |   |-- genotypes.vcf.gz</span>
+<span class="co">#&gt; |   |-- table1.txt</span>
+<span class="co">#&gt; |   `-- table2.txt</span>
+<span class="co">#&gt; |-- docs</span>
+<span class="co">#&gt; |-- nextflow.config</span>
+<span class="co">#&gt; |-- py</span>
+<span class="co">#&gt; |-- R</span>
+<span class="co">#&gt; |-- README.md</span>
+<span class="co">#&gt; `-- sh</span>
+<span class="co">#&gt;     `--  script.sh</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; 5 directories, 8 files</span></code></pre></div>
+</div>
+<div class="column cluster">
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tree</span> 
+<span class="co">#&gt; .</span>
+<span class="co">#&gt; |-- README.md</span>
+<span class="co">#&gt; |-- analysis.Rproj</span>
+<span class="co">#&gt; |-- analysis_twisst.nf</span>
+<span class="co">#&gt; |-- nextflow.config</span>
+<span class="co">#&gt; `-- sh</span>
+<span class="co">#&gt;     `-- script.sh</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; 1 directory, 5 files</span>
+
+
+
+
+
+
+
+</code></pre></div>
+</div>
+</div>
+<p>So of course the files that are listed on the <code>.gitignore</code> file, but also empty folders are omitted and not exported to github.</p>
+</div>
+<div id="update-the-repository" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Update the repository</h3>
+<p>Now, lets see how to update the content.</p>
+<p>I usually write the code of my analysis on my laptop and then use github to transfer it to the cluster. To emulate this, lets put some information into the <code>README.md</code> file. By default, this file serves as welcome message on the github project page.</p>
+<p>Therefore I’ll open the file in a text editor and copy this text:</p>
+<blockquote>
+<p>Hello world,</p>
+<p>This is a showcase repository for my bioinformatics crash course.</p>
+<p>For more information please go to my repository *getting_stuff_done* or look [here](<a href="https://k-hench.github.io/getting\_stuff\_done/git.html\#conecting-to-github" class="uri">https://k-hench.github.io/getting\_stuff\_done/git.html\#conecting-to-github</a>).</p>
+</blockquote>
+<p>After saving the changes, if we check the repository status in the command line, we’ll get:</p>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Your branch is up-to-date with &#39;origin/master&#39;.</span>
+<span class="co">#&gt; Changes not staged for commit:</span>
+<span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="co">#&gt;   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  modified:   README.md</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span></code></pre></div>
+<p>So git is aware that <em>something has changed</em>. Like before, we’ll use <code>git add .</code> and <code>git commit -m &quot;update README.md&quot;</code> to save the new changes:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&quot;update README.md&quot;</span>
+<span class="co">#&gt; [master c4d6df5] update README.md</span>
+<span class="co">#&gt;  1 file changed, 6 insertions(+)</span>
+<span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
+<span class="co">#&gt;   (use &quot;git push&quot; to publish your local commits)</span>
+<span class="co">#&gt; nothing to commit, working directory clean</span></code></pre></div>
+</div>
+<p>Getting the updates to the cluster is a two-step process:</p>
+<ul>
+<li><code>git push</code> the changes from the laptop to github</li>
+</ul>
+<div class="cluster">
+<ul>
+<li><code>git pull</code> the update from github to the cluster</li>
+</ul>
+</div>
+<div class="kclass">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> push origin master
+<span class="co">#&gt; Counting objects: 3, done.</span>
+<span class="co">#&gt; Delta compression using up to 4 threads.</span>
+<span class="co">#&gt; Compressing objects: 100% (3/3), done.</span>
+<span class="co">#&gt; Writing objects: 100% (3/3), 429 bytes | 0 bytes/s, done.</span>
+<span class="co">#&gt; Total 3 (delta 1), reused 0 (delta 0)</span>
+<span class="co">#&gt; remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span>
+<span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span>
+<span class="co">#&gt;   a9f87c1..c4d6df5  master -&gt; master</span></code></pre></div>
+<div class="cluster">
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> pull origin master
+<span class="co">#&gt; remote: Enumerating objects: 5, done.</span>
+<span class="co">#&gt; remote: Counting objects: 100% (5/5), done.</span>
+<span class="co">#&gt; remote: Compressing objects: 100% (2/2), done.</span>
+<span class="co">#&gt; remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0</span>
+<span class="co">#&gt; Unpacking objects: 100% (3/3), done.</span>
+<span class="co">#&gt; From https://github.com/k-hench/demo_root_folder</span>
+<span class="co">#&gt;  * branch            master     -&gt; FETCH_HEAD</span>
+<span class="co">#&gt;    a9f87c1..c4d6df5  master     -&gt; origin/master</span>
+<span class="co">#&gt; Updating a9f87c1..c4d6df5</span>
+<span class="co">#&gt; Fast-forward</span>
+<span class="co">#&gt;  README.md | 6 ++++++</span>
+<span class="co">#&gt;  1 file changed, 6 insertions(+)</span></code></pre></div>
+</div>
+</div>
+<p>Also, now our <code>README.md</code> is visible on the github project page (and we can see the new commit):</p>
+<div class="figure">
+<img src="img/new_repo7.png" />
+
+</div>
+<p>At this point we have the basics to develop our project locally, synchronizing the scripts with the cluster (where the heavy duty jobs will be run) and also keep track of the development of our project (Using version control instead of <a href="http://phdcomics.com/comics/archive.php?comicid=1531">horrible file names</a>).</p>
+</div>
 </div>
 <div id="using-git-with-atom" class="section level2">
 <h2><span class="header-section-number">5.4</span> Using git with Atom</h2>
+<p>Writing all those <code>git add .</code> &amp; <code>git commit</code> commands might look tedious and impractical. Luckily, this pain is greatly reduced when using <em>Atom</em> or a similar text editor as project manager.</p>
+<p>When opening a folder with Atom I usually see three panels (from left to right):</p>
+<ul>
+<li>The <em>file tree</em> that gives on overview over the content of the project</li>
+<li>The <em>editor area</em> in the middle</li>
+<li>The <em>git tab</em> showing the current git status</li>
+</ul>
+<div class="figure">
+<img src="img/atom.png" />
+
+</div>
+<p>If your Atom opens with a blank file instead of a project folder you can open it manually:</p>
+<div class="figure">
+<img src="img/atom1.png" />
+
+</div>
+<p>You can also toggle the <em>git tab</em> under the menu item <em>View</em>:</p>
+<div class="figure">
+<img src="img/atom2.png" />
+
+</div>
+<p>Now we make some changes to <code>README.md</code> and import the hamlet logo into the project. In the screenshot below I:</p>
+<ul>
+<li>saved the file changes</li>
+<li>imported the logo</li>
+<li>staged the addition of the logo (equivalent to <code>git add logo.svg</code>)</li>
+<li>added the committing comment (equivalent to <code>git commit -m &quot;add hamlet logo.&quot;</code>)</li>
+</ul>
+<p>You can also easily push changes to github after dong a commit (the <em>fetch</em> at the button turns into <em>push</em>).</p>
+<div class="figure">
+<img src="img/atom3.png" />
+
+</div>
+<p>There are a <a href="https://atom.io/packages">ton of extensions</a> for Atom out there, so you can <a href="https://www.shopify.com/partners/blog/best-atom-packages-2017">custoomize it to your needs</a>. One example is the <a href="https://atom.io/packages/minimap">mini map</a> of the code that you see to right inside the editor tab.</p>
+<hr />
 
 </div>
 </div>

@@ -45,7 +45,7 @@ Nevertheless, in the following I want to recommend three main pillars of my work
 
 ### The command line
 
-![](cl.svg)
+![](img/cl.svg)
 
 If you're doing bioinformatics you *will* need to use *the command line* - this is where all the interesting stuff happens.
 Many programs that are commonly used can only be run from *the command line*.

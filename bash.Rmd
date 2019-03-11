@@ -664,3 +664,5 @@ awk -v OFS="\t" '{print $1,$1"_second_column","more_content",$1"_last_column"}'
 By combining the programs `awk`, `cat`, `cut`, `grep` and `sed` using the pipe `|` you can build quite concise and specific commands (*one-liners*) to deal with properly formatted data.
 Over the years I collected some combinations that I regularly use to deal with different types of bioinformatic data.
 You can find them together with some more useful bash examples within the `oneliners.md` file in the [source repository of this document](https://github.com/k-hench/getting_stuff_done/blob/master/oneliners.md).
+
+--------
