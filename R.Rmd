@@ -100,7 +100,7 @@ print(args)
 # Config:
 # Set seed if your script uses any element of randomnes (sample(), rnorm(),...)
 
-set.seed(1000)                         
+set.seed(42)                         
 input_file <- as.character(args[1])
 input_value <- as.numeric(args[2])
 config_script <- as.character(args[3])
