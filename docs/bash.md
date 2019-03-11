@@ -226,7 +226,7 @@ ls -l
 #> total 164
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis_twisst.nf
-#> drwxrwxr-x 2 khench khench   4096 Mär 11 18:54 data
+#> drwxrwxr-x 2 khench khench   4096 Mär 11 19:04 data
 #> drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config
@@ -240,7 +240,7 @@ ls -l
 ```bash
 ls -lth
 #> total 164K
-#> drwxrwxr-x 2 khench khench 4,0K Mär 11 18:54 data
+#> drwxrwxr-x 2 khench khench 4,0K Mär 11 19:04 data
 #> -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R

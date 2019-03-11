@@ -241,15 +241,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#   - nothing, it&#39;s just a demo</span>
 <span class="co"># ===============================================================</span>
 <span class="co"># args contails everything thats typed into the command line -</span>
-<span class="co"># Our input start with the 7th element.</span>
-<span class="co"># Careful: if you need more input fields youalso need to adjust the subsetting</span>
+<span class="co"># Our input starts with the 7th element.</span>
+<span class="co"># Careful: if you need more input fields, you also need to adjust the subsetting</span>
 
-args =<span class="st"> </span><span class="kw">commandArgs</span>(<span class="dt">trailingOnly=</span><span class="ot">FALSE</span>)
+args =<span class="st"> </span><span class="kw">commandArgs</span>(<span class="dt">trailingOnly =</span> <span class="ot">FALSE</span>)
 args =<span class="st"> </span>args[<span class="dv">7</span><span class="op">:</span><span class="dv">9</span>]
 <span class="kw">print</span>(args)
 
 <span class="co"># Quick copy &amp; paste section for devellopment phase</span>
-<span class="co"># args &lt;- c(&#39;input_file.tsv&#39;,&#39;input_value&#39;, &#39;external_script.R&#39;)</span>
+<span class="co"># args &lt;- c(&#39;input_file.tsv&#39;, &#39;input_value&#39;, &#39;external_script.R&#39;)</span>
 <span class="co"># ------------------------------------</span>
 <span class="co"># Config:</span>
 <span class="co"># Set seed if your script uses any element of randomnes (sample(), rnorm(),...)</span>

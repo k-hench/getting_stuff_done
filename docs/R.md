@@ -87,15 +87,15 @@ Here is an example for the script that takes input from the command line.
 #   - nothing, it's just a demo
 # ===============================================================
 # args contails everything thats typed into the command line -
-# Our input start with the 7th element.
-# Careful: if you need more input fields youalso need to adjust the subsetting
+# Our input starts with the 7th element.
+# Careful: if you need more input fields, you also need to adjust the subsetting
 
-args = commandArgs(trailingOnly=FALSE)
+args = commandArgs(trailingOnly = FALSE)
 args = args[7:9]
 print(args)
 
 # Quick copy & paste section for devellopment phase
-# args <- c('input_file.tsv','input_value', 'external_script.R')
+# args <- c('input_file.tsv', 'input_value', 'external_script.R')
 # ------------------------------------
 # Config:
 # Set seed if your script uses any element of randomnes (sample(), rnorm(),...)
