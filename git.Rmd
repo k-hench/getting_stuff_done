@@ -9,7 +9,7 @@ editor_options:
 This chapter should actually simply read *"use [version control](https://en.wikipedia.org/wiki/Version_control)"*.
 [*Git*](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) just happens to be the most commonly used software to implement version control.
 Again, I do not intend to write another redundant git tutorial but simply want to show how I currently use git.  
-(*Honestly, I'm still learning this myself and people who actually know this stuff might disagree on my approach...*)
+(*Honestly, I'm still learning this myself and people who actually know this stuff might disagree with my approach...*)
 
 If you want to get a proper git introduction, please read the [manual](https://git-scm.com/doc) and/or do [an](https://git-scm.com/docs/gittutorial) [actual](https://www.tutorialspoint.com/git/index.htm) [tutorial](https://try.github.io/).
 
