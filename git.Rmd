@@ -47,7 +47,7 @@ git status
 #>     .gitignore
 #>     README.md
 #>     analysis.Rproj
-#>     analysis_twisst.nf
+#>     analysis.nf
 #>     data/
 #>     nextflow.config
 #>     sh/
@@ -104,7 +104,7 @@ git status
 #> 
 #> 	README.md
 #> 	analysis.Rproj
-#> 	analysis_twisst.nf
+#> 	analysis.nf
 #> 	nextflow.config
 #> 	sh/
 ```
@@ -126,7 +126,7 @@ git status
 #>  
 #>  	README.md
 #>  	analysis.Rproj
-#>  	analysis_twisst.nf
+#>  	analysis.nf
 #>  	nextflow.config
 #>  	sh/
 #>  
@@ -151,7 +151,7 @@ git status
 #> 
 #> 	new file:   README.md
 #> 	new file:   analysis.Rproj
-#> 	new file:   analysis_twisst.nf
+#> 	new file:   analysis.nf
 #> 	new file:   nextflow.config
 #> 	new file:   sh/script.sh
 git commit -m "init repo"
@@ -159,7 +159,7 @@ git commit -m "init repo"
 #>  5 files changed, 6 insertions(+)
 #>  create mode 100644 README.md
 #>  create mode 100644 analysis.Rproj
-#>  create mode 100644 analysis_twisst.nf
+#>  create mode 100644 analysis.nf
 #>  create mode 100644 nextflow.config
 #>  create mode 100644 sh/script.sh
 git status
@@ -263,7 +263,7 @@ ls -1a
 #> .gitignore
 #> README.md
 #> analysis.Rproj
-#> analysis_twisst.nf
+#> analysis.nf
 #> nextflow.config
 #> sh
 ```
@@ -276,7 +276,7 @@ You might notice that not all the files & folders made it to the cluster though:
 tree
 #> .
 #> |-- analysis.Rproj
-#> |-- analysis_twisst.nf
+#> |-- analysis.nf
 #> |-- data
 #> |   |-- genotypes.vcf.gz
 #> |   |-- table1.txt
@@ -297,7 +297,7 @@ tree
 #> .
 #> |-- README.md
 #> |-- analysis.Rproj
-#> |-- analysis_twisst.nf
+#> |-- analysis.nf
 #> |-- nextflow.config
 #> `-- sh
 #>     `-- script.sh

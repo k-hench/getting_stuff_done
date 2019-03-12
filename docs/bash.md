@@ -38,8 +38,8 @@ pwd
 
 ```bash
 ls
+#> analysis.nf
 #> analysis.Rproj
-#> analysis_twisst.nf
 #> data
 #> docs
 #> logo.svg
@@ -67,8 +67,8 @@ ls
 ```bash
 cd ..
 ls
+#> analysis.nf
 #> analysis.Rproj
-#> analysis_twisst.nf
 #> data
 #> docs
 #> logo.svg
@@ -192,8 +192,8 @@ Provided the script is located in our `sh` folder you can run it like this:
 
 ```bash
 bash /home/khench/root_folder/sh/script.sh
+#> analysis.nf
 #> analysis.Rproj
-#> analysis_twisst.nf
 #> data
 #> docs
 #> logo.svg
@@ -224,9 +224,9 @@ These are (optional) parameters that alter they way a program operates an are in
 ```bash
 ls -l
 #> total 164
+#> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj
-#> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis_twisst.nf
-#> drwxrwxr-x 2 khench khench   4096 Mär 11 19:12 data
+#> drwxrwxr-x 2 khench khench   4096 Mär 12 19:12 data
 #> drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config
@@ -240,7 +240,7 @@ ls -l
 ```bash
 ls -lth
 #> total 164K
-#> drwxrwxr-x 2 khench khench 4,0K Mär 11 19:12 data
+#> drwxrwxr-x 2 khench khench 4,0K Mär 12 19:12 data
 #> -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R
@@ -248,7 +248,7 @@ ls -lth
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj
-#> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf
+#> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.nf
 #> -rw-rw-r-- 1 khench khench 139K Jul 12  2018 logo.svg
 ```
 
@@ -600,7 +600,8 @@ sed 's/^/>/; s/:\t/\n/' |
 gzip > data/test.fa.gz
 
 zcat data/test.fa.gz & rm data/test.fa.gz
-#> gzip: data/test.fa.gz: No such file or directory
+#> >sequence1
+#> ATGCATAGACATA
 ```
 
 Generally (also eg. when using `grep`), there are two important special characters:

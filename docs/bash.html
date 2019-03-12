@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-11">
+<meta name="date" content="2019-03-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -158,7 +158,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2" data-path="r.html"><a href="r.html#know"><i class="fa fa-check"></i><b>6.2</b> Know</a></li>
 <li class="chapter" data-level="6.3" data-path="r.html"><a href="r.html#run"><i class="fa fa-check"></i><b>6.3</b> Run</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
+<li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a><ul>
+<li class="chapter" data-level="7.1" data-path="nextflow.html"><a href="nextflow.html#basics-2"><i class="fa fa-check"></i><b>7.1</b> Basics</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="nextflow.html"><a href="nextflow.html#the-pipeline-script"><i class="fa fa-check"></i><b>7.1.1</b> The pipeline script</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="nextflow.html"><a href="nextflow.html#a-quick-example"><i class="fa fa-check"></i><b>7.2</b> A quick example</a></li>
+<li class="chapter" data-level="7.3" data-path="nextflow.html"><a href="nextflow.html#managing-the-workflow-on-the-cluster"><i class="fa fa-check"></i><b>7.3</b> Managing the workflow on the cluster</a></li>
+<li class="chapter" data-level="7.4" data-path="nextflow.html"><a href="nextflow.html#the-config-script"><i class="fa fa-check"></i><b>7.4</b> The config script</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
 <li class="chapter" data-level="8.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#file-types"><i class="fa fa-check"></i><b>8.1</b> File types</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#genetic-data"><i class="fa fa-check"></i><b>8.1.1</b> Genetic data</a></li>
@@ -208,8 +215,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">pwd</span>
 <span class="co">#&gt; /home/khench/root_folder</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
+<span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
-<span class="co">#&gt; analysis_twisst.nf</span>
 <span class="co">#&gt; data</span>
 <span class="co">#&gt; docs</span>
 <span class="co">#&gt; logo.svg</span>
@@ -227,8 +234,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; table2.txt</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
 <span class="fu">ls</span>
+<span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
-<span class="co">#&gt; analysis_twisst.nf</span>
 <span class="co">#&gt; data</span>
 <span class="co">#&gt; docs</span>
 <span class="co">#&gt; logo.svg</span>
@@ -291,8 +298,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="bu">pwd</span></code></pre></div>
 <p>Provided the script is located in our <code>sh</code> folder you can run it like this:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> /home/khench/root_folder/sh/script.sh
+<span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
-<span class="co">#&gt; analysis_twisst.nf</span>
 <span class="co">#&gt; data</span>
 <span class="co">#&gt; docs</span>
 <span class="co">#&gt; logo.svg</span>
@@ -313,9 +320,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>One important feature of most command line programs is the usage of <em>flags</em>. These are (optional) parameters that alter they way a program operates an are invoked with <code>-</code> or <code>--</code> (depending on the program):</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -l
 <span class="co">#&gt; total 164</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj</span>
-<span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis_twisst.nf</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 11 19:12 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 12 19:12 data</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config</span>
@@ -325,7 +332,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 17:25 sh</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -lth
 <span class="co">#&gt; total 164K</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 11 19:12 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 12 19:12 data</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R</span>
@@ -333,7 +340,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:47 docs</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj</span>
-<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis_twisst.nf</span>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.nf</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench 139K Jul 12  2018 logo.svg</span></code></pre></div>
 <p>Arguably one of the most important flags for most programs is <code>-help</code>/<code>--help</code>. As you might guess this will print the documentation for most programs. Often this includes an example of the input the program expects, as well as all the options available.</p>
 </div>
@@ -569,7 +576,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="fu">gzip</span> <span class="op">&gt;</span> data/test.fa.gz
 
 <span class="fu">zcat</span> data/test.fa.gz <span class="kw">&amp;</span> <span class="fu">rm</span> data/test.fa.gz
-<span class="co">#&gt; gzip: data/test.fa.gz: No such file or directory</span></code></pre></div>
+<span class="co">#&gt; &gt;sequence1</span>
+<span class="co">#&gt; ATGCATAGACATA</span></code></pre></div>
 <p>Generally (also eg. when using <code>grep</code>), there are two important special characters:</p>
 <ul>
 <li><code>^</code>: the <em>start</em> of a line</li>

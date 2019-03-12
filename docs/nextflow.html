@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-11">
+<meta name="date" content="2019-03-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -158,7 +158,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2" data-path="r.html"><a href="r.html#know"><i class="fa fa-check"></i><b>6.2</b> Know</a></li>
 <li class="chapter" data-level="6.3" data-path="r.html"><a href="r.html#run"><i class="fa fa-check"></i><b>6.3</b> Run</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a></li>
+<li class="chapter" data-level="7" data-path="nextflow.html"><a href="nextflow.html"><i class="fa fa-check"></i><b>7</b> Nextflow</a><ul>
+<li class="chapter" data-level="7.1" data-path="nextflow.html"><a href="nextflow.html#basics-2"><i class="fa fa-check"></i><b>7.1</b> Basics</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="nextflow.html"><a href="nextflow.html#the-pipeline-script"><i class="fa fa-check"></i><b>7.1.1</b> The pipeline script</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="nextflow.html"><a href="nextflow.html#a-quick-example"><i class="fa fa-check"></i><b>7.2</b> A quick example</a></li>
+<li class="chapter" data-level="7.3" data-path="nextflow.html"><a href="nextflow.html#managing-the-workflow-on-the-cluster"><i class="fa fa-check"></i><b>7.3</b> Managing the workflow on the cluster</a></li>
+<li class="chapter" data-level="7.4" data-path="nextflow.html"><a href="nextflow.html#the-config-script"><i class="fa fa-check"></i><b>7.4</b> The config script</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html"><i class="fa fa-check"></i><b>8</b> Common file types and software</a><ul>
 <li class="chapter" data-level="8.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#file-types"><i class="fa fa-check"></i><b>8.1</b> File types</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="common-file-types-and-software.html"><a href="common-file-types-and-software.html#genetic-data"><i class="fa fa-check"></i><b>8.1.1</b> Genetic data</a></li>
@@ -189,9 +196,354 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="nextflow" class="section level1">
 <h1><span class="header-section-number">7</span> Nextflow</h1>
-<p>This is awesome!</p>
+<p>This is awesome! <a href="https://www.nextflow.io/index.html"><em>Nextflow</em></a> provides a neat way to develop and structure the <em>entire workflow</em> of you analysis in a <em>single script</em>. It makes a huge difference for one aspect I mentioned in Chapter 2:</p>
+<p><em>“Apart from the scripts you ran, people need to know what to run when and where.”</em> <em>“At least for me, it is usually quite hard even to recall the exact order of my own scripts needed for a complex data analysis […] when I come back half a year later[…].”</em></p>
+<p>Apart from this using Nextflow can save you <em>a lot</em> of mindless typing when doing different versions of a similar analysis. The drawback is that you need to get a basic Idea of yet another language (Nextflow is based on <a href="https://en.wikipedia.org/wiki/Apache_Groovy"><em>groovy</em></a>).</p>
+<p>But the Nextflow <a href="https://www.nextflow.io/docs/latest/index.html">documentation</a> is pretty good. Reading through the manual took me quite some time but the time I saved since then more than compensated pretty quickly. Also, if you have questions beyond what is covered in the manual, the help provided on <a href="https://gitter.im/nextflow-io/nextflow"><em>gitter</em></a> is amazing. So far any question I asked there was solved within about 30 min! (Of course it important not to spam the people there with unnecessary questions - so first: <em>RTFM</em>)</p>
+<div id="basics-2" class="section level2">
+<h2><span class="header-section-number">7.1</span> Basics</h2>
+<p>The basic Idea of Nextflow is that it will connect different task that you do within <em>bash</em> (or any other scripting language) in an organized but dynamic manner. It then manages your analysis for you (waiting for job <em>A</em> to finish before submitting job <em>B</em>) and can manage quite a lot of different cluster scheduling systems. You can use it from the very beginning of your project since it is able to resume a previous run: So if you first implement <em>job A</em> and then (while <em>job A</em>) is running write <em>job B</em> you can simply update your nextflow script. If you then resume the run, nextflow will remember that it already ran <em>job A</em> and start with <em>job B</em> straight away. This is also great if you later need to change a <em>middle part</em> of your analysis - nextflow will basically only rerun what is needed downstream from the the point that you changed. This is super convenient.</p>
+<p>To run a nextflow pipeline I usually prepare two scripts:</p>
+<ul>
+<li><code>analysis.nf</code>: this is the actual pipeline</li>
+<li><code>nextflow.config</code>: this is the configuration script (important on the cluster, for small local test not so much)</li>
+</ul>
+<div id="the-pipeline-script" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> The pipeline script</h3>
+<p>The <code>analysis.nf</code> is where you put together you analysis. For me, this means that it is basically a series interconnected <em>bash</em> snippets.</p>
+<p>The nextflow script is build from three types of building blocks:</p>
+<ul>
+<li><em>Processes</em>: the <em>bash</em> snippets that contain the code I would otherwise type into the terminal</li>
+<li><em>Channels</em>: streams of files you put through you pipeline, or streams of parameter values you want vary within your analysis</li>
+<li><em>Operators</em>: connect the different Processes and Channels using logic (linear, crosses), or modify a channel along the way (filtering, merging, sorting)</li>
+</ul>
+<p><strong>Processes</strong></p>
+<p>A nextflow process looks like this:</p>
+<div class="kclass">
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode"><span class="hl kwa">process</span> gather_depth <span class="hl opt">{</span>
+    label <span class="hl str">&apos;L_loc_test_script&apos;</span>
+    publishDir <span class="hl str">&quot;export_folder&quot;</span><span class="hl opt">,</span> mode<span class="hl kwe">:</span> <span class="hl str">&apos;copy&apos;</span>
+
+    <span class="hl kwb">input</span><span class="hl kwe">:</span>
+    <span class="hl kwd">set</span> <span class="hl kwc">val</span><span class="hl opt">(</span> input_val <span class="hl opt">),</span> <span class="hl kwc">file</span><span class="hl opt">(</span> input_file <span class="hl opt">)</span> <span class="hl kwd">from</span> input_channel
+
+    <span class="hl kwb">output</span><span class="hl kwe">:</span>
+    <span class="hl kwc">file</span><span class="hl opt">(</span> <span class="hl str">&quot;${input_val}.txt&quot;</span> <span class="hl opt">)</span> <span class="hl kwd">into</span> output_channel
+    
+    <span class="hl kwb">script</span><span class="hl kwe">:</span>
+    <span class="hl str">&quot;&quot;</span><span class="hl str">&quot;</span>
+<span class="hl str">    sed &apos;s/X-TAG-X/${input_val}/g&apos; ${input_file} &gt; ${input_val}.txt</span>
+<span class="hl str">   cat \$HOME/signature.txt &gt;&gt; ${input_val}.txt</span>
+<span class="hl str">    &quot;</span><span class="hl str">&quot;&quot;</span>
+<span class="hl opt">}</span>
+</code>
+</pre>
+</div>
+<p>This breaks down into different compartments:</p>
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode"><span class="hl kwa">process</span> <span class="hl com">/* &lt;process_name&gt; */</span> <span class="hl opt">{</span>
+    <span class="hl com">/* &lt;config section&gt; */</span>
+
+    <span class="hl kwb">input</span><span class="hl kwe">:</span>
+    <span class="hl com">/* &lt;input channel&gt; */</span>
+
+    <span class="hl kwb">output</span><span class="hl kwe">:</span>
+    <span class="hl com">/* &lt;output channel&gt; */</span>
+    
+    <span class="hl kwb">script</span><span class="hl kwe">:</span> <span class="hl com">/* &lt;task&gt; */</span>
+    <span class="hl str">&quot;&quot;</span><span class="hl str">&quot;</span>
+<span class="hl str">    # some bash code</span>
+<span class="hl str">    &quot;</span><span class="hl str">&quot;&quot;</span>
+<span class="hl opt">}</span>
+</code>
+</pre>
+</div>
+<p>In the <strong>config section</strong> we can assign the process to a label (to use specific config settings defined in <code>nextflow.config</code>). Here we can also specify if we want to collect the output of the script outside of the <code>work</code> folder which is used by nextflow for the execution of the code. You can also activate conda environments or load modules for this process here.</p>
+<p>The <strong>input</strong> and <strong>output</strong> sections are used to connect the individual processes and to manage the flow of files and values from process to process.</p>
+<p>The <strong>script</strong> section contains the actual code to run. Here, you write the actual bash code of the pipeline.</p>
+<p>Careful when using bash variables (eg <code>$WORK</code>) within nextflow. Nextflow itself uses the dollar sign (<code>$</code>) to assign its own variables (eg <code>${input_val}</code>) in the example scripts. These are evaluated before the scripts is run and replaced by the appropriate file/value. If you want to use bash variables that are supposed to be evaluated when the script is actually run, you need to conserve the dollar sign by <em>escaping</em> the dollar sign (<code>cat \$HOME/signature.txt</code> instead of <code>cat $HOME/signature.txt</code>).</p>
+<p><strong>Channels</strong></p>
+<p>These are the streams of <em>files</em> or <em>values</em>. One channel could be eg. all the sequencing files you need to process, while another one could be all the values of an input parameter of of a model that you wish to test for different input settings.</p>
+<p>Channels connect the different processes and Nextflow basically follows development of the stating channels during the development through the different steps of your pipeline. You feed a channel into a process in the <em>input</em> section, while the <em>output</em> section emits a new channel.</p>
+</div>
+<p>At the start of your pipeline you will need to define some channels like this:</p>
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode"><span class="hl kwa">Channel</span>.from<span class="hl opt">(</span> <span class="hl str">&apos;A&apos;</span> <span class="hl str">&apos;B&apos;</span> <span class="hl str">&apos;C&apos;</span> <span class="hl opt">)</span>
+<span class="hl kwa">Channel</span>.from<span class="hl opt">( (</span><span class="hl str">&apos;01&apos;</span>..<span class="hl str">&apos;09&apos;</span><span class="hl opt">) + (</span><span class="hl str">&apos;10&apos;</span>..<span class="hl str">&apos;19&apos;</span><span class="hl opt">))</span>
+<span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;genotypes.vcf.gz&apos;</span> <span class="hl opt">)</span>
+<span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;sequencing_data/*.fq.gz&apos;</span> <span class="hl opt">)</span>
+</code>
+</pre>
+</div>
+<p><strong>Operators</strong></p>
+<p>Operators contain the <em>actions/logic</em> that connects different elements of your pipeline. You can use them to modify your channels by exposing them to filtering, transfomiations, splitting, merging. We allready saw two operators in the example above (<code>.from()</code> &amp; <code>.fromPath()</code>). So you can see that the have form of <em>dot</em>-<em>name()</em> (or <em>dot</em>-<em>name{}</em> ).</p>
+<p>Operators (besides <code>.from()</code>, <code>.fromPath()</code> $ <code>.fromFilePairs()</code>) I frequently use are:</p>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><code>.splitCsv()</code>: read csv (combined variables)</li>
+<li><code>.set{}</code>: channel name (single copy)</li>
+<li><code>.into{}</code>: channel name (multiple copys)</li>
+<li><code>.map{}</code>: transform channel content</li>
+</ul>
+</div>
+<div class="column">
+<ul>
+<li><code>.collect()</code>: collapse the channel</li>
+<li><code>.combine()</code>: cross of two channels</li>
+<li><code>.join()</code>: merge two channels (sorted)</li>
+<li><code>.groupTuple()</code>: collapse the channel (sorted)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="a-quick-example" class="section level2">
+<h2><span class="header-section-number">7.2</span> A quick example</h2>
+<p>I want to create a quick example of the power of nextflow. Therefore lets assume we have to do a analysis where we have a set of populations that need to be compared pairewise (eg. calculate pairwise <em>F<sub>ST</sub></em> along the genome). After this you want to do a running average using different window sizes.</p>
+<p><em>I will use dummy commands here to show the workings of nextflow rather than doing an meaningful analysis</em>:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
+<span class="bu">echo</span> <span class="st">&quot;I am the input data&quot;</span> <span class="op">&gt;</span> data_file.txt</code></pre></div>
+<p>The beauty of nextflow is that you basically just have to write the script for a single case. (You can check the complete nextflow on the <a href="https://github.com/k-hench/demo_root_folder">demo_root_folder reopsitory</a>) First we initialize the different <em>Channels</em> within our pipeline script.</p>
+<div class="kclass">
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode"><span class="hl kwa">Channel</span>
+    .fromPath<span class="hl opt">(</span><span class="hl str">&quot;data_file.txt&quot;</span><span class="hl opt">)</span>
+    .set<span class="hl opt">{</span> data_channel <span class="hl opt">}</span>
+
+<span class="hl kwa">Channel</span>
+    .from<span class="hl opt">( [[</span><span class="hl num">1</span><span class="hl opt">,</span> <span class="hl str">&quot;popA&quot;</span><span class="hl opt">], [</span><span class="hl num">2</span><span class="hl opt">,</span> <span class="hl str">&quot;popB&quot;</span><span class="hl opt">], [</span><span class="hl num">3</span><span class="hl opt">,</span> <span class="hl str">&quot;popC&quot;</span><span class="hl opt">]] )</span>
+    .into<span class="hl opt">{</span> pop_channel1<span class="hl kwe">;</span> pop_channel2 <span class="hl opt">}</span>
+
+<span class="hl kwa">Channel</span>
+    .from<span class="hl opt">(</span> <span class="hl str">&quot;10kb&quot;</span> <span class="hl str">&quot;50kb&quot;</span> <span class="hl opt">)</span>
+    .set<span class="hl opt">{</span> span_channel <span class="hl opt">}</span>
+</code>
+</pre>
+</div>
+<p>Then, we combine the different channels using operators:</p>
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode">data_channel                 <span class="hl com">/* start with the raw data */</span>
+    .combine<span class="hl opt">(</span> pop_channel1 <span class="hl opt">)</span>  <span class="hl com">/* add pop1 to data */</span>
+    .combine<span class="hl opt">(</span> pop_channel2 <span class="hl opt">)</span>  <span class="hl com">/* cross with pop2 */</span>
+    .filter<span class="hl opt">{</span> <span class="hl kwc">it</span><span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] &lt;</span> <span class="hl kwc">it</span><span class="hl opt">[</span><span class="hl num">3</span><span class="hl opt">] }</span>  <span class="hl com">/* discad the upper triangle of the cross */</span>
+    .map<span class="hl opt">{</span> <span class="hl kwc">it</span><span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">,</span><span class="hl num">2</span><span class="hl opt">,</span><span class="hl num">4</span><span class="hl opt">]}</span>          <span class="hl com">/* select only data &amp; pops (remove indexes) */</span>
+    .combine<span class="hl opt">(</span> span_channel <span class="hl opt">)</span>  <span class="hl com">/* cross with sensitivities */</span>
+    .set<span class="hl opt">{</span> pairs_channel <span class="hl opt">}</span>     <span class="hl com">/* name output channel */</span>
+</code>
+</pre>
+</div>
+<p>Finally, we run the actual bash commands:</p>
+<div class="sourceCode">
+<pre class="sourceCode">
+<code class="sourceCode"><span class="hl kwa">process</span> run_pairewise <span class="hl opt">{</span>
+    publishDir <span class="hl str">&quot;output/${span}&quot;</span><span class="hl opt">,</span> mode<span class="hl kwe">:</span> <span class="hl str">&apos;copy&apos;</span>
+
+    <span class="hl kwb">input</span><span class="hl kwe">:</span>
+    <span class="hl kwd">set</span> <span class="hl kwc">file</span><span class="hl opt">(</span> data <span class="hl opt">),</span> <span class="hl kwc">val</span><span class="hl opt">(</span> pop1 <span class="hl opt">),</span> <span class="hl kwc">val</span><span class="hl opt">(</span> pop2 <span class="hl opt">),</span> <span class="hl kwc">val</span><span class="hl opt">(</span> span <span class="hl opt">)</span> <span class="hl kwd">from</span> pairs_channel
+
+    <span class="hl kwb">output</span><span class="hl kwe">:</span>
+    <span class="hl kwc">file</span><span class="hl opt">(</span> <span class="hl str">&quot;step1.${pop1}-${pop2}.${span}.txt&quot;</span> <span class="hl opt">)</span> <span class="hl kwd">into</span> step1_channel
+
+    <span class="hl kwb">script</span><span class="hl kwe">:</span>
+    <span class="hl str">&quot;&quot;</span><span class="hl str">&quot;</span>
+<span class="hl str">   cat ${data} &gt; step1.${pop1}-${pop2}.${span}.txt                 # check data content</span>
+<span class="hl str">   echo &quot;</span><span class="hl kwf">${pop1} vs. ${pop2}&quot; &gt;&gt; step1.${pop1}-${pop2}.${span}</span>.txt # run pairewise <span class="hl str">&apos;fst&apos;</span>
+    echo <span class="hl str">&quot;-- ${span} --&quot; &gt;&gt; step1.${pop1}-${pop2}.${span}.txt       # running average</span>
+<span class="hl str">   &quot;</span><span class="hl str">&quot;&quot;</span>
+<span class="hl opt">}</span>
+</code>
+</pre>
+</div>
+<p>That’s all it takes:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
+<span class="fu">ls</span> -1
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; analysis_twisst.nf</span>
+<span class="co">#&gt; data</span>
+<span class="co">#&gt; data_file.txt</span>
+<span class="co">#&gt; docs</span>
+<span class="co">#&gt; logo.svg</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; py</span>
+<span class="co">#&gt; R</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; sh</span>
+<span class="ex">nextflow</span> run analysis_twisst.nf 
+<span class="co">#&gt; N E X T F L O W  ~  version 0.31.1</span>
+<span class="co">#&gt; Launching `analysis_twisst.nf` [gloomy_goldstine] - revision: 5e861dc34e</span>
+<span class="co">#&gt; [warm up] executor &gt; local</span>
+<span class="co">#&gt; [d7/fccc1d] Submitted process &gt; run_pairewise (1)</span>
+<span class="co">#&gt; [5d/285ab0] Submitted process &gt; run_pairewise (4)</span>
+<span class="co">#&gt; [90/f10c05] Submitted process &gt; run_pairewise (2)</span>
+<span class="co">#&gt; [5c/371178] Submitted process &gt; run_pairewise (3)</span>
+<span class="co">#&gt; [79/c63706] Submitted process &gt; run_pairewise (5)</span>
+<span class="co">#&gt; [4a/ccae53] Submitted process &gt; run_pairewise (6)</span>
+<span class="fu">ls</span> -1a
+<span class="co">#&gt; .</span>
+<span class="co">#&gt; ..</span>
+<span class="co">#&gt; analysis.nf</span>
+<span class="co">#&gt; analysis.Rproj</span>
+<span class="co">#&gt; data</span>
+<span class="co">#&gt; data_file.txt</span>
+<span class="co">#&gt; docs</span>
+<span class="co">#&gt; .git</span>
+<span class="co">#&gt; .gitignore</span>
+<span class="co">#&gt; logo.svg</span>
+<span class="co">#&gt; .nextflow         &lt;- folder created by nextflow</span>
+<span class="co">#&gt; nextflow.config</span>
+<span class="co">#&gt; .nextflow.log     &lt;- logfile created by nextflow</span>
+<span class="co">#&gt; output            &lt;- folder created by nextflow</span>
+<span class="co">#&gt; py</span>
+<span class="co">#&gt; R</span>
+<span class="co">#&gt; README.md</span>
+<span class="co">#&gt; sh</span>
+<span class="co">#&gt; work              &lt;- folder created by nextflow</span>
+<span class="ex">tree</span> output/
+<span class="co">#&gt; output/</span>
+<span class="co">#&gt; ├── 10kb</span>
+<span class="co">#&gt; │   ├── step1.popA-popB.10kb.txt</span>
+<span class="co">#&gt; │   ├── step1.popA-popC.10kb.txt</span>
+<span class="co">#&gt; │   └── step1.popB-popC.10kb.txt</span>
+<span class="co">#&gt; └── 50kb</span>
+<span class="co">#&gt;     ├── step1.popA-popB.50kb.txt</span>
+<span class="co">#&gt;     ├── step1.popA-popC.50kb.txt</span>
+<span class="co">#&gt;     └── step1.popB-popC.50kb.txt</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; 2 directories, 6 files</span>
+<span class="fu">cat</span> output/10kb/step1.popA-popC.10kb.txt 
+<span class="co">#&gt; I am the input data</span>
+<span class="co">#&gt; popA vs. popC</span>
+<span class="co">#&gt; -- 10kb --</span></code></pre></div>
+<p>We can see that the three pair wise comparison were completed for both averaging sensitivities, since all the expected output files show up in the output folder.</p>
+<p>But nextflow created a few more files and folders:</p>
+<ul>
+<li><code>.nextflow</code>: the folder where nextflow does its houskeeping</li>
+<li><code>.nextflow.log</code>: the log of the nextflow run</li>
+<li><code>output</code>: the output folder (we specifically asked for this one within the process)</li>
+<li><code>work</code>: the folder where nextflow executes the scripts. The weired prefixes (eg. <code>[d7/fccc1d]</code>) in the terminal output refer to subdirectories of <code>work</code></li>
+</ul>
+<p>Of course I don not want <em>git</em> to remember the whole messy nextflow inner workings (the scripts is enough). So, I quickly add those files to the <code>.gitignore</code> (make sure to use double <code>&gt;&gt;</code>!).</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;.nextflow*&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
+<span class="bu">echo</span> <span class="st">&quot;work&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
+<span class="bu">echo</span> <span class="st">&quot;output&quot;</span> <span class="op">&gt;&gt;</span> .gitignore</code></pre></div>
+<p>Now, we made some changes - so lets uppdate the repository (and github). First, ony the <code>.gitignore</code>.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Your branch is up-to-date with &#39;origin/master&#39;.</span>
+<span class="co">#&gt; Changes not staged for commit:</span>
+<span class="co">#&gt;   (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="co">#&gt;   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  modified:   .gitignore</span>
+<span class="co">#&gt;  modified:   analysis.nf</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Untracked files:</span>
+<span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  data_file.txt</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+<span class="fu">git</span> add .gitignore
+<span class="fu">git</span> commit -m <span class="st">&quot;update .gitignore&quot;</span>
+<span class="co">#&gt; [master 5de89de] update .gitignore</span>
+<span class="co">#&gt;  1 file changed, 3 insertions(+)</span></code></pre></div>
+<p>Then we add the rest:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
+<span class="co">#&gt; Changes not staged for commit:</span>
+<span class="co">#&gt;   (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="co">#&gt;   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  modified:   analysis.nf</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Untracked files:</span>
+<span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  data_file.txt</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;pipeline update&#39;</span>
+<span class="co">#&gt; [master 557d3d7] pipeline update</span>
+<span class="co">#&gt;  2 files changed, 41 insertions(+)</span>
+<span class="co">#&gt;  create mode 100644 data_file.txt</span>
+<span class="fu">git</span> status
+<span class="co">#&gt; On branch master</span>
+<span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 2 commits.</span>
+<span class="co">#&gt;   (use &quot;git push&quot; to publish your local commits)</span>
+<span class="co">#&gt; nothing to commit, working directory clean</span>
+<span class="fu">git</span> push origin master
+<span class="co">#&gt; Counting objects: 13, done.</span>
+<span class="co">#&gt; Delta compression using up to 4 threads.</span>
+<span class="co">#&gt; Compressing objects: 100% (10/10), done.</span>
+<span class="co">#&gt; Writing objects: 100% (13/13), 1.74 KiB | 0 bytes/s, done.</span>
+<span class="co">#&gt; Total 13 (delta 4), reused 0 (delta 0)</span>
+<span class="co">#&gt; remote: Resolving deltas: 100% (4/4), completed with 1 local object.</span>
+<span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span>
+<span class="co">#&gt;    d8b99be..557d3d7  master -&gt; master</span></code></pre></div>
+</div>
+<div class="cluster">
+<p>Now, in the <em>real world</em>, I woud write the nextflow script locally. Then I would comit my changes to github and pull them onto the cluster from there. Finally I would run nextflow on the cluster (<code>nextflow run analysis.nf</code>).</p>
+</div>
+</div>
+<div id="managing-the-workflow-on-the-cluster" class="section level2">
+<h2><span class="header-section-number">7.3</span> Managing the workflow on the cluster</h2>
+<p>The nice thing about running nextflow on the cluster is, that it works pretty much the same as locally - so you don’t have to deal with submitting jobs because nextflow will take care of this.</p>
+<ul>
+<li>screen</li>
+</ul>
+</div>
+<div id="the-config-script" class="section level2">
+<h2><span class="header-section-number">7.4</span> The config script</h2>
+<p>The <code>nextflow.config</code> sets up some global setting for your nextflow run. To use the NEC computer cluster from Uni Kiel, I add this section to the config script:</p>
+<div class="kclass">
+<pre><code>env.BASE_DIR = &quot;$WORK/project_dir&quot;
+
+process {
+   executor = &#39;nqsii&#39;
+   queue = &#39;clmedium&#39;
+   cpus = 1
+   memory = 4.GB
+   time = { 1.h * task.attempt }
+   errorStrategy = { task.exitStatus == Integer.MAX_VALUE ? &#39;retry&#39; : &#39;finish&#39; }
+   maxRetries = 1
+   maxErrors = &#39;-1&#39;
+   
+     withLabel: &quot;L_loc.*&quot; {
+     executor=&#39;local&#39;
+     }
+
+     withLabel: &quot;L_20g15m_.*&quot; {
+       queue = &#39;clexpress&#39;
+       memory = 20.GB
+       time = { 15.m * task.attempt }
+    }
+    
+    withLabel: &quot;L_---_.*&quot; {
+       clusterOptions = &#39;---&#39;
+       queue = &#39;---&#39;
+       memory = ---.GB
+       cpus = ---
+       time = { ---.h * task.attempt }
+    }
+}
+
+trace { enabled = true }
+report { enabled = true }</code></pre>
+</div>
+<p>So, I set at few defaults for the jobs, and then stat defining different the types of processes that I reference within the <code>analysis.nf</code> script. Please refer to <a href="https://www.nextflow.io/docs/latest/config.html#scope-process">nextflow documentation</a> for the different options set within the process section.</p>
+<p>Apart from this, I also provide the path to the project folder and turn the <em>trace</em> and the <em>report</em> on by default.</p>
 <hr />
 
+</div>
 </div>
             </section>
 

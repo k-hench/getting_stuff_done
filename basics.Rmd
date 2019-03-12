@@ -26,7 +26,7 @@ So, my projects usually look something like this:
 
 ```
 root_folder
-├── analysis_twisst.nf    # The nextflow pipeline with the project
+├── analysist.nf          # The nextflow pipeline with the project
 ├── analysis.Rproj        # The RStudio project for the project
 ├── data                  # Folder containing the raw input data
 ├── docs                  # Folder containing the documentation of the project
