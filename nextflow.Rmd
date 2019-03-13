@@ -526,10 +526,10 @@ To resume a nextflow run:
 cd $WORK/root_folder
 nextflow run analysis.nf -c nextflow.config -resume
 ```
-</div>
 
 By the way - you can also toggle a nice graphical summary of your pipeline using `nextflow run analysis.nf -with-dag analysis.png -c nextflow.config -resume`:
 
 ![](img/analysis.png)
+</div>
 
 --------
