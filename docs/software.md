@@ -4,37 +4,106 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Docker
+
+One thing I have not covered here but which puts the whole reproducible issue to yet another level would be the use of [docker](https://en.wikipedia.org/wiki/Docker_%28software%29).
+This would allow you to not just share your data & scripts, but also the exact software versions that you used.
+Frankly, I did not include this here because I do not use it myself (didn't get the chance to learn how to use it yet).
+
 # Common file types and software
+<div class="kclass">
+Just a very superficial register of the mos frequently used file types that you should probably know.
+All of these are actually plain text files and you can open them in regular text editor (don't do this if the files are large....).
+
+The difference is just in the formatting conventions and in the expected content.
 
 ## File types
 
-- txt
-- csv
-- tsv
+- **txt** : any type of text
+- **md** : text with minimal layout code
+    
+<div class="row kclass"><div class="column">
+- **csv** : *comma* separated values (example with thee columns)
+</div><div class="column">
+```   
+A,important text,3
+```
+</div></div>
+<div class="row kclass"><div class="column">
+- **tsv** : *tab* separated values 
+</div><div class="column">
+```   
+A\timportant text\t3
+```
+</div></div>
 
 ### Genetic data
 
-- fa
-- fq
-- sam/bam
-- vcf/bcf
-- bed
-- gff
-- maf
+<div class="row kclass"><div class="column">
+- **fa** : aka. *fasta* - plain genetic sequences, includes an header line per sequence starting with `>`.
+(On the right is an example with two sequences - seq1 & seq2)
+</div><div class="column">
+```   
+>seq1 
+ATGCGT
+GCATGG
+>seq2
+ATGTAA
+```
+</div></div>
+<div class="row kclass"><div class="column">
+- **fq** : aka. *fastq* - sequencing data with quality score.
+(On the right is an example of a sequence - seq1)
+</div><div class="column">
+```
+@seq1
+ATGCGTGCATGG
+#
+*55CCF>>''))
+```
+</div></div>
+
+- [**sam/bam**](https://samtools.github.io/hts-specs/SAMv1.pdf) : sequence alignment format.
+Genetic sequences mapped to a reference, header lines start with `@`.  
+(sam is human readable, bam is binary - only for computers)
+- [**vcf/bcf**](https://samtools.github.io/hts-specs/VCFv4.2.pdf) : variant call format.
+Genotypes + metadata in table form, header lines start with `##`.  
+(vcf is human readable, bcf is binary - only for computers)
+   
+<div class="row kclass"><div class="column">
+- [**bed**](http://genome.ucsc.edu/FAQ/FAQformat.html#format1) : Browser Extensible Data.
+Ranges on a reference genome.
+Includes at least three tab separated columns (chromosome, start, end, example with three ranges).
+</div><div class="column">
+```
+LG02    0      400
+LG02    1500   3000
+LG15    555    1200
+```
+</div></div>
+   
+- [**gff**](https://www.ensembl.org/info/website/upload/gff.html) : general feature format.
+It describes exons, genes and other features of DNA.
+The structure is similar to a `bed` file with additional columns.
 
 ### Code
 
-- sh
-- R
-- nf
-- md
+- **sh** : code written in bash
+- **R** : code written in R
+- **py** : code written in python
+- **pl** : code written in pearl
+- **nf** : code written in nextflow
 
+</div>
 ## Software
 
-- fastqc
-- multiqc
-- samtools
-- vcftools
-- bedtools
+Below I list what I think are the *must haves* for any bioinformatic tool shed:
+
+- [**fastqc**](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) : tool for quality checking of sequencing data (first step of any project using new sequencing data)
+- [**multiqc**](https://multiqc.info/) : summarize the fastqc reports for all your samples in a single report
+- [**samtools**](http://www.htslib.org/download/) : tool set for working with sam files
+- [**vcftools**](https://vcftools.github.io/) : tool set for working with vcf files (reformatting & population statistics)
+- [**vcflib**](https://github.com/vcflib/vcflib) : convenience scripts for working with vcf files
+- [**bedtools**](https://github.com/arq5x/bedtools2) : tool set for working with bed files
 
 --------
