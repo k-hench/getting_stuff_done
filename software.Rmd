@@ -4,20 +4,21 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Docker
+# Common file types and other software
+
+## Docker
 
 One thing I have not covered here but which puts the whole reproducible issue to yet another level would be the use of [docker](https://en.wikipedia.org/wiki/Docker_%28software%29).
 This would allow you to not just share your data & scripts, but also the exact software versions that you used.
 Frankly, I did not include this here because I do not use it myself (didn't get the chance to learn how to use it yet).
 
-# Common file types and software
+## File types
+
 <div class="kclass">
-Just a very superficial register of the mos frequently used file types that you should probably know.
+Just a very superficial register of the most frequently used file types that you should probably know.
 All of these are actually plain text files and you can open them in regular text editor (don't do this if the files are large....).
 
 The difference is just in the formatting conventions and in the expected content.
-
-## File types
 
 - **txt** : any type of text
 - **md** : text with minimal layout code

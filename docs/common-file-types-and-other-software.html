@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>6 R | Getting Stuff Done</title>
-  <meta name="description" content="6 R | Getting Stuff Done">
+  <title>8 Common file types and other software | Getting Stuff Done</title>
+  <meta name="description" content="8 Common file types and other software | Getting Stuff Done">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="6 R | Getting Stuff Done" />
+  <meta property="og:title" content="8 Common file types and other software | Getting Stuff Done" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 R | Getting Stuff Done" />
+  <meta name="twitter:title" content="8 Common file types and other software | Getting Stuff Done" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="git.html">
-<link rel="next" href="nextflow.html">
+<link rel="prev" href="nextflow.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -193,88 +193,111 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r" class="section level1">
-<h1><span class="header-section-number">6</span> R</h1>
-<p>I could probably write 30 pages about my opinion on different <strong>R</strong> topics but I’ll spare you the pain of going over this here. All I want to do at this point, is to point out some of the excellent texts &amp; tutorials that really push my own coding in <strong>R</strong>.</p>
-<p>Then I need to mention 1/4 packages that anyone writing in R these days should be aware of. If you know them and choose not to use them - well that’s your issue. But if you have not looked at them so far - <em>do it now!</em> (Otherwise you’ll have serious issues when trying to follow any of my R code…)</p>
-<p>The last issue I want to highlight is the use of <em>standalone R scripts</em> that are meant for used from the command line/ within a pipe. For me this is my attempt to create reproducible analysis that removes as much subjectivity as possible from the last part of the <em>from raw data to figures</em> journey.</p>
-<div id="read" class="section level2">
-<h2><span class="header-section-number">6.1</span> Read</h2>
-<p>Anything written by Hadley Wickham will improve your R. He has written three great books (which are all <em>publicly available for free</em>)</p>
-<ul>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li><a href="http://r-pkgs.had.co.nz/">R packages</a></li>
-<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
-</ul>
-<p>If just start to get going with <strong>ggplot2</strong>:</p>
-<ul>
-<li>the <a href="http://www.cookbook-r.com/Graphs/">R Graphics cook book</a></li>
-<li>a <a href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction">tutorial by the Harvad University</a></li>
-<li>this <a href="http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/">page by Zev Ross</a></li>
-</ul>
-<p>Also, this platform of <a href="http://www.ggplot2-exts.org/"><strong>ggplot</strong> extensions</a> is definitively worth a look.</p>
+<div id="common-file-types-and-other-software" class="section level1">
+<h1><span class="header-section-number">8</span> Common file types and other software</h1>
+<div id="docker" class="section level2">
+<h2><span class="header-section-number">8.1</span> Docker</h2>
+<p>One thing I have not covered here but which puts the whole reproducible issue to yet another level would be the use of <a href="https://en.wikipedia.org/wiki/Docker_%28software%29">docker</a>. This would allow you to not just share your data &amp; scripts, but also the exact software versions that you used. Frankly, I did not include this here because I do not use it myself (didn’t get the chance to learn how to use it yet).</p>
 </div>
-<div id="know" class="section level2">
-<h2><span class="header-section-number">6.2</span> Know</h2>
-<p>You should know the <strong>tidyverse</strong>. It not <em>one</em>, but actually <em>a collection</em> of packages which make working in R just so much more pleasant, streamlined readable, fun…</p>
-<p>The biggest impact so far on my own coding came from four packages that are part of the <strong>tidyverse</strong>. I list them below together with those functions from these packages which really made a difference.</p>
-<ul>
-<li><strong>magrittr</strong>: the pipe operator (<code>%&gt;%</code>) is a <em>game changer</em> for R</li>
-<li><strong>ggplot2</strong>: simply the best way of data visualization I have used so far</li>
-<li><strong>dplyr</strong>: does for tables what ggplot2 does for plots (<code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarise()</code>,<code>left_join()</code>, <a href="http://genomicsclass.github.io/book/pages/dplyr_tutorial.html">tutorial</a>)</li>
-<li><strong>purrr</strong>: this package changed the way I thought about code. Since I saw the beauty of <code>map()</code>/<code>map2()</code>/<code>pmap()</code> I pack most of my code into neat small functions. This saves soooooooo much typing/sources of error/confusion.</li>
-</ul>
-<p>Of course there is many more great packages out there on <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://github.com/">github</a> or <a href="https://bioconductor.org/">bioconductor</a>. But the last package that I’m going to mention here is <strong>devtools</strong>. With this package you can easily install R packages from all different kinds of sources.</p>
-</div>
-<div id="run" class="section level2">
-<h2><span class="header-section-number">6.3</span> Run</h2>
-<p>Rstudio is a great environment to develop R code. I spend days using it the idea of running plain R seems almost archaic to me. So during most of the time I will use R code throughout a project.</p>
-<p>But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility. I already keep this in mind during the process of my scripts. This means that every script should run from start to end without interactive intervention. No manual loading of data, interaction with other scripts basically only using <code>source()</code> (outsourcing definition of needed custom functions might actually be a good idea).</p>
-<p>So, after polishing my R scripts to their final version they should be able to be run from the command line:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
-<span class="co"># or</span>
-<span class="ex">Rscript</span> --vanilla script.R input_file.tsv input_value external_script.R</code></pre></div>
-<p>For this I provide the scripts that are meant for execution with a small header &amp; config section (not the ones which I <code>source()</code>). Here is an example for the script that takes input from the command line.</p>
+<div id="file-types" class="section level2">
+<h2><span class="header-section-number">8.2</span> File types</h2>
 <div class="kclass">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#!/usr/bin/env Rscript</span>
-<span class="co"># run from terminal:</span>
-<span class="co"># Rscript --vanilla script.R input_file.tsv input_value external_script.R</span>
-<span class="co"># ===============================================================</span>
-<span class="co"># This script provides an example of an executable R script.</span>
-<span class="co"># It takes thee inputs and parses them into R variables</span>
-<span class="co"># ---------------------------------------------------------------</span>
-<span class="co"># The produced output contains:</span>
-<span class="co">#   - nothing, it&#39;s just a demo</span>
-<span class="co"># ===============================================================</span>
-<span class="co"># args contails everything thats typed into the command line -</span>
-<span class="co"># Our input starts with the 7th element.</span>
-<span class="co"># Careful: if you need more input fields, you also need to adjust the subsetting</span>
-
-args =<span class="st"> </span><span class="kw">commandArgs</span>(<span class="dt">trailingOnly =</span> <span class="ot">FALSE</span>)
-args =<span class="st"> </span>args[<span class="dv">7</span><span class="op">:</span><span class="dv">9</span>]
-<span class="kw">print</span>(args)
-
-<span class="co"># Quick copy &amp; paste section for devellopment phase</span>
-<span class="co"># args &lt;- c(&#39;input_file.tsv&#39;, &#39;input_value&#39;, &#39;external_script.R&#39;)</span>
-<span class="co"># ------------------------------------</span>
-<span class="co"># Config:</span>
-<span class="co"># Set seed if your script uses any element of randomnes (sample(), rnorm(),...)</span>
-
-<span class="kw">set.seed</span>(<span class="dv">42</span>)                         
-input_file &lt;-<span class="st"> </span><span class="kw">as.character</span>(args[<span class="dv">1</span>])
-input_value &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(args[<span class="dv">2</span>])
-config_script &lt;-<span class="st"> </span><span class="kw">as.character</span>(args[<span class="dv">3</span>])
-
-<span class="co"># ------------------------------------</span>
-<span class="co"># Here, the content of the original script starts </span>
-
-<span class="kw">library</span>(tidyverse)
-<span class="kw">source</span>(config_script)
-
-data &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(input_file)
-
-<span class="co"># The code continues....</span></code></pre></div>
+<p>Just a very superficial register of the most frequently used file types that you should probably know. All of these are actually plain text files and you can open them in regular text editor (don’t do this if the files are large….).</p>
+<p>The difference is just in the formatting conventions and in the expected content.</p>
+<ul>
+<li><strong>txt</strong> : any type of text</li>
+<li><strong>md</strong> : text with minimal layout code</li>
+</ul>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><strong>csv</strong> : <em>comma</em> separated values (example with thee columns)</li>
+</ul>
 </div>
+<div class="column">
+<pre><code>A,important text,3</code></pre>
+</div>
+</div>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><strong>tsv</strong> : <em>tab</em> separated values</li>
+</ul>
+</div>
+<div class="column">
+<pre><code>A\timportant text\t3</code></pre>
+</div>
+</div>
+<h3 id="genetic-data"><span class="header-section-number">8.2</span> Genetic data</h3>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><strong>fa</strong> : aka. <em>fasta</em> - plain genetic sequences, includes an header line per sequence starting with <code>&gt;</code>. (On the right is an example with two sequences - seq1 &amp; seq2)</li>
+</ul>
+</div>
+<div class="column">
+<pre><code>&gt;seq1 
+ATGCGT
+GCATGG
+&gt;seq2
+ATGTAA</code></pre>
+</div>
+</div>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><strong>fq</strong> : aka. <em>fastq</em> - sequencing data with quality score. (On the right is an example of a sequence - seq1)</li>
+</ul>
+</div>
+<div class="column">
+<pre><code>@seq1
+ATGCGTGCATGG
+#
+*55CCF&gt;&gt;&#39;&#39;))</code></pre>
+</div>
+</div>
+<ul>
+<li><a href="https://samtools.github.io/hts-specs/SAMv1.pdf"><strong>sam/bam</strong></a> : sequence alignment format. Genetic sequences mapped to a reference, header lines start with <code>@</code>.<br />
+(sam is human readable, bam is binary - only for computers)</li>
+<li><a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf"><strong>vcf/bcf</strong></a> : variant call format. Genotypes + metadata in table form, header lines start with <code>##</code>.<br />
+(vcf is human readable, bcf is binary - only for computers)</li>
+</ul>
+<div class="row kclass">
+<div class="column">
+<ul>
+<li><a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format1"><strong>bed</strong></a> : Browser Extensible Data. Ranges on a reference genome. Includes at least three tab separated columns (chromosome, start, end, example with three ranges).</li>
+</ul>
+</div>
+<div class="column">
+<pre><code>LG02    0      400
+LG02    1500   3000
+LG15    555    1200</code></pre>
+</div>
+</div>
+<ul>
+<li><a href="https://www.ensembl.org/info/website/upload/gff.html"><strong>gff</strong></a> : general feature format. It describes exons, genes and other features of DNA. The structure is similar to a <code>bed</code> file with additional columns.</li>
+</ul>
+<h3 id="code"><span class="header-section-number">8.2</span> Code</h3>
+<ul>
+<li><strong>sh</strong> : code written in bash</li>
+<li><strong>R</strong> : code written in R</li>
+<li><strong>py</strong> : code written in python</li>
+<li><strong>pl</strong> : code written in pearl</li>
+<li><strong>nf</strong> : code written in nextflow</li>
+</ul>
+</div>
+</div>
+<div id="software-1" class="section level2">
+<h2><span class="header-section-number">8.3</span> Software</h2>
+<p>Below I list what I think are the <em>must haves</em> for any bioinformatic tool shed:</p>
+<ul>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><strong>fastqc</strong></a> : tool for quality checking of sequencing data (first step of any project using new sequencing data)</li>
+<li><a href="https://multiqc.info/"><strong>multiqc</strong></a> : summarize the fastqc reports for all your samples in a single report</li>
+<li><a href="http://www.htslib.org/download/"><strong>samtools</strong></a> : tool set for working with sam files</li>
+<li><a href="https://vcftools.github.io/"><strong>vcftools</strong></a> : tool set for working with vcf files (reformatting &amp; population statistics)</li>
+<li><a href="https://github.com/vcflib/vcflib"><strong>vcflib</strong></a> : convenience scripts for working with vcf files</li>
+<li><a href="https://github.com/arq5x/bedtools2"><strong>bedtools</strong></a> : tool set for working with bed files</li>
+</ul>
 <hr />
 
 </div>
@@ -284,8 +307,8 @@ data &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(input_file)
           </div>
         </div>
       </div>
-<a href="git.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="nextflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nextflow.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
