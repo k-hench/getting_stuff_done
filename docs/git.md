@@ -179,7 +179,6 @@ There are other such platforms such as [bitbucket](https://bitbucket.org) or [gi
 Yet here I will stick to *github* since this is also what I am using personally (and where this page is hosted).
 
 To use github you have to create an account first.
-The basic (public) account is for free, but if you want to use github for super secret stuff, you will need to get a payed account (which is about 85$ / year I think). 
 
 ### Move the repository to *github*
 
