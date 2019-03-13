@@ -142,6 +142,14 @@ Extract text between "textsw{text}"
     ## R
     ## Nextflow
 
+Extract lines based on index file
+
+    awk 'FNR==NR{a[$1];next}FNR in a' line_index.txt data.txt 
+
+Use awk with multiple output (separate header from body)
+
+    awk '{ if (substr($1,1,1) ~ /^[#]/ ){ print $0 > "in_file.rewrite.txt"} else {print $0 > "in_file.body.txt"}}' in_file.txt
+
 fasta handling <a name="fasta"></a>
 ===================================
 
