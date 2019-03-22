@@ -61,7 +61,7 @@ ls
 knitr::opts_knit$set(root.dir = '~/root_folder/')
 ```
 
-One thing that makes your life easier when using the command line is the <tab> key on your keyboard.
+One thing that makes your life easier when using the command line is the `<tab>` key on your keyboard.
 If you don't know what it does *try it*.
 It's basically an auto-complete for your input.
 
