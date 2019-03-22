@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-13">
+<meta name="date" content="2019-03-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -197,10 +223,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">4</span> Cluster</h1>
 <hr />
 <center>
-<em>This Chapter is very much tailored to the <a href="https://www.rz.uni-kiel.de/en/our-portfolio/hiperf/nec-linux-cluster?set_language=en">NEC computer cluster of the University Kiel (Germany)</a> operation on the batch system (<a href="https://wickie.hlrs.de/platforms/index.php/NEC_SX-ACE_Batch_System">NQSII</a>).</em> <em>On any other cluster, things are going to be differet - talk to your IT department…</em>
+<em>This Chapter is very much tailored to the <a href="https://www.rz.uni-kiel.de/en/our-portfolio/hiperf/nec-linux-cluster?set_language=en">NEC computer cluster of the University Kiel (Germany)</a> operation on the batch system (<a href="https://wickie.hlrs.de/platforms/index.php/NEC_SX-ACE_Batch_System">NQSII</a>).</em>
+<em>On any other cluster, things are going to be differet - talk to your IT department…</em>
 </center>
 <hr />
-<p>At this point we are going to talk about how to work on the computer cluster (of the University Kiel). Usually, we want to work there because:</p>
+<p>At this point we are going to talk about how to work on the computer cluster (of the University Kiel).
+Usually, we want to work there because:</p>
 <center>
 We have to deal with <strong>LOTS</strong> of data and this would kill our laptop<br />
 or<br />
@@ -208,25 +236,29 @@ We have to run a job for <strong>VERY LONG</strong> (and we need the laptop for 
 or<br />
 We have <strong>MANY</strong> jobs and running the on after the other would take ages
 </center>
-<p>So the cluster is capable of doing <em>many</em> <em>work heavy</em> jobs <em>for a long time</em>. But to use it we need:</p>
+<p>So the cluster is capable of doing <em>many</em> <em>work heavy</em> jobs <em>for a long time</em>.
+But to use it we need:</p>
 <ul>
 <li>an account on the cluster (+ password) - lets assume it is smomw000 for now</li>
 <li><code>ssh</code> should already be installed (check <code>which ssh</code> in the command line)</li>
 <li>an internet connection (and access to either the Uni or the GEOMAR network)</li>
 <li>(<code>sshfs</code> for mounting the cluster)</li>
 </ul>
-<p>So, I recommend to check at this point that you check if you have <code>sshfs</code> installed - I guess not. If <code>which sshfs</code> returns a path (eg: <code>/usr/bin/ssh</code>) your all set, if it returns a blank line you need to install the program:</p>
+<p>So, I recommend to check at this point that you check if you have <code>sshfs</code> installed - I guess not.
+If <code>which sshfs</code> returns a path (eg: <code>/usr/bin/ssh</code>) your all set, if it returns a blank line you need to install the program:</p>
 <ul>
 <li><strong>Ubuntu</strong>: <code>sudo apt-get install sshfs</code></li>
 <li><strong>Mac</strong>: You’ll need to download and install two packages (<a href="https://osxfuse.github.io/">osxfuse</a> and the current version of <a href="https://github.com/osxfuse/sshfs/releases">sshfs-x.x.x.pkg</a>)</li>
-<li><strong>Windows</strong>: Honestly, I don’t know. But <a href="https://github.com/billziss-gh/sshfs-win">these instuctions</a> look like they should work. Good luck…</li>
+<li><strong>Windows</strong>: Honestly, I don’t know.
+But <a href="https://github.com/billziss-gh/sshfs-win">these instuctions</a> look like they should work. Good luck…</li>
 </ul>
 <p>Now if you double check <code>which sshfs</code> should return a path.</p>
 <div id="login" class="section level2">
 <h2><span class="header-section-number">4.1</span> Login</h2>
-<p>As mentioned before to use the cluster you need the command line - all the work on the cluster is going to happen there. The log in command looks like this:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># ssh &lt;username&gt;@&lt;hostadress&gt;</span>
-<span class="fu">ssh</span> smomw000@nesh-fe.rz.uni-kiel.de</code></pre></div>
+<p>As mentioned before to use the cluster you need the command line - all the work on the cluster is going to happen there.
+The log in command looks like this:</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># ssh &lt;username&gt;@&lt;hostadress&gt;</span>
+<span class="fu">ssh</span> smomw000@nesh-fe.rz.uni-kiel.de</code></pre>
 <p>When you log in for the first time, you will be asked to confirm that this is a secure connection.<br />
 Then you will need to type in you password and that’s basically it:</p>
 <div class="kclass cluster">
@@ -247,7 +279,8 @@ Then you will need to type in you password and that’s basically it:</p>
 *****************************************************************************************
 $ |</code></pre>
 <center>
-<em>(As a convention I will use black code blocks when talking about the cluster.</em> <em>The code blocks you are used to will continue to refer to the command line on your laptop.)</em>
+<em>(As a convention I will use black code blocks when talking about the cluster.</em>
+<em>The code blocks you are used to will continue to refer to the command line on your laptop.)</em>
 </center>
 <p>Now you are on the cluster and you can work just the same as on the command line on your local machine.<br />
 If you want to leave the cluster, all you need to do is type <code>exit</code>.</p>
@@ -263,25 +296,39 @@ If you want to leave the cluster, all you need to do is type <code>exit</code>.<
 <li><code>$WORK</code>: <code>/sfs/fs2/work-geomar7/smomw000</code></li>
 <li><code>$TAPE_CACHE</code>: <code>/nfs/tape_cache/smomw000</code></li>
 </ul>
-<p>The different directories differ in way they are backuped and by the amount of space you can use. They should be used for different tasks:</p>
-<p>In the <code>$HOME</code> are mostly things that you need to <em>configure</em> your account. On example is the start up script for your cluster account (<code>.bashrc</code>). You might collect configuration content for other programs there as well (eg. <code>R</code>,<code>py</code> or <code>miniconda2</code>). It should not be used to store large amounts of data or to actually do work there.</p>
-<p>The <code>$WORK</code> directory is where you will spend your time. Here you can store your data and do the <em>heavy lifting</em> run your projects. It is also the only directory where you should run <a href="#batch">batch jobs</a>.</p>
-<p>When you are done with a project and don’t need to access your file regularly anymore you can store them on <code>$TAPE_CACHE</code>. This basically the <em>archive</em>.<br />
+<p>The different directories differ in way they are backuped and by the amount of space you can use.
+They should be used for different tasks:</p>
+<p>In the <code>$HOME</code> are mostly things that you need to <em>configure</em> your account.
+On example is the start up script for your cluster account (<code>.bashrc</code>).
+You might collect configuration content for other programs there as well (eg. <code>R</code>,<code>py</code> or <code>miniconda2</code>).
+It should not be used to store large amounts of data or to actually do work there.</p>
+<p>The <code>$WORK</code> directory is where you will spend your time.
+Here you can store your data and do the <em>heavy lifting</em> run your projects.
+It is also the only directory where you should run <a href="#batch">batch jobs</a>.</p>
+<p>When you are done with a project and don’t need to access your file regularly anymore you can store them on <code>$TAPE_CACHE</code>.
+This basically the <em>archive</em>.<br />
 You should prepare your data into neat packages (don’t just dump you messy folders with a huge collection of loose scripts here - pack the collection into a single <code>tar</code> file first: <code>tar -zcvf messy_folder.tar.gz messy_folder</code>). Pleas read the recommendations within the cluster <a href="https://www.rz.uni-kiel.de/en/our-portfolio/hiperf/nec-linux-cluster?set_language=en">documentation</a>.</p>
 </div>
 </div>
 </div>
 <div id="mounting" class="section level2">
 <h2><span class="header-section-number">4.2</span> Mounting</h2>
-<p>One of the first things you might ask yourself is how to get you data onto the cluster. For this purpose we installed <code>shhfs</code> at the beginning of this chapter.</p>
-<p>I like to think of the usage of <code>shhfs</code> like plugging in a flash drive. But before we can use it, we need create an empty folder:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/mnt <span class="co"># Remember: This is on your local machine.</span></code></pre></div>
+<p>One of the first things you might ask yourself is how to get you data onto the cluster.
+For this purpose we installed <code>shhfs</code> at the beginning of this chapter.</p>
+<p>I like to think of the usage of <code>shhfs</code> like plugging in a flash drive.
+But before we can use it, we need create an empty folder:</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/mnt <span class="co"># Remember: This is on your local machine.</span></code></pre>
 <div class="cluster">
 <p>This out virtual <em>USB slot</em> - after mounting the cluster the files of the cluster are going to show up here on your laptop.</p>
-<p>We also need to think about which directory of the cluster we want to mount. By default the <code>$HOME</code> directory of the user will be mounted. But as mentioned above, that’s not were we are supposed to dump our data. Also, once we have mounted a directory we will not be able to go <em>up in the path</em>. That means we will not be able to access <code>/sfs/fs6/home-geomar/</code> when mounting <code>/sfs/fs6/home-geomar/smomw000</code>. Because of this, we will need to mount the <code>$WORK</code> directory directly:</p>
+<p>We also need to think about which directory of the cluster we want to mount.
+By default the <code>$HOME</code> directory of the user will be mounted.
+But as mentioned above, that’s not were we are supposed to dump our data.
+Also, once we have mounted a directory we will not be able to go <em>up in the path</em>.
+That means we will not be able to access <code>/sfs/fs6/home-geomar/</code> when mounting <code>/sfs/fs6/home-geomar/smomw000</code>.
+Because of this, we will need to mount the <code>$WORK</code> directory directly:</p>
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># sshfs &lt;username&gt;@&lt;hostadress&gt;:&lt;/path/on/cluster&gt; &lt;local/path&gt;</span>
-<span class="ex">sshfs</span> smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 <span class="va">$HOME</span>/mnt</code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># sshfs &lt;username&gt;@&lt;hostadress&gt;:&lt;/path/on/cluster&gt; &lt;local/path&gt;</span>
+<span class="ex">sshfs</span> smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 <span class="va">$HOME</span>/mnt</code></pre>
 <div class="cluster">
 <p>Now, the content of your <code>$WORK</code> directory should show up in your finder/windows explorer.</p>
 </div>
@@ -293,9 +340,11 @@ You should prepare your data into neat packages (don’t just dump you messy fol
 <p>Working on the cluster is generally not different to working ton the command line locally.</p>
 <div id="software" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Software</h3>
-<p>The one exception to this is when you need new software that is not installed. That is because you do not have admin rights on the cluster - this makes installing new software harder (s. <a href="#3.7">3.7. Installing new software</a>).</p>
+<p>The one exception to this is when you need new software that is not installed.
+That is because you do not have admin rights on the cluster - this makes installing new software harder (s. <a href="#3.7">3.7. Installing new software</a>).</p>
 <div class="cluster">
-<p>Luckily, there is more stuff installed than you might realize at first - it is just not activated yet. To see whats available run <code>module avail</code>:</p>
+<p>Luckily, there is more stuff installed than you might realize at first - it is just not activated yet.
+To see whats available run <code>module avail</code>:</p>
 <pre><code>------------------------------ /sfs/fs5/sw/modules/sxcrosscompiling ------------------------------
 MathKeisan/4.0.3(default) fview                     sxf03/rev061(default)
 crosscompiler             mpisx/10.2.4(default)     sxf90/rev534(default)
@@ -348,27 +397,33 @@ cmake3.12.1  git2.14.1    libtool2.4.6 miniconda3   sensors3.4.0</code></pre>
 <p>You can activate these <em>modules</em> by running eg. <code>module load R3.5.2</code> (and later deactivate it with <code>module unload R3.5.2</code>).</p>
 <p>If you look at the very end of the list you will find <code>miniconda3</code>.</p>
 </div>
-<p>This is quite a relief because this means you should be able to use conda as package manager to install most of the software you need (especially when coupled with <a href="https://bioconda.github.io/">bioconda</a>). (<em>Unfortunately conda apears to be suuuper slow lately. This is annoying but is still works. And I think in most cases it is still way faster than installing all dependencies of your software by hand.</em>)</p>
+<p>This is quite a relief because this means you should be able to use conda as package manager to install most of the software you need (especially when coupled with <a href="https://bioconda.github.io/">bioconda</a>).
+(<em>Unfortunately conda apears to be suuuper slow lately. This is annoying but is still works. And I think in most cases it is still way faster than installing all dependencies of your software by hand.</em>)</p>
 <p>If the software is not part of the <em>modules</em> and if you can’t find it using conda you will have to install it manually. Sorry.</p>
 </div>
 <div id="batch-scripts" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Batch scripts</h3>
 <p><a name="batch"></a></p>
-<p>I like to think of the cluster as a kind of hotel - the cluster is a <em>collection of many computers</em> like a hotel is a collection of many rooms. Yet when you enter the hotel, you don’t walk into a room directly but you enter the <em>lobby</em>. On the cluster it is the same: When you log in using <code>ssh</code> you are on the login node (the <em>“front end”</em>). Here you are not alone, but all users of the cluster share it simultaneously.</p>
+<p>I like to think of the cluster as a kind of hotel - the cluster is a <em>collection of many computers</em> like a hotel is a collection of many rooms.
+Yet when you enter the hotel, you don’t walk into a room directly but you enter the <em>lobby</em>.
+On the cluster it is the same: When you log in using <code>ssh</code> you are on the login node (the <em>“front end”</em>).
+Here you are not alone, but all users of the cluster share it simultaneously.</p>
 <p>It is totally fine to hang out in the lobby as long as don’t block it with 15 busloads of luggage.</p>
 <p>This is supposed to mean that, while you can organize you files on the login node and also to try small paths, as soon as you start to work <em>seriously</em> you should use <em>batch jobs</em> (<em>rent one/several rooms</em>).</p>
 </div>
 <div id="preparation" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Preparation</h3>
-<p>Running a batch job is easy. Instead of running commands interactively, you write them into a script and add a small header. This has the additional benefit that later you will remember exactly what you have done.</p>
+<p>Running a batch job is easy.
+Instead of running commands interactively, you write them into a script and add a small header.
+This has the additional benefit that later you will remember exactly what you have done.</p>
 So instead of this:
 <div class="cluster">
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
 <span class="fu">mkdir</span> test_folder
-<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre></div>
+<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre>
 </div>
 <p>We write this script (<code>test.sh</code>):</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="co">#PBS -b 1                       # number of threads</span>
 <span class="co">#PBS -l cpunum_job=1            # number of nodes</span>
 <span class="co">#PBS -l elapstim_req=00:00:30   # requested runtime (hh:mm:ss)</span>
@@ -380,12 +435,12 @@ So instead of this:
 
 <span class="bu">cd</span> <span class="va">$WORK</span>
 <span class="fu">mkdir</span> test_folder
-<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre></div>
+<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre>
 <div class="cluster">
 <p>You can write this script either using one of the command line text editors (<code>emacs</code>/<code>nano</code>/<code>vim</code>) or you can prepare it locally (eg. within <strong>atom</strong>) and copy it onto the mounted cluster.</p>
 <p>Once the script is located on the cluster (eg. on <code>$WORK</code>) you can <em>submit</em> the job:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
-<span class="ex">qsub</span> test.sh</code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
+<span class="ex">qsub</span> test.sh</code></pre>
 </div>
 <p>Depending on the resources needed for the job you submit, you will choose a different <em>batch class</em>:</p>
 <table>
@@ -447,7 +502,8 @@ So instead of this:
 <div id="monitor-batch-jobs" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Monitor batch jobs</h3>
 <div class="kclass cluster">
-<p>After submitting a batch job you might be interested in its current status. You can get a summary of all your currently queuing and running jobs using <code>qstat</code>:</p>
+<p>After submitting a batch job you might be interested in its current status.
+You can get a summary of all your currently queuing and running jobs using <code>qstat</code>:</p>
 <pre><code>RequestID       ReqName  UserName Queue     Pri STT S   Memory      CPU   Elapse R H M Jobs
 --------------- -------- -------- -------- ---- --- - -------- -------- -------- - - - ----
 000000.ace-ssio test     smomw000 clexpress   0 RUN -   00.13G   122.70        1 Y Y Y    1 </code></pre>
@@ -458,9 +514,14 @@ So instead of this:
 <li><code>qcat -o &lt;jobid&gt;</code>: the latest output messages (the <em>stdout</em> output)</li>
 <li><code>qcat &lt;jobid&gt;</code>: the original script that was submitted</li>
 </ul>
-<p>If you want to see more lines you can use the flag <code>-n</code>. The <code>&lt;jobid&gt;</code> is the number before <em>“.ace-ssio”</em>. An example would be <code>qcat -n 25 -e 000000</code>.</p>
-<p>If you are impatient (like me) you will find yourself retyping <code>qcat</code> over and over. (<em>If you need to repeat a command use the <code>&lt;arrow up&gt;</code> key on your keyboard!</em>) This can be tiresome. It is way easier to use the command <code>watch</code>. The following line will re-execute <code>qcat</code> every 3 seconds until you interrupt it by pressing <code>&lt;ctrl&gt;&lt;c&gt;</code>:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">watch</span> -n 3 <span class="st">&quot;qstat -n 25 -e 000000&quot;</span></code></pre></div>
+<p>If you want to see more lines you can use the flag <code>-n</code>.
+The <code>&lt;jobid&gt;</code> is the number before <em>“.ace-ssio”</em>.
+An example would be <code>qcat -n 25 -e 000000</code>.</p>
+<p>If you are impatient (like me) you will find yourself retyping <code>qcat</code> over and over.
+(<em>If you need to repeat a command use the <code>&lt;arrow up&gt;</code> key on your keyboard!</em>)
+This can be tiresome. It is way easier to use the command <code>watch</code>.
+The following line will re-execute <code>qcat</code> every 3 seconds until you interrupt it by pressing <code>&lt;ctrl&gt;&lt;c&gt;</code>:</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">watch</span> -n 3 <span class="st">&quot;qstat -n 25 -e 000000&quot;</span></code></pre>
 <p>Once your job is done you will find the file <code>stdstderr.out</code> within the directory where you submitted the original script (where you ran <code>qsub script.sh</code>).</p>
 </div>
 <hr />

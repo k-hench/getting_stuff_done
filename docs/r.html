@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-13">
+<meta name="date" content="2019-03-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -195,12 +221,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="r" class="section level1">
 <h1><span class="header-section-number">6</span> R</h1>
-<p>I could probably write 30 pages about my opinion on different <strong>R</strong> topics but I’ll spare you the pain of going over this here. All I want to do at this point, is to point out some of the excellent texts &amp; tutorials that really push my own coding in <strong>R</strong>.</p>
-<p>Then I need to mention 1/4 packages that anyone writing in R these days should be aware of. If you know them and choose not to use them - well that’s your issue. But if you have not looked at them so far - <em>do it now!</em> (Otherwise you’ll have serious issues when trying to follow any of my R code…)</p>
-<p>The last issue I want to highlight is the use of <em>standalone R scripts</em> that are meant for used from the command line/ within a pipe. For me this is my attempt to create reproducible analysis that removes as much subjectivity as possible from the last part of the <em>from raw data to figures</em> journey.</p>
+<p>I could probably write 30 pages about my opinion on different <strong>R</strong> topics but I’ll spare you the pain of going over this here.
+All I want to do at this point, is to point out some of the excellent texts &amp; tutorials that really push my own coding in <strong>R</strong>.</p>
+<p>Then I need to mention 1/4 packages that anyone writing in R these days should be aware of.
+If you know them and choose not to use them - well that’s your issue.
+But if you have not looked at them so far - <em>do it now!</em>
+(Otherwise you’ll have serious issues when trying to follow any of my R code…)</p>
+<p>The last issue I want to highlight is the use of <em>standalone R scripts</em> that are meant for used from the command line/ within a pipe.
+For me this is my attempt to create reproducible analysis that removes as much subjectivity as possible from the last part of the <em>from raw data to figures</em> journey.</p>
 <div id="read" class="section level2">
 <h2><span class="header-section-number">6.1</span> Read</h2>
-<p>Anything written by Hadley Wickham will improve your R. He has written three great books (which are all <em>publicly available for free</em>)</p>
+<p>Anything written by Hadley Wickham will improve your R.
+He has written three great books (which are all <em>publicly available for free</em>)</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
 <li><a href="http://r-pkgs.had.co.nz/">R packages</a></li>
@@ -216,27 +248,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="know" class="section level2">
 <h2><span class="header-section-number">6.2</span> Know</h2>
-<p>You should know the <strong>tidyverse</strong>. It not <em>one</em>, but actually <em>a collection</em> of packages which make working in R just so much more pleasant, streamlined readable, fun…</p>
-<p>The biggest impact so far on my own coding came from four packages that are part of the <strong>tidyverse</strong>. I list them below together with those functions from these packages which really made a difference.</p>
+<p>You should know the <strong>tidyverse</strong>.
+It not <em>one</em>, but actually <em>a collection</em> of packages which make working in R just so much more pleasant, streamlined readable, fun…</p>
+<p>The biggest impact so far on my own coding came from four packages that are part of the <strong>tidyverse</strong>.
+I list them below together with those functions from these packages which really made a difference.</p>
 <ul>
 <li><strong>magrittr</strong>: the pipe operator (<code>%&gt;%</code>) is a <em>game changer</em> for R</li>
 <li><strong>ggplot2</strong>: simply the best way of data visualization I have used so far</li>
 <li><strong>dplyr</strong>: does for tables what ggplot2 does for plots (<code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>group_by()</code>, <code>summarise()</code>,<code>left_join()</code>, <a href="http://genomicsclass.github.io/book/pages/dplyr_tutorial.html">tutorial</a>)</li>
 <li><strong>purrr</strong>: this package changed the way I thought about code. Since I saw the beauty of <code>map()</code>/<code>map2()</code>/<code>pmap()</code> I pack most of my code into neat small functions. This saves soooooooo much typing/sources of error/confusion.</li>
 </ul>
-<p>Of course there is many more great packages out there on <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://github.com/">github</a> or <a href="https://bioconductor.org/">bioconductor</a>. But the last package that I’m going to mention here is <strong>devtools</strong>. With this package you can easily install R packages from all different kinds of sources.</p>
+<p>Of course there is many more great packages out there on <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://github.com/">github</a> or <a href="https://bioconductor.org/">bioconductor</a>.
+But the last package that I’m going to mention here is <strong>devtools</strong>.
+With this package you can easily install R packages from all different kinds of sources.</p>
 </div>
 <div id="run" class="section level2">
 <h2><span class="header-section-number">6.3</span> Run</h2>
-<p>Rstudio is a great environment to develop R code. I spend days using it the idea of running plain R seems almost archaic to me. So during most of the time I will use R code throughout a project.</p>
-<p>But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility. I already keep this in mind during the process of my scripts. This means that every script should run from start to end without interactive intervention. No manual loading of data, interaction with other scripts basically only using <code>source()</code> (outsourcing definition of needed custom functions might actually be a good idea).</p>
+<p>Rstudio is a great environment to develop R code.
+I spend days using it the idea of running plain R seems almost archaic to me.
+So during most of the time I will use R code throughout a project.</p>
+<p>But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility.
+I already keep this in mind during the process of my scripts.
+This means that every script should run from start to end without interactive intervention.
+No manual loading of data, interaction with other scripts basically only using <code>source()</code> (outsourcing definition of needed custom functions might actually be a good idea).</p>
 <p>So, after polishing my R scripts to their final version they should be able to be run from the command line:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
 <span class="co"># or</span>
-<span class="ex">Rscript</span> --vanilla script.R input_file.tsv input_value external_script.R</code></pre></div>
-<p>For this I provide the scripts that are meant for execution with a small header &amp; config section (not the ones which I <code>source()</code>). Here is an example for the script that takes input from the command line.</p>
+<span class="ex">Rscript</span> --vanilla script.R input_file.tsv input_value external_script.R</code></pre>
+<p>For this I provide the scripts that are meant for execution with a small header &amp; config section (not the ones which I <code>source()</code>).
+Here is an example for the script that takes input from the command line.</p>
 <div class="kclass">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#!/usr/bin/env Rscript</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#!/usr/bin/env Rscript</span>
 <span class="co"># run from terminal:</span>
 <span class="co"># Rscript --vanilla script.R input_file.tsv input_value external_script.R</span>
 <span class="co"># ===============================================================</span>
@@ -273,7 +315,7 @@ config_script &lt;-<span class="st"> </span><span class="kw">as.character</span>
 
 data &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(input_file)
 
-<span class="co"># The code continues....</span></code></pre></div>
+<span class="co"># The code continues....</span></code></pre>
 </div>
 <hr />
 

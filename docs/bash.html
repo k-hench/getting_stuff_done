@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-13">
+<meta name="date" content="2019-03-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -210,10 +236,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>./</code> is the current directory</li>
 <li><code>..</code> is the <em>parent</em> directory (the directory which contains the current directory)</li>
 </ul>
-<p>With this you can do the most basic navigation. In our assumed project this could look like this:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">pwd</span>
-<span class="co">#&gt; /home/khench/root_folder</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
+<p>With this you can do the most basic navigation.
+In our assumed project this could look like this:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">pwd</span>
+<span class="co">#&gt; /home/khench/root_folder</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
 <span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
 <span class="co">#&gt; data</span>
@@ -223,15 +250,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; py</span>
 <span class="co">#&gt; R</span>
 <span class="co">#&gt; README.md</span>
-<span class="co">#&gt; sh</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> data
+<span class="co">#&gt; sh</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> data
 <span class="bu">pwd</span>
-<span class="co">#&gt; /home/khench/root_folder/data</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
+<span class="co">#&gt; /home/khench/root_folder/data</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span>
 <span class="co">#&gt; genotypes.vcf.gz</span>
 <span class="co">#&gt; table1.txt</span>
-<span class="co">#&gt; table2.txt</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
+<span class="co">#&gt; table2.txt</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
 <span class="fu">ls</span>
 <span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
@@ -242,21 +269,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; py</span>
 <span class="co">#&gt; R</span>
 <span class="co">#&gt; README.md</span>
-<span class="co">#&gt; sh</span></code></pre></div>
-<p>One thing that makes your life easier when using the command line is the <tab> key on your keyboard. If you don’t know what it does <em>try it</em>. It’s basically an auto-complete for your input.</p>
-<p>If eg. you are sitting in the <code>root_folder</code> and want to move to <code>root_folder/data</code> all you need to type is <code>root_folder/da&lt;tab&gt;</code> and it will auto-complete to <code>root_folder/data</code>. Typing <code>root_folder/d&lt;tab&gt;</code> will not be enough since this is ambiguous since it might complete to either <code>root_folder/data</code> or <code>root_folder/docs</code>. Of course, in this example we only saved a single key stroke, but in <em>real life</em> <tab> can save you a lot of (mis-)typing.</p>
+<span class="co">#&gt; sh</span></code></pre>
+<p>One thing that makes your life easier when using the command line is the <tab> key on your keyboard.
+If you don’t know what it does <em>try it</em>.
+It’s basically an auto-complete for your input.</p>
+<p>If eg. you are sitting in the <code>root_folder</code> and want to move to <code>root_folder/data</code> all you need to type is <code>root_folder/da&lt;tab&gt;</code> and it will auto-complete to <code>root_folder/data</code>.
+Typing <code>root_folder/d&lt;tab&gt;</code> will not be enough since this is ambiguous since it might complete to either <code>root_folder/data</code> or <code>root_folder/docs</code>.
+Of course, in this example we only saved a single key stroke, but in <em>real life</em> <tab> can save you a lot of (mis-)typing.</p>
 </div>
 <div id="paths" class="section level2">
 <h2><span class="header-section-number">3.2</span> Paths</h2>
-<p>A <em>path</em> is a location on your file system - it is quite similar to a URL in your web browser. It can either point to a file or to folder.</p>
+<p>A <em>path</em> is a location on your file system - it is quite similar to a URL in your web browser.
+It can either point to a file or to folder.</p>
 <p>We have seen this before: the command <code>pwd</code> prints the <em>path</em> to the current working directory.</p>
 <p>Generally we need to be aware of two different types - <em>absolute</em> vs. <em>relative</em> paths:</p>
 <p>An absolute path looks something like this:</p>
 <p><code>/home/khench/root_folder</code> (Note the leading slash <code>/home...</code>.)</p>
 <p>This is what the type of path that <code>pwd</code> reports and it will always point to the same location on your file system regardless of the directory you are currently operating in. That is because the leading slash points to the root folder of your file system (not of your project) which is an <em>absolute</em> position.</p>
 <p>The disadvantage of absolute paths is that <em>things can change</em>: you might move your project folder to a different location (backup on external hard drive) or share with collaborators. In these cases your path will point to a file/location that does not exist - it is basically a <em>broken link</em>.</p>
-<p>Therefore in some cases the use of <em>relative paths</em> is useful. Relative paths indicate the location of a file/folder <em>relative to your current working directory</em>.</p>
-<p>We used this for example in the command <code>cd data</code> (short for <code>cd ./data</code>). Here, there is no leading slash - instead the path starts directly with the folder name or with the current directory (<code>./</code>)</p>
+<p>Therefore in some cases the use of <em>relative paths</em> is useful.
+Relative paths indicate the location of a file/folder <em>relative to your current working directory</em>.</p>
+<p>We used this for example in the command <code>cd data</code> (short for <code>cd ./data</code>).
+Here, there is no leading slash - instead the path starts directly with the folder name or with the current directory (<code>./</code>)</p>
 <p>So to get from the <code>root_folder</code> into the <code>data</code> folder we can use either of the two commands:</p>
 <ul>
 <li><code>cd data</code> (relative path)</li>
@@ -265,38 +299,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="variables" class="section level2">
 <h2><span class="header-section-number">3.3</span> Variables</h2>
-<p>Variables are <em>containers for something else</em>. You can for example store some text in a variable. Later you can access this “information”. Therefore you have to address the variable name and put it behind a dollar sign:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">VAR=</span><span class="st">&quot;some text&quot;</span>
+<p>Variables are <em>containers for something else</em>. You can for example store some text in a variable.
+Later you can access this “information”.
+Therefore you have to address the variable name and put it behind a dollar sign:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">VAR=</span><span class="st">&quot;some text&quot;</span>
 <span class="bu">echo</span> <span class="va">${VAR}</span>
-<span class="co">#&gt; some text</span></code></pre></div>
-<p>(There are two equivalent notations: <code>$VAR</code> and <code>${VAR}</code>. The notation with curly brackets helps if your variable name is more complex since the start and end of the name is exactly defined.)</p>
-<p>Variables are often used to store important paths. You could for example store the (absolute) location of your project folder in a Variable (<code>PROJ=&quot;/home/khench/root_folder&quot;</code>) in some sort of configuration script and then use the variable to navigate (<code>cd $PROJ/data</code>). That way you only need to update the location of the project folder in a single place in case it needs to be updated.</p>
-<p>There are quite a view variables that are already defined on your computer and it is good to be aware of these. Two important ones are <code>$HOME</code> and <code>$PATH</code>.</p>
+<span class="co">#&gt; some text</span></code></pre>
+<p>(There are two equivalent notations: <code>$VAR</code> and <code>${VAR}</code>.
+The notation with curly brackets helps if your variable name is more complex since the start and end of the name is exactly defined.)</p>
+<p>Variables are often used to store important paths.
+You could for example store the (absolute) location of your project folder in a Variable (<code>PROJ=&quot;/home/khench/root_folder&quot;</code>) in some sort of configuration script and then use the variable to navigate (<code>cd $PROJ/data</code>).
+That way you only need to update the location of the project folder in a single place in case it needs to be updated.</p>
+<p>There are quite a view variables that are already defined on your computer and it is good to be aware of these.
+Two important ones are <code>$HOME</code> and <code>$PATH</code>.</p>
 <p><code>$HOME</code> directs to the home folder of the user (often you can also use <code>~/</code> as an equivalent to <code>$HOME/</code>):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="va">${HOME}</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="va">${HOME}</span>
 <span class="va">test=</span><span class="st">&#39;asre&#39;</span>
-<span class="co">#&gt; /home/khench</span></code></pre></div>
+<span class="co">#&gt; /home/khench</span></code></pre>
 <p><code>$PATH</code> often not a directory but a collection of directories separated by a colon:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">/usr</span>/bin:<span class="ex">/usr/local</span>/bin:<span class="ex">/home/khench/bin</span></code></pre></div>
-<p>The <code>$PATH</code> is a super important variable - it the register of directories where your computer looks for installed software. Every command that you type into the command line (eg. <code>cd</code> or <code>ls</code>) is a program that is located in one of the folders within your <code>$PATH</code>.</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">/usr</span>/bin:<span class="ex">/usr/local</span>/bin:<span class="ex">/home/khench/bin</span></code></pre>
+<p>The <code>$PATH</code> is a super important variable - it the register of directories where your computer looks for installed software.
+Every command that you type into the command line (eg. <code>cd</code> or <code>ls</code>) is a program that is located in one of the folders within your <code>$PATH</code>.</p>
 <p>You can still run programs that are located elsewhere, but if you do so you need to specify the <em>absolute path</em> of this program (<code>/home/khench/own/scripts/weird_script.py</code> instead of just <code>weird_script.py</code>).</p>
 <p>We will discuss <a href="#later">later</a> how to extend the <code>$PATH</code> in case you want to include a custom software folder if you need to install stuff manually.</p>
 </div>
 <div id="scripts" class="section level2">
 <h2><span class="header-section-number">3.4</span> Scripts</h2>
-<p>So far, we have been working interactively on the command line. That is we typed directly into the terminal and observed the direct output. But I claimed before that one of the advantages of the command line is that reproducible and the possibility to protocol the work on the command line. One aspects of this is the ability to store your workflow in scripts. If you use a script to store bash commands the conventional suffix is <code>.sh</code> (eg: <code>script.sh</code>). Additionally it is useful to add a header line that points to the location of bash itself (usually one of the two):</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<p>So far, we have been working interactively on the command line.
+That is we typed directly into the terminal and observed the direct output.
+But I claimed before that one of the advantages of the command line is that reproducible and the possibility to protocol the work on the command line.
+One aspects of this is the ability to store your workflow in scripts.
+If you use a script to store bash commands the conventional suffix is <code>.sh</code> (eg: <code>script.sh</code>).
+Additionally it is useful to add a header line that points to the location of bash itself (usually one of the two):</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="ex">or</span>
-<span class="co">#!/usr/bin/env bash</span></code></pre></div>
+<span class="co">#!/usr/bin/env bash</span></code></pre>
 <p>A full (admittedly quite silly) script might look like this:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
 
 <span class="bu">cd</span> /home/khench/root_folder
 <span class="fu">ls</span>
 <span class="bu">echo</span> <span class="st">&quot; --------------- &quot;</span>
-<span class="bu">pwd</span></code></pre></div>
+<span class="bu">pwd</span></code></pre>
 <p>Provided the script is located in our <code>sh</code> folder you can run it like this:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> /home/khench/root_folder/sh/script.sh
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> /home/khench/root_folder/sh/script.sh
 <span class="co">#&gt; analysis.nf</span>
 <span class="co">#&gt; analysis.Rproj</span>
 <span class="co">#&gt; data</span>
@@ -308,30 +354,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; README.md</span>
 <span class="co">#&gt; sh</span>
 <span class="co">#&gt;  --------------- </span>
-<span class="co">#&gt; /home/khench/root_folder</span></code></pre></div>
-<p>The big benefit of using bash scripts is that you will be able to remember later what you are doing right now. A workflow that you do interactively is basically <em>gone</em> in the sense that you will never be able to remember it exactly.</p>
-<p>As with the paths there is one script that you should be aware of - your bash start up script. This is a hidden file (<code>.bashrc</code> or <code>.bash_profile</code>)located in your <code>$HOME</code> folder. This script is run every time when you open the terminal and will be important <a href="#later">later</a>.</p>
+<span class="co">#&gt; /home/khench/root_folder</span></code></pre>
+<p>The big benefit of using bash scripts is that you will be able to remember later what you are doing right now.
+A workflow that you do interactively is basically <em>gone</em> in the sense that you will never be able to remember it exactly.</p>
+<p>As with the paths there is one script that you should be aware of - your bash start up script.
+This is a hidden file (<code>.bashrc</code> or <code>.bash_profile</code>)located in your <code>$HOME</code> folder.
+This script is run every time when you open the terminal and will be important <a href="#later">later</a>.</p>
 </div>
 <div id="commandsprograms-iiii" class="section level2">
 <h2><span class="header-section-number">3.5</span> Commands/Programs (II/II)</h2>
 <div id="flags" class="section level3">
 <h3><span class="header-section-number">3.5.1</span> Flags</h3>
-<p>One important feature of most command line programs is the usage of <em>flags</em>. These are (optional) parameters that alter they way a program operates an are invoked with <code>-</code> or <code>--</code> (depending on the program):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -l
+<p>One important feature of most command line programs is the usage of <em>flags</em>.
+These are (optional) parameters that alter they way a program operates an are invoked with <code>-</code> or <code>--</code> (depending on the program):</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -l
 <span class="co">#&gt; total 164</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 13 15:48 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 13 16:10 data</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 15:48 py</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 15:48 R</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench    439 Mär 11 17:13 README.md</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 17:25 sh</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -lth
+<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 17:25 sh</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -lth
 <span class="co">#&gt; total 164K</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 13 15:48 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 13 16:10 data</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R</span>
@@ -340,15 +390,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:47 docs</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.nf</span>
-<span class="co">#&gt; -rw-rw-r-- 1 khench khench 139K Jul 12  2018 logo.svg</span></code></pre></div>
-<p>Arguably one of the most important flags for most programs is <code>-help</code>/<code>--help</code>. As you might guess this will print the documentation for most programs. Often this includes an example of the input the program expects, as well as all the options available.</p>
+<span class="co">#&gt; -rw-rw-r-- 1 khench khench 139K Jul 12  2018 logo.svg</span></code></pre>
+<p>Arguably one of the most important flags for most programs is <code>-help</code>/<code>--help</code>.
+As you might guess this will print the documentation for most programs.
+Often this includes an example of the input the program expects, as well as all the options available.</p>
 </div>
 <div id="more-commandsprograms" class="section level3">
 <h3><span class="header-section-number">3.5.2</span> More commands/programs</h3>
 <p>Apart from the most basic commands needed for <em>navigating</em> within the command line, I want to list the commands I personally use most frequently to actually <em>do stuff</em>:</p>
 <div id="operators" class="section level4">
 <h4><span class="header-section-number">3.5.2.1</span> Operators</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#     # comment code (stuff here is not executed)</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#     # comment code (stuff here is not executed)</span>
 <span class="op">&gt;</span>     # <span class="ex">redirect</span> output into file (overrides existing file)
 <span class="op">&gt;&gt;</span>    # <span class="ex">append</span> existing file (creates new file if not yet existent)
 <span class="op">1&gt;</span>    # <span class="ex">redirect</span> stdout to file (<span class="op">1&gt;&gt;</span> append)
@@ -357,7 +409,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&amp;&gt;</span>    # <span class="ex">redirect</span> both stdout and stderr to file
 <span class="kw">|</span>     # <span class="ex">the</span> <span class="st">&#39;pipe&#39;</span>: combine commands (THIS ONE IS IMPORTANT)
 <span class="ex">*</span>     # wildcard/joker: ls *.txt lists all files ending int <span class="st">&#39;.txt&#39;</span>
-<span class="ex">\ </span>    # linebreak: continue a command on a new line (to avoid horribly long commands)</code></pre></div>
+<span class="ex">\ </span>    # linebreak: continue a command on a new line (to avoid horribly long commands)</code></pre>
 <p>It is important to be aware of several <a href="http://tldp.org/LDP/abs/html/io-redirection.html"><em>channels</em></a> that are being used within bash:</p>
 <ul>
 <li><strong>stdin</strong>: usually what you type into the terminal</li>
@@ -368,26 +420,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="reading-text" class="section level4">
 <h4><span class="header-section-number">3.5.2.2</span> Reading Text</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">echo</span> (-e, <span class="st">&quot;\n&quot;</span>, <span class="st">&quot;\t&quot;</span> )     # <span class="ex">print</span> text to stdout, -e allows special chracters eg newline <span class="kw">&amp;</span> <span class="ex">tab</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">echo</span> (-e, <span class="st">&quot;\n&quot;</span>, <span class="st">&quot;\t&quot;</span> )     # <span class="ex">print</span> text to stdout, -e allows special chracters eg newline <span class="kw">&amp;</span> <span class="ex">tab</span>
 <span class="fu">cat</span>                        # read a text file and print to stdout
 <span class="fu">zcat</span>                       # read a gz-compressed text file and print to stdout
 <span class="fu">less</span> (<span class="st">&quot;/&quot;</span>)                 # <span class="bu">read</span> <span class="va">a</span> <span class="va">text</span> <span class="va">interactively</span> (<span class="va">type</span> <span class="st">&quot;/&quot;</span> <span class="va">to</span> <span class="va">search</span> <span class="va">for</span> <span class="va">a</span> <span class="va">pattern</span>)
 <span class="fu">head</span> (-n,  -n -1)          # <span class="ex">print</span> the first (-n) <span class="ex">lines</span> of a text file (-1: everything but the last (1) <span class="ex">lines</span>)
 <span class="fu">tail</span> (-n , -n +2)          # <span class="ex">print</span> the last (-n) <span class="ex">lines</span> of a text file (2+: everything starting at line (2))
 <span class="fu">grep</span> (-v, -w, -i, <span class="st">&#39;a\|b&#39;</span>)  # <span class="ex">search</span> for line (-v not) <span class="ex">containing</span> pattern within text file (a <span class="st">&quot;or&quot;</span> b)
-<span class="fu">wc</span> (-l, -c)                # <span class="ex">count</span> lines/chracters within text file</code></pre></div>
+<span class="fu">wc</span> (-l, -c)                # <span class="ex">count</span> lines/chracters within text file</code></pre>
 </div>
 <div id="text-manipulation-table-like-text-files" class="section level4">
 <h4><span class="header-section-number">3.5.2.3</span> Text manipulation (table like text files)</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">paste</span>         # combine columns 
-<span class="fu">sort</span>          # sort textfiles based on specific column</code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">paste</span>         # combine columns 
+<span class="fu">sort</span>          # sort textfiles based on specific column</code></pre>
 </div>
 <div id="text-manipulation-table-like-text-files-1" class="section level4">
 <h4><span class="header-section-number">3.5.2.4</span> Text manipulation (table like text files)</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sed</span>           # search and replace
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sed</span>           # search and replace
 <span class="fu">awk</span>           # power horse: filter rows, combines culumns, complex operations
-<span class="fu">cut</span> (-c, -f)  # <span class="ex">print</span> selective columns/charaters of each row</code></pre></div>
-<p>In my opinion especially <code>sed</code> &amp; <code>awk</code> are extremely powerful commands. I will give a few usage examples at the very <a href="#end">end</a> of this section.</p>
+<span class="fu">cut</span> (-c, -f)  # <span class="ex">print</span> selective columns/charaters of each row</code></pre>
+<p>In my opinion especially <code>sed</code> &amp; <code>awk</code> are extremely powerful commands.
+I will give a few usage examples at the very <a href="#end">end</a> of this section.</p>
 </div>
 <div id="text-editors" class="section level4">
 <h4><span class="header-section-number">3.5.2.5</span> Text editors</h4>
@@ -397,62 +450,66 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="https://www.nano-editor.org/">nano</a></li>
 <li><a href="https://www.vim.org/">vim</a></li>
 </ul>
-<p>All have their own <em>fan base</em>. It makes sense to learn how to use at least one of those - basically all will require to learn a handful of key-combinations.</p>
+<p>All have their own <em>fan base</em>.
+It makes sense to learn how to use at least one of those - basically all will require to learn a handful of key-combinations.</p>
 </div>
 <div id="organizing-files" class="section level4">
 <h4><span class="header-section-number">3.5.2.6</span> Organizing files</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span>              # create new directory
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span>              # create new directory
 <span class="fu">ln</span> (-s)            # <span class="ex">create</span> link to file/directory
 <span class="fu">rm</span> (-r)            # <span class="ex">delete</span> file/directory
 <span class="fu">mv</span>                 # move/rename file/directory
 <span class="fu">wget</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span>         # download file
 <span class="fu">gzip</span>               # compress file (file.txt -<span class="op">&gt;</span> file.txt.gz)
 <span class="fu">gunzip</span>             # decompress file (file.txt.gz -<span class="op">&gt;</span> file.txt)
-<span class="fu">tar</span> (-zcvf/-zxvf)  # <span class="kw">(</span><span class="ex">de</span><span class="kw">)</span><span class="ex">compress</span> folder (folder -<span class="op">&gt;</span> folder.tar.gz)</code></pre></div>
+<span class="fu">tar</span> (-zcvf/-zxvf)  # <span class="kw">(</span><span class="ex">de</span><span class="kw">)</span><span class="ex">compress</span> folder (folder -<span class="op">&gt;</span> folder.tar.gz)</code></pre>
 </div>
 <div id="organizing-software" class="section level4">
 <h4><span class="header-section-number">3.5.2.7</span> Organizing software</h4>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">which</span> (programm_name)  # <span class="ex">look</span> for the programm called <span class="st">&quot;programm_name&quot;</span> and print its path
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">which</span> (programm_name)  # <span class="ex">look</span> for the programm called <span class="st">&quot;programm_name&quot;</span> and print its path
 <span class="fu">bash</span> (script.sh)       # <span class="ex">run</span> <span class="st">&quot;script.sh&quot;</span> within own bash session 
-<span class="bu">source</span> (script.sh)     # <span class="ex">run</span> <span class="st">&quot;script.sh&quot;</span> within current bash session </code></pre></div>
+<span class="bu">source</span> (script.sh)     # <span class="ex">run</span> <span class="st">&quot;script.sh&quot;</span> within current bash session </code></pre>
 </div>
 </div>
 </div>
 <div id="loops" class="section level2">
 <h2><span class="header-section-number">3.6</span> Loops</h2>
-<p>Sometimes you need to do one thing multiple times. Or almost the same thing and just modify a single parameter. In this case you can use loops instead of manual copy-and-paste. There are two loops that you should know:</p>
+<p>Sometimes you need to do one thing multiple times.
+Or almost the same thing and just modify a single parameter.
+In this case you can use loops instead of manual copy-and-paste.
+There are two loops that you should know:</p>
 <ul>
 <li><code>for</code></li>
 <li><code>while</code></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in A B C<span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in A B C<span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
 <span class="co">#&gt; A</span>
 <span class="co">#&gt; B</span>
-<span class="co">#&gt; C</span></code></pre></div>
+<span class="co">#&gt; C</span></code></pre>
 <p>You and use bash commands to create the sequence to loop over by using <code>$(command)</code> (eg: <code>$(ls *.txt)</code>).</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">seq</span> -w 9 11<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;LG&quot;</span><span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">seq</span> -w 9 11<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;LG&quot;</span><span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
 <span class="co">#&gt; LG09</span>
 <span class="co">#&gt; LG10</span>
-<span class="co">#&gt; LG11</span></code></pre></div>
+<span class="co">#&gt; LG11</span></code></pre>
 <p>You can also loop over the content of a file:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
 <span class="co">#&gt; line1</span>
 <span class="co">#&gt; line2</span>
-<span class="co">#&gt; line3</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<span class="co">#&gt; line3</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
 <span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">cat</span> data/table1.txt<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>;  <span class="kw">done</span>
 <span class="co">#&gt; --- 1 ----</span>
 <span class="co">#&gt; line1</span>
 <span class="co">#&gt; --- 2 ----</span>
 <span class="co">#&gt; line2</span>
 <span class="co">#&gt; --- 3 ----</span>
-<span class="co">#&gt; line3</span></code></pre></div>
+<span class="co">#&gt; line3</span></code></pre>
 <p>Yet this might give unexpected results when your file contains whitespaces (looping over a table):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table2.txt
 <span class="co">#&gt; A    1</span>
 <span class="co">#&gt; B    2</span>
-<span class="co">#&gt; C    3</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<span class="co">#&gt; C    3</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
 <span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">cat</span> data/table2.txt<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>;  <span class="kw">done</span>
 <span class="co">#&gt; --- 1 ----</span>
 <span class="co">#&gt; A</span>
@@ -465,29 +522,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; --- 5 ----</span>
 <span class="co">#&gt; C</span>
 <span class="co">#&gt; --- 6 ----</span>
-<span class="co">#&gt; 3</span></code></pre></div>
+<span class="co">#&gt; 3</span></code></pre>
 <p>In this case you can switch to <code>while</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">Z=</span>1
 <span class="kw">while</span> <span class="bu">read</span> <span class="va">k</span>; <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;--- </span><span class="va">$Z</span><span class="st"> ----&quot;</span><span class="kw">;</span> <span class="bu">echo</span> <span class="va">$k</span><span class="kw">;</span> <span class="va">Z=$(($Z</span> + 1<span class="va">))</span>; <span class="kw">done</span> <span class="op">&lt;</span> <span class="ex">data/table2.txt</span>
 <span class="co">#&gt; --- 1 ----</span>
 <span class="co">#&gt; A 1</span>
 <span class="co">#&gt; --- 2 ----</span>
 <span class="co">#&gt; B 2</span>
 <span class="co">#&gt; --- 3 ----</span>
-<span class="co">#&gt; C 3</span></code></pre></div>
+<span class="co">#&gt; C 3</span></code></pre>
 <p>I use this pattern to read in parameters eg. for a function call within the loop:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">while</span> <span class="bu">read</span> <span class="va">k</span>; <span class="kw">do</span> 
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">while</span> <span class="bu">read</span> <span class="va">k</span>; <span class="kw">do</span> 
 <span class="va">P1=$(</span><span class="bu">echo</span> <span class="va">$k</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span><span class="va">)</span>;
 <span class="va">P2=$(</span><span class="bu">echo</span> <span class="va">$k</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span><span class="va">)</span>;
 <span class="bu">echo</span> <span class="st">&quot;parameter 1: </span><span class="va">${P1}</span><span class="st">, parameter 2: </span><span class="va">${P2}</span><span class="st">&quot;</span>
 <span class="kw">done</span> <span class="op">&lt;</span> <span class="ex">data/table2.txt</span>
 <span class="co">#&gt; parameter 1: A, parameter 2: 1</span>
 <span class="co">#&gt; parameter 1: B, parameter 2: 2</span>
-<span class="co">#&gt; parameter 1: C, parameter 2: 3</span></code></pre></div>
+<span class="co">#&gt; parameter 1: C, parameter 2: 3</span></code></pre>
 </div>
 <div id="installing-new-software" class="section level2">
 <h2><span class="header-section-number">3.7</span> Installing new software</h2>
-<p><a name="later"></a> <strong>This is hell!</strong> Installing new software is what can take up a huge portion of your time &amp; sanity. That is because most new programs that you want to install will not work straight <em>out of the box</em> but depend on 17 other programs, packages and libraries and all of course in specific versions winch contradict each other. These dependencies will then of course not work straight <em>out of the box</em> but depend on … (You get the idea - right?)</p>
+<p><a name="later"></a>
+<strong>This is hell!</strong>
+Installing new software is what can take up a huge portion of your time &amp; sanity.
+That is because most new programs that you want to install will not work straight <em>out of the box</em> but depend on 17 other programs, packages and libraries and all of course in specific versions winch contradict each other. These dependencies will then of course not work straight <em>out of the box</em> but depend on … (You get the idea - right?)</p>
 <p>Ok, I might exaggerate a little here but not much…</p>
 <p>Therefore, whenever possible try to use package managers. These are programs that try to keep track of your software and - well - to <em>manage</em> the whole dependency hell for you.</p>
 <p>Depending on your OS, there are different package managers available for you:</p>
@@ -496,43 +556,55 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Ubuntu: apt-get (comes with the OS)</li>
 <li>Universal: <a href="https://conda.io/en/latest/">conda</a>/<a href="https://bioconda.github.io/">bioconda</a></li>
 </ul>
-<p>(Conda &amp; especially bioconda are generally pretty useful, but lately they seem a little <em>buggy</em>. That is, lately the take ages to load and their ‘catalog’ might not contain the <em>bleding edge</em> version of the program you’re looking for.)</p>
-<p>Yet, sometimes the program you need is not available using package managers. In those cases you will have to bite the bullet and install the manually. How to do this exactly varies case by case, but a common theme to <em>compile a program from source</em> is the following:</p>
+<p>(Conda &amp; especially bioconda are generally pretty useful, but lately they seem a little <em>buggy</em>.
+That is, lately the take ages to load and their ‘catalog’ might not contain the <em>bleding edge</em> version of the program you’re looking for.)</p>
+<p>Yet, sometimes the program you need is not available using package managers.
+In those cases you will have to bite the bullet and install the manually.
+How to do this exactly varies case by case, but a common theme to <em>compile a program from source</em> is the following:</p>
 <ul>
 <li><code>./configure</code></li>
 <li><code>make</code></li>
 <li><code>make install</code></li>
 </ul>
 <p>One example here would be the installation of <a href="http://catchenlab.life.illinois.edu/stacks/manual/#install">Stacks</a>:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">wget</span> http://catchenlab.life.illinois.edu/stacks/source/stacks-2.3d.tar.gz <span class="co"># downloading the software</span>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">wget</span> http://catchenlab.life.illinois.edu/stacks/source/stacks-2.3d.tar.gz <span class="co"># downloading the software</span>
 <span class="fu">tar</span> xfvz stacks-2.3d.tar.gz                                               # decompressing the folder
 <span class="bu">cd</span> stacks-2.3d                                                            # navigate into the folder
 <span class="ex">./configure</span>
 <span class="fu">make</span>
-<span class="fu">sudo</span> make install</code></pre></div>
-<p>You might notice that here we used <code>sudo make install</code> instead of <code>make install</code>. This means that to execute this command we need admin rights - no problem on your laptop, but on the cluster this is a no-go. We’ll talk about this later.</p>
+<span class="fu">sudo</span> make install</code></pre>
+<p>You might notice that here we used <code>sudo make install</code> instead of <code>make install</code>.
+This means that to execute this command we need admin rights - no problem on your laptop, but on the cluster this is a no-go.
+We’ll talk about this later.</p>
 <p>The (naive) way I like to picture the installation is by comparing it to building IKEA furniture:</p>
 <ul>
 <li><code>./configure</code>: Your computer <em>reads the IKEA manual</em> and checks that is has all the tools needed to build the piece</li>
 <li><code>make</code>: Your computer unpacks the pieces and <em>puts the closet together</em> (it is now standing in your workshop)</li>
 <li><code>make install</code>: You put the closet into the bedroom (which is where you will be looking for your <em>cloths</em>)</li>
 </ul>
-<p>The point with <code>make install</code> is that it puts the compiled software into one of the standard folders within your <code>$PATH</code> so that the computer can find it. But since these folders are quite important the average user is not allowed to modify them - you need <em>admin rights</em> (<code>sudo ...</code>,<em>“become root”</em>) to do this.</p>
+<p>The point with <code>make install</code> is that it puts the compiled software into one of the standard folders within your <code>$PATH</code> so that the computer can find it.
+But since these folders are quite important the average user is not allowed to modify them - you need <em>admin rights</em> (<code>sudo ...</code>,<em>“become root”</em>) to do this.</p>
 <p>As mentioned before , this is possible if you own the computer, but on the cluster this will not be the case.</p>
 <p>The work-around is to create a custom folder that you <em>can acess</em> and to collect the manually installed software there instead.</p>
-<p>Lets say your software folder is <code>/home/khench/software</code>. This would change your installation procedure to the following:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">./configure</span> --prefix=<span class="st">&quot;/home/khench/software&quot;</span>
+<p>Lets say your software folder is <code>/home/khench/software</code>.
+This would change your installation procedure to the following:</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">./configure</span> --prefix=<span class="st">&quot;/home/khench/software&quot;</span>
 <span class="fu">make</span>
-<span class="fu">make</span> install <span class="co"># no &#39;sudo&#39; needed since I &#39;own&#39; the target folder</span></code></pre></div>
-<p>This will place the compiled software into <code>/home/khench/software</code> or <code>/home/khench/software/bin</code>. Our problem is only half solved at this point, since the computer still does not find the software. Assuming the program is called <code>new_program</code>, running <code>which new_program</code> will still return a blank line at this point.</p>
-<p>Therefore, we need to add <code>/home/khench/software</code> &amp; <code>/home/khench/software/bin</code> to our <code>$PATH</code>. To do this we add the following line to our bash start-up script (<code>$HOME/.bashrc</code> or <code>$HOME/.bash_profile</code>):</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">PATH=$PATH</span>:/home/khench/software:/home/khench/software/bin</code></pre></div>
-<p>We append the existing <code>$PATH</code> with our two custom directories. Note that the start-up script is a <em>start-up</em> script - the changes will come into effect once we restart the terminal but they will not effect the running session. To update the current session we need to run the start-up script manually (<code>source $HOME/.bashrc</code> or <code>source $HOME/.bash_profile</code>).</p>
+<span class="fu">make</span> install <span class="co"># no &#39;sudo&#39; needed since I &#39;own&#39; the target folder</span></code></pre>
+<p>This will place the compiled software into <code>/home/khench/software</code> or <code>/home/khench/software/bin</code>.
+Our problem is only half solved at this point, since the computer still does not find the software.
+Assuming the program is called <code>new_program</code>, running <code>which new_program</code> will still return a blank line at this point.</p>
+<p>Therefore, we need to add <code>/home/khench/software</code> &amp; <code>/home/khench/software/bin</code> to our <code>$PATH</code>.
+To do this we add the following line to our bash start-up script (<code>$HOME/.bashrc</code> or <code>$HOME/.bash_profile</code>):</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">PATH=$PATH</span>:/home/khench/software:/home/khench/software/bin</code></pre>
+<p>We append the existing <code>$PATH</code> with our two custom directories.
+Note that the start-up script is a <em>start-up</em> script - the changes will come into effect once we restart the terminal but they will not effect the running session.
+To update the current session we need to run the start-up script manually (<code>source $HOME/.bashrc</code> or <code>source $HOME/.bash_profile</code>).</p>
 <p>At this point the following should work:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">which</span> new_program
-<span class="co">#&gt; /home/khench/software/bin/new_program</span></code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">which</span> new_program
+<span class="co">#&gt; /home/khench/software/bin/new_program</span></code></pre>
 <p>I usually like to double check that the program will open properly by calling the program help after installing.</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">new_program</span> -help
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">new_program</span> -help
 <span class="co">#&gt; Program: new_program (Program for demonstation purposes)</span>
 <span class="co">#&gt; Version: 0.1.2</span>
 <span class="co">#&gt; </span>
@@ -540,29 +612,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Options: -option1        program option 1</span>
 <span class="co">#&gt;          -option2        program option 1</span>
-<span class="co">#&gt;          -help           display this help text</span></code></pre></div>
+<span class="co">#&gt;          -help           display this help text</span></code></pre>
 <p>If this does not produce an error but displays the help text, the program should generally work.</p>
 <hr />
 </div>
 <div id="appendix-sed-and-awk-examples" class="section level2">
 <h2><span class="header-section-number">3.8</span> Appendix (<code>sed</code> and <code>awk</code> examples)</h2>
 <p><a name="end"></a></p>
-<p>A large portion of bioinformatics is dealing with plain text files. The programs <code>sed</code> and <code>awk</code> are very powerful for this and can really help you working efficiently. I sure you can do way more using these two commands if you dig into their manuals, but here is how I usually use them:</p>
+<p>A large portion of bioinformatics is dealing with plain text files.
+The programs <code>sed</code> and <code>awk</code> are very powerful for this and can really help you working efficiently.
+I sure you can do way more using these two commands if you dig into their manuals, but here is how I usually use them:</p>
 <div id="sed" class="section level3">
 <h3><span class="header-section-number">3.8.1</span> <code>sed</code></h3>
-<p>This is my go-to <em>search &amp; replace</em> function. I use it to reformat sample names from genotype files (<sampleid><species><population> -&gt; <sampleid>), reformat variable within a bash pipeline, transform whitespaces (“” -&gt; “”; &quot; &quot; -&gt; “”) and similar tasks:</p>
+<p>This is my go-to <em>search &amp; replace</em> function.
+I use it to reformat sample names from genotype files (<sampleid><species><population> -&gt; <sampleid>), reformat variable within a bash pipeline, transform whitespaces (“ -&gt;”“;” &quot; -&gt; &quot;) and similar tasks:</p>
 <div id="basics" class="section level4">
 <h4><span class="header-section-number">3.8.1.1</span> Basics</h4>
-<p>The basic structure looks like <code>sed 's/pattern/replace/g' &lt;input file&gt;</code>. Here the <code>s/</code> activates the <em>search &amp; replace mode</em>, the <code>/pattern/</code> is the old content (<em>search</em>), the <code>/replace/</code> is the new content (<em>replace</em>) and the <code>/g</code> indicates that you want to replace <em>all occurences</em> (<em>globally</em>) of the patterns within every line of the text. In contrast <code>sed 's/pattern/replace/'</code> would only replace the first occurrence of the pattern within each line.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
+<p>The basic structure looks like <code>sed 's/pattern/replace/g' &lt;input file&gt;</code>.
+Here the <code>s/</code> activates the <em>search &amp; replace mode</em>, the <code>/pattern/</code> is the old content (<em>search</em>), the <code>/replace/</code> is the new content (<em>replace</em>) and the <code>/g</code> indicates that you want to replace <em>all occurences</em> (<em>globally</em>) of the patterns within every line of the text.
+In contrast <code>sed 's/pattern/replace/'</code> would only replace the first occurrence of the pattern within each line.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> data/table1.txt
 <span class="co">#&gt; line1</span>
 <span class="co">#&gt; line2</span>
-<span class="co">#&gt; line3</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/line/fancy new content\t/g&#39;</span> data/table1.txt
+<span class="co">#&gt; line3</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/line/fancy new content\t/g&#39;</span> data/table1.txt
 <span class="co">#&gt; fancy new content    1</span>
 <span class="co">#&gt; fancy new content    2</span>
-<span class="co">#&gt; fancy new content    3</span></code></pre></div>
-<p>In cases where you need to replace a slash (“/”) you can use a different delimiter. The following commands are equivalent and I believe there are many more options:</p>
+<span class="co">#&gt; fancy new content    3</span></code></pre>
+<p>In cases where you need to replace a slash (“/”) you can use a different delimiter.
+The following commands are equivalent and I believe there are many more options:</p>
 <ul>
 <li><code>s/pattern/replace/g</code></li>
 <li><code>s=pattern=replace=g</code></li>
@@ -570,12 +648,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>You can also replace several patterns in one command (one after the other) by separating them with a semicolon (<code>sed 's/pattern1/replace1/g; s/pattern2/replace2/g'</code>).</p>
 <p>When using <code>sed</code> in a bash pipeline is looks like this:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;sequence1:\tATGCATAGACATA&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;sequence1:\tATGCATAGACATA&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">sed</span> <span class="st">&#39;s/^/&gt;/; s/:\t/\n/&#39;</span> <span class="kw">|</span>
 <span class="fu">gzip</span> <span class="op">&gt;</span> data/test.fa.gz
 
 <span class="fu">zcat</span> data/test.fa.gz <span class="kw">&amp;</span> <span class="fu">rm</span> data/test.fa.gz
-<span class="co">#&gt; gzip: data/test.fa.gz: No such file or directory</span></code></pre></div>
+<span class="co">#&gt; &gt;sequence1</span>
+<span class="co">#&gt; ATGCATAGACATA</span></code></pre>
 <p>Generally (also eg. when using <code>grep</code>), there are two important special characters:</p>
 <ul>
 <li><code>^</code>: the <em>start</em> of a line</li>
@@ -585,127 +664,147 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="wildcards" class="section level4">
 <h4><span class="header-section-number">3.8.1.2</span> Wildcards</h4>
-<p>So far we have <em>replaced</em> patterns in a destructive manner. By this I mean that after using <code>sed</code> the pattern is <em>replaced</em> and thus gone. But sometimes you don’t want to <em>delete</em> the pattern you are looking for but to merely <em>modify</em> it. Of course you could argue that all you need to do is to write eg:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;pattern1234 &amp; pattern3412 &amp; pattern1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<p>So far we have <em>replaced</em> patterns in a destructive manner.
+By this I mean that after using <code>sed</code> the pattern is <em>replaced</em> and thus gone.
+But sometimes you don’t want to <em>delete</em> the pattern you are looking for but to merely <em>modify</em> it.
+Of course you could argue that all you need to do is to write eg:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;pattern1234 &amp; pattern3412 &amp; pattern1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">sed</span> <span class="st">&#39;s/pattern/pattern replace/g&#39;</span>
-<span class="co">#&gt; pattern replace1234 &amp; pattern replace3412 &amp; pattern replace1643</span></code></pre></div>
-<p>But this only works when we know <em>exactly</em> what we are looking for. To be more precise so far we did not really do <code>s/pattern/replace/g</code> but more something like <code>s/name/replace/g</code>. By this I mean that we searched for an exact string (what I call a <em>name</em>), while a <em>pattern</em> can be more ambiguous by using <em>wildcards</em> and <em>regular expressions</em> (<code>.*</code>,<code>[123]</code> ,<code>[0-9]</code>, <code>[0-9]*</code>, <code>[A-Z]*</code>,<code>[a-z]*</code>):</p>
+<span class="co">#&gt; pattern replace1234 &amp; pattern replace3412 &amp; pattern replace1643</span></code></pre>
+<p>But this only works when we know <em>exactly</em> what we are looking for.
+To be more precise so far we did not really do <code>s/pattern/replace/g</code> but more something like <code>s/name/replace/g</code>.
+By this I mean that we searched for an exact string (what I call a <em>name</em>), while a <em>pattern</em> can be more ambiguous by using <em>wildcards</em> and <em>regular expressions</em> (<code>.*</code>,<code>[123]</code> ,<code>[0-9]</code>, <code>[0-9]*</code>, <code>[A-Z]*</code>,<code>[a-z]*</code>):</p>
 <p>We could for example replace all (lowercase) words followed the combination of numbers starting with “1”:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">sed</span> <span class="st">&#39;s/[a-z][a-z]*1[0-9]*/---/g&#39;</span>
-<span class="co">#&gt; --- &amp; name3412 &amp; --- &amp; strinG1643</span></code></pre></div>
+<span class="co">#&gt; --- &amp; name3412 &amp; --- &amp; strinG1643</span></code></pre>
 </div>
 <div id="modifying-matches" class="section level4">
 <h4><span class="header-section-number">3.8.1.3</span> Modifying matches</h4>
-<p>Now in this case, we <em>don’t</em> know the exact string that we are going to replace - we only know the <em>pattern</em>. So if we want to modify but avoid deleting it we need a different method to capture the detected pattern. To do this we fragment the search pattern using <code>\(pattern\)</code> or <code>\(pat\)\(tern\)</code>. The patterns declared like <code>s/\(pattern\)/</code> will still be found just like in <code>s/pattern/</code>, but now we can access the matched pattern using <code>\1</code> (<em>pattern</em>) or <code>\1</code> (<em>pat</em>) &amp; <code>\2</code> (<em>tern</em>) in the replace section:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<p>Now in this case, we <em>don’t</em> know the exact string that we are going to replace - we only know the <em>pattern</em>.
+So if we want to modify but avoid deleting it we need a different method to capture the detected pattern.
+To do this we fragment the search pattern using <code>\(pattern\)</code> or <code>\(pat\)\(tern\)</code>.
+The patterns declared like <code>s/\(pattern\)/</code> will still be found just like in <code>s/pattern/</code>, but now we can access the matched pattern using <code>\1</code> (<em>pattern</em>) or <code>\1</code> (<em>pat</em>) &amp; <code>\2</code> (<em>tern</em>) in the replace section:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;word1234 &amp; name3412 &amp; string1643 &amp; strinG1643&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">sed</span> <span class="st">&#39;s/\([a-z][a-z]*\)1\([0-9]*\)/\1--&gt;1\2/g&#39;</span>
-<span class="co">#&gt; word--&gt;1234 &amp; name3412 &amp; string--&gt;1643 &amp; strinG1643</span></code></pre></div>
+<span class="co">#&gt; word--&gt;1234 &amp; name3412 &amp; string--&gt;1643 &amp; strinG1643</span></code></pre>
 </div>
 </div>
 <div id="awk" class="section level3">
 <h3><span class="header-section-number">3.8.2</span> <code>awk</code></h3>
-<p>I feel like <code>awk</code> is more like its own programming language than just a unix command - it can be super useful. I usually use it when <em>“I need to work with columns”</em> within a bash pipeline. This could be eg. add in two columns or add a string to a column based on a condition. I’m afraid this is almost an insult to the program because I sure you can do waaay cooler things that this - alas, so far I could not get past <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a>.</p>
+<p>I feel like <code>awk</code> is more like its own programming language than just a unix command - it can be super useful.
+I usually use it when <em>“I need to work with columns”</em> within a bash pipeline.
+This could be eg. add in two columns or add a string to a column based on a condition.
+I’m afraid this is almost an insult to the program because I sure you can do waaay cooler things that this - alas, so far I could not get past <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a>.</p>
 <div id="basics-1" class="section level4">
 <h4><span class="header-section-number">3.8.2.1</span> Basics</h4>
 <p>The basic structure of <code>awk</code> looks like:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">awk</span> <span class="op">&lt;</span>definig variables<span class="op">&gt;</span> <span class="st">&#39;condition {action} condition {action}...&#39;</span> input_file</code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">awk</span> <span class="op">&lt;</span>definig variables<span class="op">&gt;</span> <span class="st">&#39;condition {action} condition {action}...&#39;</span> input_file</code></pre>
 <p>The most simple (and useless) version is to emulate <code>cat</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print}&#39;</span> data/table2.txt
 <span class="co">#&gt; A    1</span>
 <span class="co">#&gt; B    2</span>
-<span class="co">#&gt; C    3</span></code></pre></div>
-<p>The first thing to know about <code>awk</code> is how to address the individual columns. By default <code>awk</code> uses any whitespace (<code>&quot; &quot;</code> &amp; <code>&quot;\t&quot;</code>) as column delimiter. <code>$0</code> is the whole line, <code>$1</code> is the first column, <code>$2</code> is the second …</p>
+<span class="co">#&gt; C    3</span></code></pre>
+<p>The first thing to know about <code>awk</code> is how to address the individual columns.
+By default <code>awk</code> uses any whitespace (<code>&quot; &quot;</code> &amp; <code>&quot;\t&quot;</code>) as column delimiter.
+<code>$0</code> is the whole line, <code>$1</code> is the first column, <code>$2</code> is the second …</p>
 <p>Reading a <code>&quot;\t&quot;</code> delimited table:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span> data/table2.txt
 <span class="co">#&gt; 1</span>
 <span class="co">#&gt; 2</span>
-<span class="co">#&gt; 3</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2&quot;-input-&quot;$1}&#39;</span> data/table2.txt
+<span class="co">#&gt; 3</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;{print $2&quot;-input-&quot;$1}&#39;</span> data/table2.txt
 <span class="co">#&gt; 1-input-A</span>
 <span class="co">#&gt; 2-input-B</span>
-<span class="co">#&gt; 3-input-C</span></code></pre></div>
+<span class="co">#&gt; 3-input-C</span></code></pre>
 <p>Space <code>&quot; &quot;</code> is also delimiter:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/^/new_first_column /&#39;</span> data/table2.txt <span class="kw">|</span> <span class="kw">\</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sed</span> <span class="st">&#39;s/^/new_first_column /&#39;</span> data/table2.txt <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> <span class="st">&#39;{print $2&quot;-input-&quot;$1}&#39;</span>
 <span class="co">#&gt; A-input-new_first_column</span>
 <span class="co">#&gt; B-input-new_first_column</span>
-<span class="co">#&gt; C-input-new_first_column</span></code></pre></div>
+<span class="co">#&gt; C-input-new_first_column</span></code></pre>
 </div>
 <div id="conditions" class="section level4">
 <h4><span class="header-section-number">3.8.2.2</span> Conditions</h4>
 <p>The second thing to know is how to add a condition to a action:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 {print}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 {print}&#39;</span> data/table2.txt
 <span class="co">#&gt; B    2</span>
-<span class="co">#&gt; C    3</span></code></pre></div>
+<span class="co">#&gt; C    3</span></code></pre>
 <p>Combining conditions with logical <em>and</em>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 &amp;&amp; $1 == &quot;C&quot; {print}&#39;</span> data/table2.txt
-<span class="co">#&gt; C    3</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 &amp;&amp; $1 == &quot;C&quot; {print}&#39;</span> data/table2.txt
+<span class="co">#&gt; C    3</span></code></pre>
 <p>Combining conditions with logical <em>or</em>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 || $1 == &quot;A&quot; {print}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &gt;= 2 || $1 == &quot;A&quot; {print}&#39;</span> data/table2.txt
 <span class="co">#&gt; A    1</span>
 <span class="co">#&gt; B    2</span>
-<span class="co">#&gt; C    3</span></code></pre></div>
+<span class="co">#&gt; C    3</span></code></pre>
 <p>Different actions for different cases:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $1&quot;\t&quot;$2*-1} $2 &gt;= 2 {print $1&quot;\t&quot;$2*10}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $1&quot;\t&quot;$2*-1} $2 &gt;= 2 {print $1&quot;\t&quot;$2*10}&#39;</span> data/table2.txt
 <span class="co">#&gt; A    -1</span>
 <span class="co">#&gt; B    20</span>
-<span class="co">#&gt; C    30</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $0&quot;\tFAIL&quot;} $2 &gt;= 2 {print $0&quot;\tPASS&quot;}&#39;</span> data/table2.txt
+<span class="co">#&gt; C    30</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> <span class="st">&#39;$2 &lt; 2 {print $0&quot;\tFAIL&quot;} $2 &gt;= 2 {print $0&quot;\tPASS&quot;}&#39;</span> data/table2.txt
 <span class="co">#&gt; A    1   FAIL</span>
 <span class="co">#&gt; B    2   PASS</span>
-<span class="co">#&gt; C    3   PASS</span></code></pre></div>
+<span class="co">#&gt; C    3   PASS</span></code></pre>
 <p>In <code>awk</code>, <code>&quot;NR&quot;</code> stands for the <em>row number</em> and <code>&quot;NF&quot;</code> stands for the <em>numbers of fields</em> (columns) within that row:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;1\n1 2\n1 2 3\n1 2 3 4\n1 2 3&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -e <span class="st">&quot;1\n1 2\n1 2 3\n1 2 3 4\n1 2 3&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> <span class="st">&#39;NR &gt; 2 {print NF}&#39;</span>
 <span class="co">#&gt; 3</span>
 <span class="co">#&gt; 4</span>
-<span class="co">#&gt; 3</span></code></pre></div>
+<span class="co">#&gt; 3</span></code></pre>
 </div>
 <div id="variables-1" class="section level4">
 <h4><span class="header-section-number">3.8.2.3</span> Variables</h4>
-<p>One to be aware of is the use of variables within <code>awk</code>. You might have noticed that the columns within <code>awk</code> look like bash variables ( eg. <code>$1</code>). But if you try to use a bash variable within <code>awk</code> this will fail:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<p>One to be aware of is the use of variables within <code>awk</code>.
+You might have noticed that the columns within <code>awk</code> look like bash variables ( eg. <code>$1</code>).
+But if you try to use a bash variable within <code>awk</code> this will fail:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> <span class="st">&#39;{print $HOME&quot;--&quot;$1}&#39;</span>
-<span class="co">#&gt; test--test</span></code></pre></div>
+<span class="co">#&gt; test--test</span></code></pre>
 <p>This is not what we expected - that would have been:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">--test&quot;</span>
-<span class="co">#&gt; /home/khench--test</span></code></pre></div>
-<p>The issue here is the use of different quotation marks (single <code>''</code> vs. double <code>&quot;&quot;</code>). In short - the <code>awk</code> command needs to be wrapped in single quotes, but within these, bash variables don’t work:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&#39;$HOME&#39;</span>
-<span class="co">#&gt; $HOME</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">--test&quot;</span>
+<span class="co">#&gt; /home/khench--test</span></code></pre>
+<p>The issue here is the use of different quotation marks (single <code>''</code> vs. double <code>&quot;&quot;</code>).
+In short - the <code>awk</code> command needs to be wrapped in single quotes, but within these, bash variables don’t work:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&#39;$HOME&#39;</span>
+<span class="co">#&gt; $HOME</span></code></pre>
 <p>vs.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">&quot;</span>
-<span class="co">#&gt; /home/khench</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">&quot;</span>
+<span class="co">#&gt; /home/khench</span></code></pre>
 <p>To get around this we can pass the variable to <code>awk</code> <em>before</em> the use of the single quotes:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> -v h=<span class="va">$HOME</span> <span class="st">&#39;{print h&quot;--&quot;$1}&#39;</span>
-<span class="co">#&gt; /home/khench--test</span></code></pre></div>
+<span class="co">#&gt; /home/khench--test</span></code></pre>
 <p>Basically you can store anything within a <code>awk</code> variable and use it within <code>awk</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> -v x=9 -v y=<span class="st">&quot;bla&quot;</span> <span class="st">&#39;$2 &lt; 2 {print $0&quot;\t&quot;x} $2 &gt;= 2 {print $0&quot;\t&quot;y}&#39;</span> data/table2.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">awk</span> -v x=9 -v y=<span class="st">&quot;bla&quot;</span> <span class="st">&#39;$2 &lt; 2 {print $0&quot;\t&quot;x} $2 &gt;= 2 {print $0&quot;\t&quot;y}&#39;</span> data/table2.txt
 <span class="co">#&gt; A    1   9</span>
 <span class="co">#&gt; B    2   bla</span>
-<span class="co">#&gt; C    3   bla</span></code></pre></div>
-<p>One special <code>awk</code> variable is “OFS”. This is the field delimiter and it can be set like any other variable. The following two examples are equivalent (but one is way easier to read/write).</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="co">#&gt; C    3   bla</span></code></pre>
+<p>One special <code>awk</code> variable is “OFS”.
+This is the field delimiter and it can be set like any other variable.
+The following two examples are equivalent (but one is way easier to read/write).</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> <span class="st">&#39;{print $1&quot;\t&quot;$1&quot;_second_column\tmore_content\t&quot;$1&quot;_last_column&quot;}&#39;</span>
-<span class="co">#&gt; A    A_second_column more_content    A_last_column</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
+<span class="co">#&gt; A    A_second_column more_content    A_last_column</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A&quot;</span> <span class="kw">|</span> <span class="kw">\</span>
 <span class="fu">awk</span> -v OFS=<span class="st">&quot;\t&quot;</span> <span class="st">&#39;{print $1,$1&quot;_second_column&quot;,&quot;more_content&quot;,$1&quot;_last_column&quot;}&#39;</span>
-<span class="co">#&gt; A    A_second_column more_content    A_last_column</span></code></pre></div>
+<span class="co">#&gt; A    A_second_column more_content    A_last_column</span></code></pre>
 </div>
 </div>
 <div id="bash-one-liners" class="section level3">
 <h3><span class="header-section-number">3.8.3</span> Bash one-liners</h3>
-<p>By combining the programs <code>awk</code>, <code>cat</code>, <code>cut</code>, <code>grep</code> and <code>sed</code> using the pipe <code>|</code> you can build quite concise and specific commands (<em>one-liners</em>) to deal with properly formatted data. Over the years I collected some combinations that I regularly use to deal with different types of bioinformatic data. You can find them together with some more useful bash examples within the <code>oneliners.md</code> file in the <a href="https://github.com/k-hench/getting_stuff_done/blob/master/oneliners.md">source repository of this document</a>.</p>
+<p>By combining the programs <code>awk</code>, <code>cat</code>, <code>cut</code>, <code>grep</code> and <code>sed</code> using the pipe <code>|</code> you can build quite concise and specific commands (<em>one-liners</em>) to deal with properly formatted data.
+Over the years I collected some combinations that I regularly use to deal with different types of bioinformatic data.
+You can find them together with some more useful bash examples within the <code>oneliners.md</code> file in the <a href="https://github.com/k-hench/getting_stuff_done/blob/master/oneliners.md">source repository of this document</a>.</p>
 <hr />
 
-<pre><code>## ── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.1.0.9000     ✔ purrr   0.3.0     
 ## ✔ tibble  2.0.1          ✔ dplyr   0.7.8     
 ## ✔ tidyr   0.8.2          ✔ stringr 1.4.0     
 ## ✔ readr   1.3.1          ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 </div>

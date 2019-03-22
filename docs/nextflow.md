@@ -131,7 +131,7 @@ At the start of your pipeline you will need to define some channels like this:
 
 <div class="sourceCode">
 <pre class="sourceCode">
-<code class="sourceCode"><span class="hl kwa">Channel</span>.from<span class="hl opt">(</span> <span class="hl str">&apos;A&apos;</span> <span class="hl str">&apos;B&apos;</span> <span class="hl str">&apos;C&apos;</span> <span class="hl opt">)</span>
+<code class="sourceCode"><span class="hl kwa">Channel</span>.from<span class="hl opt">(</span> <span class="hl str">&apos;A&apos;</span><span class="hl opt">,</span> <span class="hl str">&apos;B&apos;</span><span class="hl opt">,</span> <span class="hl str">&apos;C&apos;</span> <span class="hl opt">)</span>
 <span class="hl kwa">Channel</span>.from<span class="hl opt">( (</span><span class="hl str">&apos;01&apos;</span>..<span class="hl str">&apos;09&apos;</span><span class="hl opt">) + (</span><span class="hl str">&apos;10&apos;</span>..<span class="hl str">&apos;19&apos;</span><span class="hl opt">))</span>
 <span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;genotypes.vcf.gz&apos;</span> <span class="hl opt">)</span>
 <span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;sequencing_data/*.fq.gz&apos;</span> <span class="hl opt">)</span>

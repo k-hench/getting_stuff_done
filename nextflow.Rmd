@@ -138,7 +138,7 @@ You feed a channel into a process in the *input* section, while the *output* sec
 At the start of your pipeline you will need to define some channels like this:
 
 ```{r , eval = FALSE, hilang = 'nf'}
-Channel.from( 'A' 'B' 'C' )
+Channel.from( 'A', 'B', 'C' )
 Channel.from( ('01'..'09') + ('10'..'19'))
 Channel.fromPath( 'genotypes.vcf.gz' )
 Channel.fromPath( 'sequencing_data/*.fq.gz' )

@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-13">
+<meta name="date" content="2019-03-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -195,13 +221,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="nextflow" class="section level1">
 <h1><span class="header-section-number">7</span> Nextflow</h1>
-<p>This is awesome! <a href="https://www.nextflow.io/index.html"><em>Nextflow</em></a> provides a neat way to develop and structure the <em>entire workflow</em> of you analysis in a <em>single script</em>. It makes a huge difference for one aspect I mentioned in Chapter 2:</p>
-<p><em>“Apart from the scripts you ran, people need to know what to run when and where.”</em> <em>“At least for me, it is usually quite hard even to recall the exact order of my own scripts needed for a complex data analysis […] when I come back half a year later[…].”</em></p>
-<p>Apart from this using Nextflow can save you <em>a lot</em> of mindless typing when doing different versions of a similar analysis. The drawback is that you need to get a basic Idea of yet another language (Nextflow is based on <a href="https://en.wikipedia.org/wiki/Apache_Groovy"><em>groovy</em></a>).</p>
-<p>But the Nextflow <a href="https://www.nextflow.io/docs/latest/index.html">documentation</a> is pretty good. Reading through the manual took me quite some time but the time I saved since then more than compensated pretty quickly. Also, if you have questions beyond what is covered in the manual, the help provided on <a href="https://gitter.im/nextflow-io/nextflow"><em>gitter</em></a> is amazing. So far any question I asked there was solved within about 30 min! (Of course it important not to spam the people there with unnecessary questions - so first: <em>RTFM</em>)</p>
+<p>This is awesome!
+<a href="https://www.nextflow.io/index.html"><em>Nextflow</em></a> provides a neat way to develop and structure the <em>entire workflow</em> of you analysis in a <em>single script</em>.
+It makes a huge difference for one aspect I mentioned in Chapter 2:</p>
+<p><em>“Apart from the scripts you ran, people need to know what to run when and where.”</em>
+<em>“At least for me, it is usually quite hard even to recall the exact order of my own scripts needed for a complex data analysis […] when I come back half a year later[…].”</em></p>
+<p>Apart from this using Nextflow can save you <em>a lot</em> of mindless typing when doing different versions of a similar analysis.
+The drawback is that you need to get a basic Idea of yet another language (Nextflow is based on <a href="https://en.wikipedia.org/wiki/Apache_Groovy"><em>groovy</em></a>).</p>
+<p>But the Nextflow <a href="https://www.nextflow.io/docs/latest/index.html">documentation</a> is pretty good.
+Reading through the manual took me quite some time but the time I saved since then more than compensated pretty quickly.
+Also, if you have questions beyond what is covered in the manual, the help provided on <a href="https://gitter.im/nextflow-io/nextflow"><em>gitter</em></a> is amazing.
+So far any question I asked there was solved within about 30 min!
+(Of course it important not to spam the people there with unnecessary questions - so first: <em>RTFM</em>)</p>
 <div id="basics-2" class="section level2">
 <h2><span class="header-section-number">7.1</span> Basics</h2>
-<p>The basic Idea of Nextflow is that it will connect different task that you do within <em>bash</em> (or any other scripting language) in an organized but dynamic manner. It then manages your analysis for you (waiting for job <em>A</em> to finish before submitting job <em>B</em>) and can manage quite a lot of different cluster scheduling systems. You can use it from the very beginning of your project since it is able to resume a previous run: So if you first implement <em>job A</em> and then (while <em>job A</em>) is running write <em>job B</em> you can simply update your nextflow script. If you then resume the run, nextflow will remember that it already ran <em>job A</em> and start with <em>job B</em> straight away. This is also great if you later need to change a <em>middle part</em> of your analysis - nextflow will basically only rerun what is needed downstream from the the point that you changed. This is super convenient.</p>
+<p>The basic Idea of Nextflow is that it will connect different task that you do within <em>bash</em> (or any other scripting language) in an organized but dynamic manner.
+It then manages your analysis for you (waiting for job <em>A</em> to finish before submitting job <em>B</em>) and can manage quite a lot of different cluster scheduling systems.
+You can use it from the very beginning of your project since it is able to resume a previous run:
+So if you first implement <em>job A</em> and then (while <em>job A</em>) is running write <em>job B</em> you can simply update your nextflow script.
+If you then resume the run, nextflow will remember that it already ran <em>job A</em> and start with <em>job B</em> straight away.
+This is also great if you later need to change a <em>middle part</em> of your analysis - nextflow will basically only rerun what is needed downstream from the the point that you changed.
+This is super convenient.</p>
 <p>To run a nextflow pipeline I usually prepare two scripts:</p>
 <ul>
 <li><code>analysis.nf</code>: this is the actual pipeline</li>
@@ -209,7 +249,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="the-pipeline-script" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> The pipeline script</h3>
-<p>The <code>analysis.nf</code> is where you put together you analysis. For me, this means that it is basically a series interconnected <em>bash</em> snippets.</p>
+<p>The <code>analysis.nf</code> is where you put together you analysis.
+For me, this means that it is basically a series interconnected <em>bash</em> snippets.</p>
 <p>The nextflow script is build from three types of building blocks:</p>
 <ul>
 <li><em>Processes</em>: the <em>bash</em> snippets that contain the code I would otherwise type into the terminal</li>
@@ -260,18 +301,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </code>
 </pre>
 </div>
-<p>In the <strong>config section</strong> we can assign the process to a label (to use specific config settings defined in <code>nextflow.config</code>). Here we can also specify if we want to collect the output of the script outside of the <code>work</code> folder which is used by nextflow for the execution of the code. You can also activate conda environments or load modules for this process here.</p>
+<p>In the <strong>config section</strong> we can assign the process to a label (to use specific config settings defined in <code>nextflow.config</code>).
+Here we can also specify if we want to collect the output of the script outside of the <code>work</code> folder which is used by nextflow for the execution of the code.
+You can also activate conda environments or load modules for this process here.</p>
 <p>The <strong>input</strong> and <strong>output</strong> sections are used to connect the individual processes and to manage the flow of files and values from process to process.</p>
-<p>The <strong>script</strong> section contains the actual code to run. Here, you write the actual bash code of the pipeline.</p>
-<p>Careful when using bash variables (eg <code>$WORK</code>) within nextflow. Nextflow itself uses the dollar sign (<code>$</code>) to assign its own variables (eg <code>${input_val}</code>) in the example scripts. These are evaluated before the scripts is run and replaced by the appropriate file/value. If you want to use bash variables that are supposed to be evaluated when the script is actually run, you need to conserve the dollar sign by <em>escaping</em> the dollar sign (<code>cat \$HOME/signature.txt</code> instead of <code>cat $HOME/signature.txt</code>).</p>
+<p>The <strong>script</strong> section contains the actual code to run.
+Here, you write the actual bash code of the pipeline.</p>
+<p>Careful when using bash variables (eg <code>$WORK</code>) within nextflow.
+Nextflow itself uses the dollar sign (<code>$</code>) to assign its own variables (eg <code>${input_val}</code>) in the example scripts.
+These are evaluated before the scripts is run and replaced by the appropriate file/value.
+If you want to use bash variables that are supposed to be evaluated when the script is actually run, you need to conserve the dollar sign by <em>escaping</em> the dollar sign (<code>cat \$HOME/signature.txt</code> instead of <code>cat $HOME/signature.txt</code>).</p>
 <p><strong>Channels</strong></p>
-<p>These are the streams of <em>files</em> or <em>values</em>. One channel could be eg. all the sequencing files you need to process, while another one could be all the values of an input parameter of of a model that you wish to test for different input settings.</p>
-<p>Channels connect the different processes and Nextflow basically follows development of the stating channels during the development through the different steps of your pipeline. You feed a channel into a process in the <em>input</em> section, while the <em>output</em> section emits a new channel.</p>
+<p>These are the streams of <em>files</em> or <em>values</em>.
+One channel could be eg. all the sequencing files you need to process, while another one could be all the values of an input parameter of of a model that you wish to test for different input settings.</p>
+<p>Channels connect the different processes and Nextflow basically follows development of the stating channels during the development through the different steps of your pipeline.
+You feed a channel into a process in the <em>input</em> section, while the <em>output</em> section emits a new channel.</p>
 </div>
 <p>At the start of your pipeline you will need to define some channels like this:</p>
 <div class="sourceCode">
 <pre class="sourceCode">
-<code class="sourceCode"><span class="hl kwa">Channel</span>.from<span class="hl opt">(</span> <span class="hl str">&apos;A&apos;</span> <span class="hl str">&apos;B&apos;</span> <span class="hl str">&apos;C&apos;</span> <span class="hl opt">)</span>
+<code class="sourceCode"><span class="hl kwa">Channel</span>.from<span class="hl opt">(</span> <span class="hl str">&apos;A&apos;</span><span class="hl opt">,</span> <span class="hl str">&apos;B&apos;</span><span class="hl opt">,</span> <span class="hl str">&apos;C&apos;</span> <span class="hl opt">)</span>
 <span class="hl kwa">Channel</span>.from<span class="hl opt">( (</span><span class="hl str">&apos;01&apos;</span>..<span class="hl str">&apos;09&apos;</span><span class="hl opt">) + (</span><span class="hl str">&apos;10&apos;</span>..<span class="hl str">&apos;19&apos;</span><span class="hl opt">))</span>
 <span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;genotypes.vcf.gz&apos;</span> <span class="hl opt">)</span>
 <span class="hl kwa">Channel</span>.fromPath<span class="hl opt">(</span> <span class="hl str">&apos;sequencing_data/*.fq.gz&apos;</span> <span class="hl opt">)</span>
@@ -279,7 +328,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </pre>
 </div>
 <p><strong>Operators</strong></p>
-<p>Operators contain the <em>actions/logic</em> that connects different elements of your pipeline. You can use them to modify your channels by exposing them to filtering, transformations, splitting, merging. We already saw two operators in the example above (<code>.from()</code> &amp; <code>.fromPath()</code>). So you can see that the have form of <em>dot</em>-<em>name()</em> (or <em>dot</em>-<em>name{}</em> ).</p>
+<p>Operators contain the <em>actions/logic</em> that connects different elements of your pipeline.
+You can use them to modify your channels by exposing them to filtering, transformations, splitting, merging.
+We already saw two operators in the example above (<code>.from()</code> &amp; <code>.fromPath()</code>).
+So you can see that the have form of <em>dot</em>-<em>name()</em> (or <em>dot</em>-<em>name{}</em> ).</p>
 <p>Operators (besides <code>.from()</code>, <code>.fromPath()</code> $ <code>.fromFilePairs()</code>) I frequently use are:</p>
 <div class="row kclass">
 <div class="column">
@@ -303,11 +355,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="a-quick-example" class="section level2">
 <h2><span class="header-section-number">7.2</span> A quick example</h2>
-<p>I want to create a quick example of the power of nextflow. Therefore lets assume we have to do a analysis where we have a set of populations that need to be compared pairwise (eg. calculate pairwise <em>F<sub>ST</sub></em> along the genome). After this you want to do a running average using different window sizes.</p>
+<p>I want to create a quick example of the power of nextflow.
+Therefore lets assume we have to do a analysis where we have a set of populations that need to be compared pairwise (eg. calculate pairwise <em>F<sub>ST</sub></em> along the genome).
+After this you want to do a running average using different window sizes.</p>
 <p><em>I will use dummy commands here to show the workings of nextflow rather than doing an meaningful analysis</em>:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
-<span class="bu">echo</span> <span class="st">&quot;I am the input data&quot;</span> <span class="op">&gt;</span> data_file.txt</code></pre></div>
-<p>The beauty of nextflow is that you basically just have to write the script for a single case. (You can check the complete nextflow on the <a href="https://github.com/k-hench/demo_root_folder">demo_root_folder reopsitory</a>) First we initialize the different <em>Channels</em> within our pipeline script.</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
+<span class="bu">echo</span> <span class="st">&quot;I am the input data&quot;</span> <span class="op">&gt;</span> data_file.txt</code></pre>
+<p>The beauty of nextflow is that you basically just have to write the script for a single case.
+(You can check the complete nextflow on the <a href="https://github.com/k-hench/demo_root_folder">demo_root_folder reopsitory</a>)
+First we initialize the different <em>Channels</em> within our pipeline script.</p>
 <div class="kclass">
 <div class="sourceCode">
 <pre class="sourceCode">
@@ -361,7 +417,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </pre>
 </div>
 <p>That’s all it takes:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> ~/root_folder
 <span class="fu">ls</span> -1
 <span class="co">#&gt; analysis.Rproj</span>
 <span class="co">#&gt; analysis_twisst.nf</span>
@@ -419,8 +475,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="fu">cat</span> output/10kb/step1.popA-popC.10kb.txt 
 <span class="co">#&gt; I am the input data</span>
 <span class="co">#&gt; popA vs. popC</span>
-<span class="co">#&gt; -- 10kb --</span></code></pre></div>
-<p>We can see that the three pair wise comparison were completed for both averaging sensitivities, since all the expected output files show up in the output folder.</p>
+<span class="co">#&gt; -- 10kb --</span></code></pre>
+<p>We can see that the three pair wise comparison were completed for both averaging sensitivities,
+since all the expected output files show up in the output folder.</p>
 <p>But nextflow created a few more files and folders:</p>
 <ul>
 <li><code>.nextflow</code>: the folder where nextflow does its housekeeping</li>
@@ -428,12 +485,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>output</code>: the output folder (we specifically asked for this one within the process)</li>
 <li><code>work</code>: the folder where nextflow executes the scripts. The weird prefixes (eg. <code>[d7/fccc1d]</code>) in the terminal output refer to sub directories of <code>work</code></li>
 </ul>
-<p>Of course I don not want <em>git</em> to remember the whole messy nextflow inner workings (the scripts is enough). So, I quickly add those files to the <code>.gitignore</code> (make sure to use double <code>&gt;&gt;</code>!).</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;.nextflow*&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
+<p>Of course I don not want <em>git</em> to remember the whole messy nextflow inner workings (the scripts is enough).
+So, I quickly add those files to the <code>.gitignore</code> (make sure to use double <code>&gt;&gt;</code>!).</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;.nextflow*&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
 <span class="bu">echo</span> <span class="st">&quot;work&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
-<span class="bu">echo</span> <span class="st">&quot;output&quot;</span> <span class="op">&gt;&gt;</span> .gitignore</code></pre></div>
-<p>Now, we made some changes - so lets update the repository (and github). First, only the <code>.gitignore</code>.</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<span class="bu">echo</span> <span class="st">&quot;output&quot;</span> <span class="op">&gt;&gt;</span> .gitignore</code></pre>
+<p>Now, we made some changes - so lets update the repository (and github).
+First, only the <code>.gitignore</code>.</p>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
 <span class="co">#&gt; On branch master</span>
 <span class="co">#&gt; Your branch is up-to-date with &#39;origin/master&#39;.</span>
 <span class="co">#&gt; Changes not staged for commit:</span>
@@ -452,9 +511,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="fu">git</span> add .gitignore
 <span class="fu">git</span> commit -m <span class="st">&quot;update .gitignore&quot;</span>
 <span class="co">#&gt; [master 5de89de] update .gitignore</span>
-<span class="co">#&gt;  1 file changed, 3 insertions(+)</span></code></pre></div>
+<span class="co">#&gt;  1 file changed, 3 insertions(+)</span></code></pre>
 <p>Then we add the rest:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> status
 <span class="co">#&gt; On branch master</span>
 <span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
 <span class="co">#&gt; Changes not staged for commit:</span>
@@ -487,10 +546,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; Total 13 (delta 4), reused 0 (delta 0)</span>
 <span class="co">#&gt; remote: Resolving deltas: 100% (4/4), completed with 1 local object.</span>
 <span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span>
-<span class="co">#&gt;    d8b99be..557d3d7  master -&gt; master</span></code></pre></div>
+<span class="co">#&gt;    d8b99be..557d3d7  master -&gt; master</span></code></pre>
 </div>
 <div class="cluster">
-<p>Now, in the <em>real world</em>, I would write the nextflow script locally. Then I would commit my changes to github and pull them onto the cluster from there. Finally I would run nextflow on the cluster (<code>nextflow run analysis.nf</code>).</p>
+<p>Now, in the <em>real world</em>, I would write the nextflow script locally.
+Then I would commit my changes to github and pull them onto the cluster from there.
+Finally I would run nextflow on the cluster (<code>nextflow run analysis.nf</code>).</p>
 </div>
 </div>
 <div id="managing-the-workflow-on-the-cluster" class="section level2">
@@ -498,7 +559,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="cluster">
 <p>The nice thing about running nextflow on the cluster is, that it works pretty much the same as locally - so you don’t have to deal with submitting jobs because nextflow will take care of this.</p>
 <p>The tricky part about this is that you will need to keep nextflow running for the whole time - yet we still want to be able to log out from the cluster and shut down the laptop at the end of the day (and not keep an open ssh session for 10 days until the analysis has finished).</p>
-<p>For this we can use <a href="https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/"><code>screen</code></a>. Basically we create a <em>virtual session</em> that will continue to run even if we log out from the cluster (even though we thereby close the session that created it in the first place). This is ideal for our nextflow needs: It enables us to</p>
+<p>For this we can use <a href="https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/"><code>screen</code></a>.
+Basically we create a <em>virtual session</em> that will continue to run even if we log out from the cluster (even though we thereby close the session that created it in the first place).
+This is ideal for our nextflow needs: It enables us to</p>
 </div>
 <ol style="list-style-type: decimal">
 <li>to log on to the cluster and create a screen session</li>
@@ -510,7 +573,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>check if nextflow is still running (and kill it since we by now found a typo in the pipeline…)</li>
 </ol>
 <div class="kclass">
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">screen</span> -S test
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">screen</span> -S test
 <span class="kw">while</span> <span class="fu">sleep</span> 5<span class="kw">;</span> <span class="kw">do</span> <span class="fu">date</span><span class="kw">;done</span> 
 <span class="co"># &lt;&lt;ctrl&gt;&lt;a&gt;&gt; &lt;&lt;ctrl&gt;&lt;d&gt;&gt; (detach)</span>
 <span class="co">#&gt; [detached from 14079.test]</span>
@@ -535,14 +598,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="ex">screen</span> -ls
 <span class="co">#&gt; There is a screen on:</span>
 <span class="co">#&gt;  6972.Tel    (13.03.2019 10:53:32)   (Detached)</span>
-<span class="co">#&gt; 1 Socket in /var/run/screen/S-khench.</span></code></pre></div>
+<span class="co">#&gt; 1 Socket in /var/run/screen/S-khench.</span></code></pre>
 </div>
 <p>There is one more trick when using screen with the cluster:</p>
-<p>My metaphor with the hotel was not exactly accurate (surprise…). That is because there are actually three log in nodes instead of a single one and with the standard log in, the log in node is chosen at random (I think).</p>
-<p>Now if you start a screen session on on log in node and later log on to a different one, you will not find you screen session back. Luckily, you also choose a specific log in node by using eg <code>nesh-fe2</code> instead of <code>nesh-fe2</code>.</p>
+<p>My metaphor with the hotel was not exactly accurate (surprise…).
+That is because there are actually three log in nodes instead of a single one and with the standard log in, the log in node is chosen at random (I think).</p>
+<p>Now if you start a screen session on on log in node and later log on to a different one, you will not find you screen session back.
+Luckily, you also choose a specific log in node by using eg <code>nesh-fe2</code> instead of <code>nesh-fe2</code>.</p>
 <p>To make things a little easier, I added these two lines to my <code>~/.bashrc</code> file:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">alias</span> toNEC=<span class="st">&quot;ssh smomw000@nesh-fe1.rz.uni-kiel.de&quot;</span>
-<span class="bu">alias</span> mountNEC=<span class="st">&quot;sshfs smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 ~/mnt&quot;</span></code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">alias</span> toNEC=<span class="st">&quot;ssh smomw000@nesh-fe1.rz.uni-kiel.de&quot;</span>
+<span class="bu">alias</span> mountNEC=<span class="st">&quot;sshfs smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 ~/mnt&quot;</span></code></pre>
 <div class="cluster">
 <p>Of course you will need to adjust the mounting path to match your <code>$WORK</code> directory on the cluster.</p>
 </div>
@@ -550,7 +615,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="the-config-script" class="section level2">
 <h2><span class="header-section-number">7.4</span> The config script</h2>
-<p>The <code>nextflow.config</code> sets up some global setting for your nextflow run. To use the NEC computer cluster from Uni Kiel, I add this section to the config script:</p>
+<p>The <code>nextflow.config</code> sets up some global setting for your nextflow run.
+To use the NEC computer cluster from Uni Kiel, I add this section to the config script:</p>
 <div class="kclass">
 <pre><code>env.BASE_DIR = &quot;$WORK/project_dir&quot;
 
@@ -586,7 +652,8 @@ process {
 trace { enabled = true }
 report { enabled = true }</code></pre>
 </div>
-<p>So, I set at few defaults for the jobs, and then stat defining different the types of processes that I reference within the <code>analysis.nf</code> script. Please refer to <a href="https://www.nextflow.io/docs/latest/config.html#scope-process">nextflow documentation</a> for the different options set within the process section.</p>
+<p>So, I set at few defaults for the jobs, and then stat defining different the types of processes that I reference within the <code>analysis.nf</code> script.
+Please refer to <a href="https://www.nextflow.io/docs/latest/config.html#scope-process">nextflow documentation</a> for the different options set within the process section.</p>
 <p>Apart from this, I also provide the path to the project folder and turn the <em>trace</em> and the <em>report</em> on by default.</p>
 </div>
 <div id="quick-recap" class="section level2">
@@ -604,13 +671,10 @@ report { enabled = true }</code></pre>
 </ol>
 <p>To resume a nextflow run:</p>
 <div class="cluster">
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>/root_folder
-<span class="ex">nextflow</span> run analysis.nf -c nextflow.config -resume</code></pre></div>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>/root_folder
+<span class="ex">nextflow</span> run analysis.nf -c nextflow.config -resume</code></pre>
 <p>By the way - you can also toggle a nice graphical summary of your pipeline using <code>nextflow run analysis.nf -with-dag analysis.png -c nextflow.config -resume</code>:</p>
-<div class="figure">
-<img src="img/analysis.png" />
-
-</div>
+<p><img src="img/analysis.png" /></p>
 </div>
 <hr />
 
