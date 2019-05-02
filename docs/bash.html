@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-22">
+<meta name="date" content="2019-05-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -371,7 +371,7 @@ These are (optional) parameters that alter they way a program operates an are in
 <span class="co">#&gt; total 164</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 22 14:37 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär 22 16:36 data</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config</span>
@@ -381,7 +381,7 @@ These are (optional) parameters that alter they way a program operates an are in
 <span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7 17:25 sh</span></code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -lth
 <span class="co">#&gt; total 164K</span>
-<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 22 14:37 data</span>
+<span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär 22 16:36 data</span>
 <span class="co">#&gt; -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh</span>
 <span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R</span>
@@ -486,7 +486,7 @@ There are two loops that you should know:</p>
 <span class="co">#&gt; A</span>
 <span class="co">#&gt; B</span>
 <span class="co">#&gt; C</span></code></pre>
-<p>You and use bash commands to create the sequence to loop over by using <code>$(command)</code> (eg: <code>$(ls *.txt)</code>).</p>
+<p>You can use bash commands to create the sequence to loop over by using <code>$(command)</code> (eg: <code>$(ls *.txt)</code>).</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">k</span> in <span class="va">$(</span><span class="fu">seq</span> -w 9 11<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;LG&quot;</span><span class="va">$k</span><span class="kw">;</span> <span class="kw">done</span>
 <span class="co">#&gt; LG09</span>
 <span class="co">#&gt; LG10</span>
@@ -798,12 +798,12 @@ Over the years I collected some combinations that I regularly use to deal with d
 You can find them together with some more useful bash examples within the <code>oneliners.md</code> file in the <a href="https://github.com/k-hench/getting_stuff_done/blob/master/oneliners.md">source repository of this document</a>.</p>
 <hr />
 
-<pre><code>## ── Attaching packages ────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.1.0.9000     ✔ purrr   0.3.0     
-## ✔ tibble  2.0.1          ✔ dplyr   0.7.8     
+<pre><code>## ── Attaching packages ──────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.1.0.9000     ✔ purrr   0.3.2     
+## ✔ tibble  2.1.1          ✔ dplyr   0.8.0.9010
 ## ✔ tidyr   0.8.2          ✔ stringr 1.4.0     
 ## ✔ readr   1.3.1          ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ─────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 </div>

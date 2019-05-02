@@ -295,7 +295,7 @@ There are two loops that you should know:
 for k in A B C; do echo $k; done
 ```
 
-You and use bash commands to create the sequence to loop over by using `$(command)` (eg: `$(ls *.txt)`).
+You can use bash commands to create the sequence to loop over by using `$(command)` (eg: `$(ls *.txt)`).
 
 ```{bash}
 for k in $(seq -w 9 11); do echo "LG"$k; done

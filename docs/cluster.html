@@ -25,7 +25,7 @@
 <meta name="author" content="Kosmas Hench">
 
 
-<meta name="date" content="2019-03-22">
+<meta name="date" content="2019-05-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -424,8 +424,8 @@ So instead of this:
 </div>
 <p>We write this script (<code>test.sh</code>):</p>
 <pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="co">#PBS -b 1                       # number of threads</span>
-<span class="co">#PBS -l cpunum_job=1            # number of nodes</span>
+<span class="co">#PBS -b 1                       # number of nodes</span>
+<span class="co">#PBS -l cpunum_job=1            # number of cores</span>
 <span class="co">#PBS -l elapstim_req=00:00:30   # requested runtime (hh:mm:ss)</span>
 <span class="co">#PBS -l memsz_job=1gb           # requested memory</span>
 <span class="co">#PBS -N testjob                 # job name</span>
