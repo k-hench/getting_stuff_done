@@ -8,7 +8,7 @@ editor_options:
 
 ## Organization
 
-Generally, I like to keep stuff together if it used within the same project.
+Generally, I like to keep stuff together if it is used within the same project.
 This means that I recommend to create *one* project folder for each of your projects.
 I call this folder the *root folder* of the projects.
 This folder will later be equivalent to the git repository and the RStudio projects.
@@ -21,7 +21,7 @@ This asks for more than a loose collection of programming scripts: Apart from th
 At least for me, it is usually quite hard even to recall the exact order of my own scripts needed for a complex data analysis (eg. the genotyping process of sequencing data) when I come back half a year later (trying to put together the final version of the methods for a publication).
 So for someone else it is basically impossible to know how to combine the individual steps of your analysis unless you *really* make an effort to help them.
 
-A first way to make you analysis better understandable is to have a clear structure for you files - having a single project folder is the first step.
+A first step to make your analysis better understandable is to have a clear structure for your files - having a single project folder is the first step.
 So, my projects usually look something like this:
 
 ```
@@ -49,11 +49,11 @@ Nevertheless, in the following I want to recommend three main pillars of my work
 
 If you're doing bioinformatics you *will* need to use *the command line* - this is where all the interesting stuff happens.
 Many programs that are commonly used can only be run from *the command line*.
-And if you want to do serious computations using a computer cluster they require that you use *the command line*.
+And if you want to do serious computations using a computer cluster this requires that you use *the command line*.
 
 When using the command line, you simply change the way you communicate with your computer:
-The basic Idea here is to replace your mouse with your keyboard - instead of clicking things you write commands.
-Yet there are many things that you can do both using the command line or the mouse (eg. creating/ managing folders & files), so the need to write down everything into a "black box" might seem a little tedious at first. Still we use the command line because there are some things that you can only do there. A second huge benefit is that you can protocol everything you do.
+The basic idea here is to replace your mouse with your keyboard - instead of clicking things you write commands.
+Yet there are many things that you can do both using the command line or the mouse (eg. creating/ managing folders & files), so the need to write down everything into a "black box" might seem a little tedious at first. Still, we use the command line because there are some things that you can only do there. A second huge benefit is that you can protocol everything you do.
 
 #### Linux/ Mac
 
@@ -75,7 +75,7 @@ In such a case (as in most programming related issues) [google](https://www.goog
 ### Atom (Text editor/ project manager)
 
 To manage your project I recommend using [**Atom**](https://atom.io/).
-This is where I keep the track of the entire project, write the pipelines for my analysis, communicate with [github](https://github.com/) - in short this my main working environment.
+This is where I keep track of the entire project, write the pipelines for my analysis, communicate with [github](https://github.com/) - in short this my main working environment.
 It is cross-platform (Linux/Mac/Windows), integrates git and has a ton of extensions so you can basically puzzle together all the functions you could ever ask for.
 
 Yet, I also use gedit (the native text editor) for *quick and dirty* work and a simple text editor (Mac: textedit, Windows: Notepad) has its value.
@@ -106,6 +106,6 @@ If you encounter weird error this might be the source of the problem.
 I ran into issues eg. when using `awk` or `sed` - we will talk about these later.
 
 Also, due to my educational history you will find this tutorial to be quite **R**-centric.
-This is reflects my own skill set and many helpful tools especially in the **python** world are not covered here.
+This mostly reflects my own skill set and so, many helpful tools especially in the **python** world are not covered here.
 
 --------

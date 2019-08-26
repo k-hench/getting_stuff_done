@@ -10,7 +10,7 @@ editor_options:
 
 The *Bourne-again shell* ([bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29)) is usually the programming language that you will use when running the command line.
 
-To be efficient you will therefore need some knowledge of this language. I do not intend to rewrite the 1254th tutorial on *"How to use bash"* since there are [allready](https://www.bash.academy/) [lots](https://www.learnshell.org/) [of](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) [tutorials](https://www.shellscript.sh/) [online](https://www.codecademy.com/learn/learn-the-command-line) (again - google is your friend here...).
+To be efficient you will therefore need some knowledge of this language. I do not intend to rewrite the 1254th tutorial on *"How to use bash"* since there are [already](https://www.bash.academy/) [lots](https://www.learnshell.org/) [of](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) [tutorials](https://www.shellscript.sh/) [online](https://www.codecademy.com/learn/learn-the-command-line) (again - google is your friend here...).
 
 Here I will give a small overview and simply list the common patterns/issues/programs and the way I deal with them in bash:
 
@@ -226,7 +226,7 @@ ls -l
 #> total 164
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj
-#> drwxrwxr-x 2 khench khench   4096 Mär 22 16:36 data
+#> drwxrwxr-x 2 khench khench   4096 Mai  2 17:07 data
 #> drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs
 #> -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg
 #> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config
@@ -240,7 +240,7 @@ ls -l
 ```bash
 ls -lth
 #> total 164K
-#> drwxrwxr-x 2 khench khench 4,0K Mär 22 16:36 data
+#> drwxrwxr-x 2 khench khench 4,0K Mai  2 17:07 data
 #> -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Basic setup | Getting Stuff Done</title>
-  <meta name="description" content="2 Basic setup | Getting Stuff Done">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="2 Basic setup | Getting Stuff Done" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Basic setup | Getting Stuff Done" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   
   
 
-<meta name="author" content="Kosmas Hench">
+<meta name="author" content="Kosmas Hench" />
 
 
-<meta name="date" content="2019-05-02">
+<meta name="date" content="2019-08-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="bash.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="bash.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -56,7 +55,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -223,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> Basic setup</h1>
 <div id="organization" class="section level2">
 <h2><span class="header-section-number">2.1</span> Organization</h2>
-<p>Generally, I like to keep stuff together if it used within the same project.
+<p>Generally, I like to keep stuff together if it is used within the same project.
 This means that I recommend to create <em>one</em> project folder for each of your projects.
 I call this folder the <em>root folder</em> of the projects.
 This folder will later be equivalent to the git repository and the RStudio projects.</p>
@@ -233,7 +231,7 @@ My personal standard is to (try to) provide all information needed to recreate m
 <p>This asks for more than a loose collection of programming scripts: Apart from the scripts you ran, people need to know what to run <em>when and where</em>.
 At least for me, it is usually quite hard even to recall the exact order of my own scripts needed for a complex data analysis (eg. the genotyping process of sequencing data) when I come back half a year later (trying to put together the final version of the methods for a publication).
 So for someone else it is basically impossible to know how to combine the individual steps of your analysis unless you <em>really</em> make an effort to help them.</p>
-<p>A first way to make you analysis better understandable is to have a clear structure for you files - having a single project folder is the first step.
+<p>A first step to make your analysis better understandable is to have a clear structure for your files - having a single project folder is the first step.
 So, my projects usually look something like this:</p>
 <pre><code>root_folder
 ├── analysist.nf          # The nextflow pipeline with the project
@@ -257,10 +255,10 @@ Nevertheless, in the following I want to recommend three main pillars of my work
 <p><img src="img/cl.svg" /></p>
 <p>If you’re doing bioinformatics you <em>will</em> need to use <em>the command line</em> - this is where all the interesting stuff happens.
 Many programs that are commonly used can only be run from <em>the command line</em>.
-And if you want to do serious computations using a computer cluster they require that you use <em>the command line</em>.</p>
+And if you want to do serious computations using a computer cluster this requires that you use <em>the command line</em>.</p>
 <p>When using the command line, you simply change the way you communicate with your computer:
-The basic Idea here is to replace your mouse with your keyboard - instead of clicking things you write commands.
-Yet there are many things that you can do both using the command line or the mouse (eg. creating/ managing folders &amp; files), so the need to write down everything into a “black box” might seem a little tedious at first. Still we use the command line because there are some things that you can only do there. A second huge benefit is that you can protocol everything you do.</p>
+The basic idea here is to replace your mouse with your keyboard - instead of clicking things you write commands.
+Yet there are many things that you can do both using the command line or the mouse (eg. creating/ managing folders &amp; files), so the need to write down everything into a “black box” might seem a little tedious at first. Still, we use the command line because there are some things that you can only do there. A second huge benefit is that you can protocol everything you do.</p>
 <div id="linux-mac" class="section level4">
 <h4><span class="header-section-number">2.2.1.1</span> Linux/ Mac</h4>
 <p>If your OS happens to be <a href="https://support.apple.com/en-ca/guide/terminal/welcome/mac">Mac</a> or Linux (<a href="https://www.ubuntubeginner.com/ubuntu-terminal-basics/">Ubuntu</a>) you are lucky when it comes to the command line since the command line is a native unix environment. So all you have to do is to look for the <em>Terminal</em> within you preinstalled programs and open it.</p>
@@ -278,7 +276,7 @@ So if you are using Windows, you will need to install <a href="https://cygwin.co
 <div id="atom-text-editor-project-manager" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Atom (Text editor/ project manager)</h3>
 <p>To manage your project I recommend using <a href="https://atom.io/"><strong>Atom</strong></a>.
-This is where I keep the track of the entire project, write the pipelines for my analysis, communicate with <a href="https://github.com/">github</a> - in short this my main working environment.
+This is where I keep track of the entire project, write the pipelines for my analysis, communicate with <a href="https://github.com/">github</a> - in short this my main working environment.
 It is cross-platform (Linux/Mac/Windows), integrates git and has a ton of extensions so you can basically puzzle together all the functions you could ever ask for.</p>
 <p>Yet, I also use gedit (the native text editor) for <em>quick and dirty</em> work and a simple text editor (Mac: textedit, Windows: Notepad) has its value.
 Sometimes Atom is simply an overkill.</p>
@@ -291,9 +289,9 @@ In my opinion there is no reason not to use Rstudio to develop your R scripts.</
 I use it when I want to work with R <em>interactively</em> - that is for data exploration or to <em>devellop</em> R scripts.
 My ultimate goal for <em>shareable</em>/<em>reproducible</em> content (eg. scripts for figures in publications) are standalone R scripts.
 These are executable from the command line and run from start to end without interactive fiddling, eg:</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> --vanilla script.R
-<span class="ex">or</span>
-<span class="ex">Rscript</span> --vanilla script.R input_file.txt output_figure.pdf</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">Rscript</span> --vanilla script.R</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">or</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="ex">Rscript</span> --vanilla script.R input_file.txt output_figure.pdf</a></code></pre></div>
 <p>So much for now, we’re going to talk more about R later….</p>
 </div>
 <div id="disclaimer" class="section level3">
@@ -302,7 +300,7 @@ These are executable from the command line and run from start to end without int
 If you encounter weird error this might be the source of the problem.
 I ran into issues eg. when using <code>awk</code> or <code>sed</code> - we will talk about these later.</p>
 <p>Also, due to my educational history you will find this tutorial to be quite <strong>R</strong>-centric.
-This is reflects my own skill set and many helpful tools especially in the <strong>python</strong> world are not covered here.</p>
+This mostly reflects my own skill set and so, many helpful tools especially in the <strong>python</strong> world are not covered here.</p>
 <hr />
 
 </div>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Cluster | Getting Stuff Done</title>
-  <meta name="description" content="4 Cluster | Getting Stuff Done">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="4 Cluster | Getting Stuff Done" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Cluster | Getting Stuff Done" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   
   
 
-<meta name="author" content="Kosmas Hench">
+<meta name="author" content="Kosmas Hench" />
 
 
-<meta name="date" content="2019-05-02">
+<meta name="date" content="2019-08-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bash.html">
-<link rel="next" href="git.html">
+<link rel="prev" href="bash.html"/>
+<link rel="next" href="git.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -56,7 +55,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -257,8 +255,8 @@ But <a href="https://github.com/billziss-gh/sshfs-win">these instuctions</a> loo
 <h2><span class="header-section-number">4.1</span> Login</h2>
 <p>As mentioned before to use the cluster you need the command line - all the work on the cluster is going to happen there.
 The log in command looks like this:</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># ssh &lt;username&gt;@&lt;hostadress&gt;</span>
-<span class="fu">ssh</span> smomw000@nesh-fe.rz.uni-kiel.de</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="co"># ssh &lt;username&gt;@&lt;hostadress&gt;</span></a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="fu">ssh</span> smomw000@nesh-fe.rz.uni-kiel.de</a></code></pre></div>
 <p>When you log in for the first time, you will be asked to confirm that this is a secure connection.<br />
 Then you will need to type in you password and that’s basically it:</p>
 <div class="kclass cluster">
@@ -317,7 +315,7 @@ You should prepare your data into neat packages (don’t just dump you messy fol
 For this purpose we installed <code>shhfs</code> at the beginning of this chapter.</p>
 <p>I like to think of the usage of <code>shhfs</code> like plugging in a flash drive.
 But before we can use it, we need create an empty folder:</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/mnt <span class="co"># Remember: This is on your local machine.</span></code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="fu">mkdir</span> <span class="va">${HOME}</span>/mnt <span class="co"># Remember: This is on your local machine.</span></a></code></pre></div>
 <div class="cluster">
 <p>This out virtual <em>USB slot</em> - after mounting the cluster the files of the cluster are going to show up here on your laptop.</p>
 <p>We also need to think about which directory of the cluster we want to mount.
@@ -327,8 +325,8 @@ Also, once we have mounted a directory we will not be able to go <em>up in the p
 That means we will not be able to access <code>/sfs/fs6/home-geomar/</code> when mounting <code>/sfs/fs6/home-geomar/smomw000</code>.
 Because of this, we will need to mount the <code>$WORK</code> directory directly:</p>
 </div>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># sshfs &lt;username&gt;@&lt;hostadress&gt;:&lt;/path/on/cluster&gt; &lt;local/path&gt;</span>
-<span class="ex">sshfs</span> smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 <span class="va">$HOME</span>/mnt</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># sshfs &lt;username&gt;@&lt;hostadress&gt;:&lt;/path/on/cluster&gt; &lt;local/path&gt;</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="ex">sshfs</span> smomw000@nesh-fe.rz.uni-kiel.de:/sfs/fs2/work-geomar7/smomw000 <span class="va">$HOME</span>/mnt</a></code></pre></div>
 <div class="cluster">
 <p>Now, the content of your <code>$WORK</code> directory should show up in your finder/windows explorer.</p>
 </div>
@@ -418,29 +416,29 @@ Instead of running commands interactively, you write them into a script and add 
 This has the additional benefit that later you will remember exactly what you have done.</p>
 So instead of this:
 <div class="cluster">
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
-<span class="fu">mkdir</span> test_folder
-<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="bu">cd</span> <span class="va">$WORK</span></a>
+<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="fu">mkdir</span> test_folder</a>
+<a class="sourceLine" id="cb68-3" data-line-number="3"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</a></code></pre></div>
 </div>
 <p>We write this script (<code>test.sh</code>):</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="co">#PBS -b 1                       # number of nodes</span>
-<span class="co">#PBS -l cpunum_job=1            # number of cores</span>
-<span class="co">#PBS -l elapstim_req=00:00:30   # requested runtime (hh:mm:ss)</span>
-<span class="co">#PBS -l memsz_job=1gb           # requested memory</span>
-<span class="co">#PBS -N testjob                 # job name</span>
-<span class="co">#PBS -o stdstderr.out           # file for standard-output </span>
-<span class="co">#PBS -j o                       # join stdout/stderr</span>
-<span class="co">#PBS -q clexpress               # requested batch class</span>
-
-<span class="bu">cd</span> <span class="va">$WORK</span>
-<span class="fu">mkdir</span> test_folder
-<span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="co">#PBS -b 1                       # number of nodes</span></a>
+<a class="sourceLine" id="cb69-3" data-line-number="3"><span class="co">#PBS -l cpunum_job=1            # number of cores</span></a>
+<a class="sourceLine" id="cb69-4" data-line-number="4"><span class="co">#PBS -l elapstim_req=00:00:30   # requested runtime (hh:mm:ss)</span></a>
+<a class="sourceLine" id="cb69-5" data-line-number="5"><span class="co">#PBS -l memsz_job=1gb           # requested memory</span></a>
+<a class="sourceLine" id="cb69-6" data-line-number="6"><span class="co">#PBS -N testjob                 # job name</span></a>
+<a class="sourceLine" id="cb69-7" data-line-number="7"><span class="co">#PBS -o stdstderr.out           # file for standard-output </span></a>
+<a class="sourceLine" id="cb69-8" data-line-number="8"><span class="co">#PBS -j o                       # join stdout/stderr</span></a>
+<a class="sourceLine" id="cb69-9" data-line-number="9"><span class="co">#PBS -q clexpress               # requested batch class</span></a>
+<a class="sourceLine" id="cb69-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb69-11" data-line-number="11"><span class="bu">cd</span> <span class="va">$WORK</span></a>
+<a class="sourceLine" id="cb69-12" data-line-number="12"><span class="fu">mkdir</span> test_folder</a>
+<a class="sourceLine" id="cb69-13" data-line-number="13"><span class="bu">echo</span> <span class="st">&quot;test&quot;</span> <span class="op">&gt;</span> test_folder/test.txt</a></code></pre></div>
 <div class="cluster">
 <p>You can write this script either using one of the command line text editors (<code>emacs</code>/<code>nano</code>/<code>vim</code>) or you can prepare it locally (eg. within <strong>atom</strong>) and copy it onto the mounted cluster.</p>
 <p>Once the script is located on the cluster (eg. on <code>$WORK</code>) you can <em>submit</em> the job:</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> <span class="va">$WORK</span>
-<span class="ex">qsub</span> test.sh</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="bu">cd</span> <span class="va">$WORK</span></a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="ex">qsub</span> test.sh</a></code></pre></div>
 </div>
 <p>Depending on the resources needed for the job you submit, you will choose a different <em>batch class</em>:</p>
 <table>
@@ -521,7 +519,7 @@ An example would be <code>qcat -n 25 -e 000000</code>.</p>
 (<em>If you need to repeat a command use the <code>&lt;arrow up&gt;</code> key on your keyboard!</em>)
 This can be tiresome. It is way easier to use the command <code>watch</code>.
 The following line will re-execute <code>qcat</code> every 3 seconds until you interrupt it by pressing <code>&lt;ctrl&gt;&lt;c&gt;</code>:</p>
-<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">watch</span> -n 3 <span class="st">&quot;qstat -n 25 -e 000000&quot;</span></code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="ex">watch</span> -n 3 <span class="st">&quot;qstat -n 25 -e 000000&quot;</span></a></code></pre></div>
 <p>Once your job is done you will find the file <code>stdstderr.out</code> within the directory where you submitted the original script (where you ran <code>qsub script.sh</code>).</p>
 </div>
 <hr />

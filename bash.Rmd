@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 The *Bourne-again shell* ([bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29)) is usually the programming language that you will use when running the command line.
 
-To be efficient you will therefore need some knowledge of this language. I do not intend to rewrite the 1254th tutorial on *"How to use bash"* since there are [allready](https://www.bash.academy/) [lots](https://www.learnshell.org/) [of](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) [tutorials](https://www.shellscript.sh/) [online](https://www.codecademy.com/learn/learn-the-command-line) (again - google is your friend here...).
+To be efficient you will therefore need some knowledge of this language. I do not intend to rewrite the 1254th tutorial on *"How to use bash"* since there are [already](https://www.bash.academy/) [lots](https://www.learnshell.org/) [of](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) [tutorials](https://www.shellscript.sh/) [online](https://www.codecademy.com/learn/learn-the-command-line) (again - google is your friend here...).
 
 Here I will give a small overview and simply list the common patterns/issues/programs and the way I deal with them in bash:
 
