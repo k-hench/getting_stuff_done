@@ -24,7 +24,7 @@
 <meta name="author" content="Kosmas Hench" />
 
 
-<meta name="date" content="2019-08-26" />
+<meta name="date" content="2019-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,26 +235,26 @@ Later, we will be able to come back to any time point of which we have a snapsho
 <p>We are going back to our example project folder (<code>~/root_folder</code>) of the chapter 2.
 All of the git commands have the structure <code>git [command] &lt;options&gt;</code>.
 To turn the folder into a git repository we run:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="bu">cd</span> ~/root_folder</a>
-<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb73-3" data-line-number="3"><span class="co">#&gt; Initialized empty Git repository in /home/khench/root_folder/.git/</span></a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="bu">cd</span> ~/root_folder</a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb70-3" data-line-number="3"><span class="co">#&gt; Initialized empty Git repository in /home/khench/root_folder/.git/</span></a></code></pre></div>
 <p>No, we can check the current status of the repository:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb74"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="co">#&gt;</span></a>
-<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="co">#&gt; Initial commit</span></a>
-<a class="sourceLine" id="cb74-5" data-line-number="5"><span class="co">#&gt;</span></a>
-<a class="sourceLine" id="cb74-6" data-line-number="6"><span class="co">#&gt; Untracked files:</span></a>
-<a class="sourceLine" id="cb74-7" data-line-number="7"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
-<a class="sourceLine" id="cb74-8" data-line-number="8"><span class="co">#&gt;</span></a>
-<a class="sourceLine" id="cb74-9" data-line-number="9"><span class="co">#&gt;     .gitignore</span></a>
-<a class="sourceLine" id="cb74-10" data-line-number="10"><span class="co">#&gt;     README.md</span></a>
-<a class="sourceLine" id="cb74-11" data-line-number="11"><span class="co">#&gt;     analysis.Rproj</span></a>
-<a class="sourceLine" id="cb74-12" data-line-number="12"><span class="co">#&gt;     analysis.nf</span></a>
-<a class="sourceLine" id="cb74-13" data-line-number="13"><span class="co">#&gt;     data/</span></a>
-<a class="sourceLine" id="cb74-14" data-line-number="14"><span class="co">#&gt;     nextflow.config</span></a>
-<a class="sourceLine" id="cb74-15" data-line-number="15"><span class="co">#&gt;     sh/</span></a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb71-3" data-line-number="3"><span class="co">#&gt;</span></a>
+<a class="sourceLine" id="cb71-4" data-line-number="4"><span class="co">#&gt; Initial commit</span></a>
+<a class="sourceLine" id="cb71-5" data-line-number="5"><span class="co">#&gt;</span></a>
+<a class="sourceLine" id="cb71-6" data-line-number="6"><span class="co">#&gt; Untracked files:</span></a>
+<a class="sourceLine" id="cb71-7" data-line-number="7"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
+<a class="sourceLine" id="cb71-8" data-line-number="8"><span class="co">#&gt;</span></a>
+<a class="sourceLine" id="cb71-9" data-line-number="9"><span class="co">#&gt;     .gitignore</span></a>
+<a class="sourceLine" id="cb71-10" data-line-number="10"><span class="co">#&gt;     README.md</span></a>
+<a class="sourceLine" id="cb71-11" data-line-number="11"><span class="co">#&gt;     analysis.Rproj</span></a>
+<a class="sourceLine" id="cb71-12" data-line-number="12"><span class="co">#&gt;     analysis.nf</span></a>
+<a class="sourceLine" id="cb71-13" data-line-number="13"><span class="co">#&gt;     data/</span></a>
+<a class="sourceLine" id="cb71-14" data-line-number="14"><span class="co">#&gt;     nextflow.config</span></a>
+<a class="sourceLine" id="cb71-15" data-line-number="15"><span class="co">#&gt;     sh/</span></a></code></pre></div>
 </div>
 <p>You’ll see that git is aware of all the files (empty folders are omitted) in the folder.
 But at this stage the filed are not tracked yet.</p>
@@ -276,50 +276,50 @@ Because of this we simply add the data folder to the <code>.gitignore</code> fil
 This is basically a blacklist of files &amp; directories that <em>“git ignores”</em>.</p>
 <p>I want to do this at the very beginning to not have any traces of the huge files within the history of the repository.</p>
 <p><code>.gitignore</code> now looks like this:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="fu">cat</span> .gitignore </a>
-<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="co">#&gt; data</span></a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="fu">cat</span> .gitignore </a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="co">#&gt; data</span></a></code></pre></div>
 <p>Now we first add the <code>.gitignore</code> to the tracked files and only add the rest later.
 We need to have the <code>.gitignore</code> in effect first - otherwise the <code>data</code> folder will not be omitted:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb76"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="fu">git</span> add .gitignore</a>
-<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb76-3" data-line-number="3"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb76-4" data-line-number="4"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb76-5" data-line-number="5"><span class="co">#&gt; Initial commit</span></a>
-<a class="sourceLine" id="cb76-6" data-line-number="6"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb76-7" data-line-number="7"><span class="co">#&gt; Changes to be committed:</span></a>
-<a class="sourceLine" id="cb76-8" data-line-number="8"><span class="co">#&gt;   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span></a>
-<a class="sourceLine" id="cb76-9" data-line-number="9"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb76-10" data-line-number="10"><span class="co">#&gt;  new file:   .gitignore</span></a>
-<a class="sourceLine" id="cb76-11" data-line-number="11"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb76-12" data-line-number="12"><span class="co">#&gt; Untracked files:</span></a>
-<a class="sourceLine" id="cb76-13" data-line-number="13"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
-<a class="sourceLine" id="cb76-14" data-line-number="14"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb76-15" data-line-number="15"><span class="co">#&gt;  README.md</span></a>
-<a class="sourceLine" id="cb76-16" data-line-number="16"><span class="co">#&gt;  analysis.Rproj</span></a>
-<a class="sourceLine" id="cb76-17" data-line-number="17"><span class="co">#&gt;  analysis.nf</span></a>
-<a class="sourceLine" id="cb76-18" data-line-number="18"><span class="co">#&gt;  nextflow.config</span></a>
-<a class="sourceLine" id="cb76-19" data-line-number="19"><span class="co">#&gt;  sh/</span></a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="fu">git</span> add .gitignore</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb73-3" data-line-number="3"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb73-4" data-line-number="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb73-5" data-line-number="5"><span class="co">#&gt; Initial commit</span></a>
+<a class="sourceLine" id="cb73-6" data-line-number="6"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb73-7" data-line-number="7"><span class="co">#&gt; Changes to be committed:</span></a>
+<a class="sourceLine" id="cb73-8" data-line-number="8"><span class="co">#&gt;   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span></a>
+<a class="sourceLine" id="cb73-9" data-line-number="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb73-10" data-line-number="10"><span class="co">#&gt;  new file:   .gitignore</span></a>
+<a class="sourceLine" id="cb73-11" data-line-number="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb73-12" data-line-number="12"><span class="co">#&gt; Untracked files:</span></a>
+<a class="sourceLine" id="cb73-13" data-line-number="13"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
+<a class="sourceLine" id="cb73-14" data-line-number="14"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb73-15" data-line-number="15"><span class="co">#&gt;  README.md</span></a>
+<a class="sourceLine" id="cb73-16" data-line-number="16"><span class="co">#&gt;  analysis.Rproj</span></a>
+<a class="sourceLine" id="cb73-17" data-line-number="17"><span class="co">#&gt;  analysis.nf</span></a>
+<a class="sourceLine" id="cb73-18" data-line-number="18"><span class="co">#&gt;  nextflow.config</span></a>
+<a class="sourceLine" id="cb73-19" data-line-number="19"><span class="co">#&gt;  sh/</span></a></code></pre></div>
 </div>
 <p>So, now the changes in <code>.gitignore</code> are <em>staged for a commit</em> - the file is ready for a snapshot.
 To save this snapshot we run:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb77"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;init gitignore&quot;</span></a>
-<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="co">#&gt; [master (root-commit) 575e91f] init gitignore</span></a>
-<a class="sourceLine" id="cb77-3" data-line-number="3"><span class="co">#&gt;  1 file changed, 1 insertion(+)</span></a>
-<a class="sourceLine" id="cb77-4" data-line-number="4"><span class="co">#&gt;  create mode 100644 .gitignore</span></a>
-<a class="sourceLine" id="cb77-5" data-line-number="5"><span class="fu">git</span> status </a>
-<a class="sourceLine" id="cb77-6" data-line-number="6"><span class="co">#&gt;  On branch master</span></a>
-<a class="sourceLine" id="cb77-7" data-line-number="7"><span class="co">#&gt;  Untracked files:</span></a>
-<a class="sourceLine" id="cb77-8" data-line-number="8"><span class="co">#&gt;    (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
-<a class="sourceLine" id="cb77-9" data-line-number="9"><span class="co">#&gt;  </span></a>
-<a class="sourceLine" id="cb77-10" data-line-number="10"><span class="co">#&gt;      README.md</span></a>
-<a class="sourceLine" id="cb77-11" data-line-number="11"><span class="co">#&gt;      analysis.Rproj</span></a>
-<a class="sourceLine" id="cb77-12" data-line-number="12"><span class="co">#&gt;      analysis.nf</span></a>
-<a class="sourceLine" id="cb77-13" data-line-number="13"><span class="co">#&gt;      nextflow.config</span></a>
-<a class="sourceLine" id="cb77-14" data-line-number="14"><span class="co">#&gt;      sh/</span></a>
-<a class="sourceLine" id="cb77-15" data-line-number="15"><span class="co">#&gt;  </span></a>
-<a class="sourceLine" id="cb77-16" data-line-number="16"><span class="co">#&gt;  nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span></a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;init gitignore&quot;</span></a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="co">#&gt; [master (root-commit) 575e91f] init gitignore</span></a>
+<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="co">#&gt;  1 file changed, 1 insertion(+)</span></a>
+<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="co">#&gt;  create mode 100644 .gitignore</span></a>
+<a class="sourceLine" id="cb74-5" data-line-number="5"><span class="fu">git</span> status </a>
+<a class="sourceLine" id="cb74-6" data-line-number="6"><span class="co">#&gt;  On branch master</span></a>
+<a class="sourceLine" id="cb74-7" data-line-number="7"><span class="co">#&gt;  Untracked files:</span></a>
+<a class="sourceLine" id="cb74-8" data-line-number="8"><span class="co">#&gt;    (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></a>
+<a class="sourceLine" id="cb74-9" data-line-number="9"><span class="co">#&gt;  </span></a>
+<a class="sourceLine" id="cb74-10" data-line-number="10"><span class="co">#&gt;      README.md</span></a>
+<a class="sourceLine" id="cb74-11" data-line-number="11"><span class="co">#&gt;      analysis.Rproj</span></a>
+<a class="sourceLine" id="cb74-12" data-line-number="12"><span class="co">#&gt;      analysis.nf</span></a>
+<a class="sourceLine" id="cb74-13" data-line-number="13"><span class="co">#&gt;      nextflow.config</span></a>
+<a class="sourceLine" id="cb74-14" data-line-number="14"><span class="co">#&gt;      sh/</span></a>
+<a class="sourceLine" id="cb74-15" data-line-number="15"><span class="co">#&gt;  </span></a>
+<a class="sourceLine" id="cb74-16" data-line-number="16"><span class="co">#&gt;  nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span></a></code></pre></div>
 </div>
 <p>Now we see two things:</p>
 <ul>
@@ -328,28 +328,28 @@ To save this snapshot we run:</p>
 </ul>
 <p>So, at this point we can add and commit the rest of the files:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb78"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb78-3" data-line-number="3"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb78-4" data-line-number="4"><span class="co">#&gt; Changes to be committed:</span></a>
-<a class="sourceLine" id="cb78-5" data-line-number="5"><span class="co">#&gt;   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span></a>
-<a class="sourceLine" id="cb78-6" data-line-number="6"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb78-7" data-line-number="7"><span class="co">#&gt;  new file:   README.md</span></a>
-<a class="sourceLine" id="cb78-8" data-line-number="8"><span class="co">#&gt;  new file:   analysis.Rproj</span></a>
-<a class="sourceLine" id="cb78-9" data-line-number="9"><span class="co">#&gt;  new file:   analysis.nf</span></a>
-<a class="sourceLine" id="cb78-10" data-line-number="10"><span class="co">#&gt;  new file:   nextflow.config</span></a>
-<a class="sourceLine" id="cb78-11" data-line-number="11"><span class="co">#&gt;  new file:   sh/script.sh</span></a>
-<a class="sourceLine" id="cb78-12" data-line-number="12"><span class="fu">git</span> commit -m <span class="st">&quot;init repo&quot;</span></a>
-<a class="sourceLine" id="cb78-13" data-line-number="13"><span class="co">#&gt; [master a9f87c1] init repo</span></a>
-<a class="sourceLine" id="cb78-14" data-line-number="14"><span class="co">#&gt;  5 files changed, 6 insertions(+)</span></a>
-<a class="sourceLine" id="cb78-15" data-line-number="15"><span class="co">#&gt;  create mode 100644 README.md</span></a>
-<a class="sourceLine" id="cb78-16" data-line-number="16"><span class="co">#&gt;  create mode 100644 analysis.Rproj</span></a>
-<a class="sourceLine" id="cb78-17" data-line-number="17"><span class="co">#&gt;  create mode 100644 analysis.nf</span></a>
-<a class="sourceLine" id="cb78-18" data-line-number="18"><span class="co">#&gt;  create mode 100644 nextflow.config</span></a>
-<a class="sourceLine" id="cb78-19" data-line-number="19"><span class="co">#&gt;  create mode 100644 sh/script.sh</span></a>
-<a class="sourceLine" id="cb78-20" data-line-number="20"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb78-21" data-line-number="21"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb78-22" data-line-number="22"><span class="co">#&gt; nothing to commit, working directory clean</span></a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb75-3" data-line-number="3"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb75-4" data-line-number="4"><span class="co">#&gt; Changes to be committed:</span></a>
+<a class="sourceLine" id="cb75-5" data-line-number="5"><span class="co">#&gt;   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span></a>
+<a class="sourceLine" id="cb75-6" data-line-number="6"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb75-7" data-line-number="7"><span class="co">#&gt;  new file:   README.md</span></a>
+<a class="sourceLine" id="cb75-8" data-line-number="8"><span class="co">#&gt;  new file:   analysis.Rproj</span></a>
+<a class="sourceLine" id="cb75-9" data-line-number="9"><span class="co">#&gt;  new file:   analysis.nf</span></a>
+<a class="sourceLine" id="cb75-10" data-line-number="10"><span class="co">#&gt;  new file:   nextflow.config</span></a>
+<a class="sourceLine" id="cb75-11" data-line-number="11"><span class="co">#&gt;  new file:   sh/script.sh</span></a>
+<a class="sourceLine" id="cb75-12" data-line-number="12"><span class="fu">git</span> commit -m <span class="st">&quot;init repo&quot;</span></a>
+<a class="sourceLine" id="cb75-13" data-line-number="13"><span class="co">#&gt; [master a9f87c1] init repo</span></a>
+<a class="sourceLine" id="cb75-14" data-line-number="14"><span class="co">#&gt;  5 files changed, 6 insertions(+)</span></a>
+<a class="sourceLine" id="cb75-15" data-line-number="15"><span class="co">#&gt;  create mode 100644 README.md</span></a>
+<a class="sourceLine" id="cb75-16" data-line-number="16"><span class="co">#&gt;  create mode 100644 analysis.Rproj</span></a>
+<a class="sourceLine" id="cb75-17" data-line-number="17"><span class="co">#&gt;  create mode 100644 analysis.nf</span></a>
+<a class="sourceLine" id="cb75-18" data-line-number="18"><span class="co">#&gt;  create mode 100644 nextflow.config</span></a>
+<a class="sourceLine" id="cb75-19" data-line-number="19"><span class="co">#&gt;  create mode 100644 sh/script.sh</span></a>
+<a class="sourceLine" id="cb75-20" data-line-number="20"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb75-21" data-line-number="21"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb75-22" data-line-number="22"><span class="co">#&gt; nothing to commit, working directory clean</span></a></code></pre></div>
 </div>
 </div>
 <div id="conecting-to-github" class="section level2">
@@ -372,16 +372,16 @@ Yet here I will stick to <em>github</em> since this is also what I am using pers
 <p>Then we switch back to the <em>command line</em>:</p>
 <p>Within the <code>root_folder</code> we now create a connection to the new <em>github repository</em> which we set to be the <em>origin</em> of our local project:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb79"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="fu">git</span> remote add origin https://github.com/k-hench/demo_root_folder.git</a>
-<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="fu">git</span> push -u origin master</a>
-<a class="sourceLine" id="cb79-3" data-line-number="3"><span class="co">#&gt; Counting objects: 8, done.</span></a>
-<a class="sourceLine" id="cb79-4" data-line-number="4"><span class="co">#&gt; Delta compression using up to 4 threads.</span></a>
-<a class="sourceLine" id="cb79-5" data-line-number="5"><span class="co">#&gt; Compressing objects: 100% (4/4), done.</span></a>
-<a class="sourceLine" id="cb79-6" data-line-number="6"><span class="co">#&gt; Writing objects: 100% (8/8), 652 bytes | 0 bytes/s, done.</span></a>
-<a class="sourceLine" id="cb79-7" data-line-number="7"><span class="co">#&gt; Total 8 (delta 0), reused 0 (delta 0)</span></a>
-<a class="sourceLine" id="cb79-8" data-line-number="8"><span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span></a>
-<a class="sourceLine" id="cb79-9" data-line-number="9"><span class="co">#&gt;  * [new branch]      master -&gt; master</span></a>
-<a class="sourceLine" id="cb79-10" data-line-number="10"><span class="co">#&gt; Branch master set up to track remote branch master from origin.</span></a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="fu">git</span> remote add origin https://github.com/k-hench/demo_root_folder.git</a>
+<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="fu">git</span> push -u origin master</a>
+<a class="sourceLine" id="cb76-3" data-line-number="3"><span class="co">#&gt; Counting objects: 8, done.</span></a>
+<a class="sourceLine" id="cb76-4" data-line-number="4"><span class="co">#&gt; Delta compression using up to 4 threads.</span></a>
+<a class="sourceLine" id="cb76-5" data-line-number="5"><span class="co">#&gt; Compressing objects: 100% (4/4), done.</span></a>
+<a class="sourceLine" id="cb76-6" data-line-number="6"><span class="co">#&gt; Writing objects: 100% (8/8), 652 bytes | 0 bytes/s, done.</span></a>
+<a class="sourceLine" id="cb76-7" data-line-number="7"><span class="co">#&gt; Total 8 (delta 0), reused 0 (delta 0)</span></a>
+<a class="sourceLine" id="cb76-8" data-line-number="8"><span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span></a>
+<a class="sourceLine" id="cb76-9" data-line-number="9"><span class="co">#&gt;  * [new branch]      master -&gt; master</span></a>
+<a class="sourceLine" id="cb76-10" data-line-number="10"><span class="co">#&gt; Branch master set up to track remote branch master from origin.</span></a></code></pre></div>
 </div>
 <p>Now we can see the content of our <code>root_folder</code> showing up on our github account:</p>
 <p><img src="img/new_repo3.png" /></p>
@@ -408,67 +408,67 @@ We simply copy the repository URL from github:</p>
 <p>Then we log in to the cluster and <em>clone</em> the repository.
 This will download it to the current directory on the cluster:</p>
 <div class="cluster kclass">
-<div class="sourceCode" id="cb80"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="bu">cd</span> <span class="va">$WORK</span></a>
-<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="fu">git</span> clone https://github.com/k-hench/demo_root_folder.git</a>
-<a class="sourceLine" id="cb80-3" data-line-number="3"><span class="co">#&gt; Cloning into &#39;demo_root_folder&#39;...</span></a>
-<a class="sourceLine" id="cb80-4" data-line-number="4"><span class="co">#&gt; remote: Enumerating objects: 8, done.</span></a>
-<a class="sourceLine" id="cb80-5" data-line-number="5"><span class="co">#&gt; remote: Counting objects: 100% (8/8), done.</span></a>
-<a class="sourceLine" id="cb80-6" data-line-number="6"><span class="co">#&gt; remote: Compressing objects: 100% (4/4), done.</span></a>
-<a class="sourceLine" id="cb80-7" data-line-number="7"><span class="co">#&gt; remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0</span></a>
-<a class="sourceLine" id="cb80-8" data-line-number="8"><span class="co">#&gt; Unpacking objects: 100% (8/8), done.</span></a>
-<a class="sourceLine" id="cb80-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb80-10" data-line-number="10"><span class="bu">cd</span> demo_root_folder/</a>
-<a class="sourceLine" id="cb80-11" data-line-number="11"><span class="fu">ls</span> -1a</a>
-<a class="sourceLine" id="cb80-12" data-line-number="12"><span class="co">#&gt; .</span></a>
-<a class="sourceLine" id="cb80-13" data-line-number="13"><span class="co">#&gt; ..</span></a>
-<a class="sourceLine" id="cb80-14" data-line-number="14"><span class="co">#&gt; .git</span></a>
-<a class="sourceLine" id="cb80-15" data-line-number="15"><span class="co">#&gt; .gitignore</span></a>
-<a class="sourceLine" id="cb80-16" data-line-number="16"><span class="co">#&gt; README.md</span></a>
-<a class="sourceLine" id="cb80-17" data-line-number="17"><span class="co">#&gt; analysis.Rproj</span></a>
-<a class="sourceLine" id="cb80-18" data-line-number="18"><span class="co">#&gt; analysis.nf</span></a>
-<a class="sourceLine" id="cb80-19" data-line-number="19"><span class="co">#&gt; nextflow.config</span></a>
-<a class="sourceLine" id="cb80-20" data-line-number="20"><span class="co">#&gt; sh</span></a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="bu">cd</span> <span class="va">$WORK</span></a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="fu">git</span> clone https://github.com/k-hench/demo_root_folder.git</a>
+<a class="sourceLine" id="cb77-3" data-line-number="3"><span class="co">#&gt; Cloning into &#39;demo_root_folder&#39;...</span></a>
+<a class="sourceLine" id="cb77-4" data-line-number="4"><span class="co">#&gt; remote: Enumerating objects: 8, done.</span></a>
+<a class="sourceLine" id="cb77-5" data-line-number="5"><span class="co">#&gt; remote: Counting objects: 100% (8/8), done.</span></a>
+<a class="sourceLine" id="cb77-6" data-line-number="6"><span class="co">#&gt; remote: Compressing objects: 100% (4/4), done.</span></a>
+<a class="sourceLine" id="cb77-7" data-line-number="7"><span class="co">#&gt; remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0</span></a>
+<a class="sourceLine" id="cb77-8" data-line-number="8"><span class="co">#&gt; Unpacking objects: 100% (8/8), done.</span></a>
+<a class="sourceLine" id="cb77-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb77-10" data-line-number="10"><span class="bu">cd</span> demo_root_folder/</a>
+<a class="sourceLine" id="cb77-11" data-line-number="11"><span class="fu">ls</span> -1a</a>
+<a class="sourceLine" id="cb77-12" data-line-number="12"><span class="co">#&gt; .</span></a>
+<a class="sourceLine" id="cb77-13" data-line-number="13"><span class="co">#&gt; ..</span></a>
+<a class="sourceLine" id="cb77-14" data-line-number="14"><span class="co">#&gt; .git</span></a>
+<a class="sourceLine" id="cb77-15" data-line-number="15"><span class="co">#&gt; .gitignore</span></a>
+<a class="sourceLine" id="cb77-16" data-line-number="16"><span class="co">#&gt; README.md</span></a>
+<a class="sourceLine" id="cb77-17" data-line-number="17"><span class="co">#&gt; analysis.Rproj</span></a>
+<a class="sourceLine" id="cb77-18" data-line-number="18"><span class="co">#&gt; analysis.nf</span></a>
+<a class="sourceLine" id="cb77-19" data-line-number="19"><span class="co">#&gt; nextflow.config</span></a>
+<a class="sourceLine" id="cb77-20" data-line-number="20"><span class="co">#&gt; sh</span></a></code></pre></div>
 </div>
 <p>You might notice that not all the files &amp; folders made it to the cluster though:</p>
 <div class="row kclass">
 <div class="column">
-<div class="sourceCode" id="cb81"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="ex">tree</span></a>
-<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="co">#&gt; .</span></a>
-<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="co">#&gt; |-- analysis.Rproj</span></a>
-<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">#&gt; |-- analysis.nf</span></a>
-<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="co">#&gt; |-- data</span></a>
-<a class="sourceLine" id="cb81-6" data-line-number="6"><span class="co">#&gt; |   |-- genotypes.vcf.gz</span></a>
-<a class="sourceLine" id="cb81-7" data-line-number="7"><span class="co">#&gt; |   |-- table1.txt</span></a>
-<a class="sourceLine" id="cb81-8" data-line-number="8"><span class="co">#&gt; |   `-- table2.txt</span></a>
-<a class="sourceLine" id="cb81-9" data-line-number="9"><span class="co">#&gt; |-- docs</span></a>
-<a class="sourceLine" id="cb81-10" data-line-number="10"><span class="co">#&gt; |-- nextflow.config</span></a>
-<a class="sourceLine" id="cb81-11" data-line-number="11"><span class="co">#&gt; |-- py</span></a>
-<a class="sourceLine" id="cb81-12" data-line-number="12"><span class="co">#&gt; |-- R</span></a>
-<a class="sourceLine" id="cb81-13" data-line-number="13"><span class="co">#&gt; |-- README.md</span></a>
-<a class="sourceLine" id="cb81-14" data-line-number="14"><span class="co">#&gt; `-- sh</span></a>
-<a class="sourceLine" id="cb81-15" data-line-number="15"><span class="co">#&gt;     `--  script.sh</span></a>
-<a class="sourceLine" id="cb81-16" data-line-number="16"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb81-17" data-line-number="17"><span class="co">#&gt; 5 directories, 8 files</span></a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="ex">tree</span></a>
+<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="co">#&gt; .</span></a>
+<a class="sourceLine" id="cb78-3" data-line-number="3"><span class="co">#&gt; |-- analysis.Rproj</span></a>
+<a class="sourceLine" id="cb78-4" data-line-number="4"><span class="co">#&gt; |-- analysis.nf</span></a>
+<a class="sourceLine" id="cb78-5" data-line-number="5"><span class="co">#&gt; |-- data</span></a>
+<a class="sourceLine" id="cb78-6" data-line-number="6"><span class="co">#&gt; |   |-- genotypes.vcf.gz</span></a>
+<a class="sourceLine" id="cb78-7" data-line-number="7"><span class="co">#&gt; |   |-- table1.txt</span></a>
+<a class="sourceLine" id="cb78-8" data-line-number="8"><span class="co">#&gt; |   `-- table2.txt</span></a>
+<a class="sourceLine" id="cb78-9" data-line-number="9"><span class="co">#&gt; |-- docs</span></a>
+<a class="sourceLine" id="cb78-10" data-line-number="10"><span class="co">#&gt; |-- nextflow.config</span></a>
+<a class="sourceLine" id="cb78-11" data-line-number="11"><span class="co">#&gt; |-- py</span></a>
+<a class="sourceLine" id="cb78-12" data-line-number="12"><span class="co">#&gt; |-- R</span></a>
+<a class="sourceLine" id="cb78-13" data-line-number="13"><span class="co">#&gt; |-- README.md</span></a>
+<a class="sourceLine" id="cb78-14" data-line-number="14"><span class="co">#&gt; `-- sh</span></a>
+<a class="sourceLine" id="cb78-15" data-line-number="15"><span class="co">#&gt;     `--  script.sh</span></a>
+<a class="sourceLine" id="cb78-16" data-line-number="16"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb78-17" data-line-number="17"><span class="co">#&gt; 5 directories, 8 files</span></a></code></pre></div>
 </div>
 <div class="column cluster">
-<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="ex">tree</span> </a>
-<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="co">#&gt; .</span></a>
-<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="co">#&gt; |-- README.md</span></a>
-<a class="sourceLine" id="cb82-4" data-line-number="4"><span class="co">#&gt; |-- analysis.Rproj</span></a>
-<a class="sourceLine" id="cb82-5" data-line-number="5"><span class="co">#&gt; |-- analysis.nf</span></a>
-<a class="sourceLine" id="cb82-6" data-line-number="6"><span class="co">#&gt; |-- nextflow.config</span></a>
-<a class="sourceLine" id="cb82-7" data-line-number="7"><span class="co">#&gt; `-- sh</span></a>
-<a class="sourceLine" id="cb82-8" data-line-number="8"><span class="co">#&gt;     `-- script.sh</span></a>
-<a class="sourceLine" id="cb82-9" data-line-number="9"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb82-10" data-line-number="10"><span class="co">#&gt; 1 directory, 5 files</span></a>
-<a class="sourceLine" id="cb82-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb82-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb82-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb82-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb82-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb82-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb82-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb82-18" data-line-number="18"></a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="ex">tree</span> </a>
+<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="co">#&gt; .</span></a>
+<a class="sourceLine" id="cb79-3" data-line-number="3"><span class="co">#&gt; |-- README.md</span></a>
+<a class="sourceLine" id="cb79-4" data-line-number="4"><span class="co">#&gt; |-- analysis.Rproj</span></a>
+<a class="sourceLine" id="cb79-5" data-line-number="5"><span class="co">#&gt; |-- analysis.nf</span></a>
+<a class="sourceLine" id="cb79-6" data-line-number="6"><span class="co">#&gt; |-- nextflow.config</span></a>
+<a class="sourceLine" id="cb79-7" data-line-number="7"><span class="co">#&gt; `-- sh</span></a>
+<a class="sourceLine" id="cb79-8" data-line-number="8"><span class="co">#&gt;     `-- script.sh</span></a>
+<a class="sourceLine" id="cb79-9" data-line-number="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb79-10" data-line-number="10"><span class="co">#&gt; 1 directory, 5 files</span></a>
+<a class="sourceLine" id="cb79-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb79-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb79-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb79-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb79-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb79-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb79-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb79-18" data-line-number="18"></a></code></pre></div>
 </div>
 </div>
 <p>So of course the files that are listed on the <code>.gitignore</code> file, but also empty folders are omitted and not exported to github.</p>
@@ -488,27 +488,27 @@ By default, this file serves as welcome message on the github project page.</p>
 </blockquote>
 <p>After saving the changes, if we check the repository status in the command line, we’ll get:</p>
 <div class="kclass">
-<div class="sourceCode" id="cb83"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="co">#&gt; Your branch is up-to-date with &#39;origin/master&#39;.</span></a>
-<a class="sourceLine" id="cb83-4" data-line-number="4"><span class="co">#&gt; Changes not staged for commit:</span></a>
-<a class="sourceLine" id="cb83-5" data-line-number="5"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span></a>
-<a class="sourceLine" id="cb83-6" data-line-number="6"><span class="co">#&gt;   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span></a>
-<a class="sourceLine" id="cb83-7" data-line-number="7"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb83-8" data-line-number="8"><span class="co">#&gt;  modified:   README.md</span></a>
-<a class="sourceLine" id="cb83-9" data-line-number="9"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb83-10" data-line-number="10"><span class="co">#&gt; no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb80-3" data-line-number="3"><span class="co">#&gt; Your branch is up-to-date with &#39;origin/master&#39;.</span></a>
+<a class="sourceLine" id="cb80-4" data-line-number="4"><span class="co">#&gt; Changes not staged for commit:</span></a>
+<a class="sourceLine" id="cb80-5" data-line-number="5"><span class="co">#&gt;   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span></a>
+<a class="sourceLine" id="cb80-6" data-line-number="6"><span class="co">#&gt;   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span></a>
+<a class="sourceLine" id="cb80-7" data-line-number="7"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb80-8" data-line-number="8"><span class="co">#&gt;  modified:   README.md</span></a>
+<a class="sourceLine" id="cb80-9" data-line-number="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb80-10" data-line-number="10"><span class="co">#&gt; no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span></a></code></pre></div>
 <p>So git is aware that <em>something has changed</em>.
 Like before, we’ll use <code>git add .</code> and <code>git commit -m &quot;update README.md&quot;</code> to save the new changes:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;update README.md&quot;</span></a>
-<a class="sourceLine" id="cb84-3" data-line-number="3"><span class="co">#&gt; [master c4d6df5] update README.md</span></a>
-<a class="sourceLine" id="cb84-4" data-line-number="4"><span class="co">#&gt;  1 file changed, 6 insertions(+)</span></a>
-<a class="sourceLine" id="cb84-5" data-line-number="5"><span class="fu">git</span> status</a>
-<a class="sourceLine" id="cb84-6" data-line-number="6"><span class="co">#&gt; On branch master</span></a>
-<a class="sourceLine" id="cb84-7" data-line-number="7"><span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span></a>
-<a class="sourceLine" id="cb84-8" data-line-number="8"><span class="co">#&gt;   (use &quot;git push&quot; to publish your local commits)</span></a>
-<a class="sourceLine" id="cb84-9" data-line-number="9"><span class="co">#&gt; nothing to commit, working directory clean</span></a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;update README.md&quot;</span></a>
+<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="co">#&gt; [master c4d6df5] update README.md</span></a>
+<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">#&gt;  1 file changed, 6 insertions(+)</span></a>
+<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="fu">git</span> status</a>
+<a class="sourceLine" id="cb81-6" data-line-number="6"><span class="co">#&gt; On branch master</span></a>
+<a class="sourceLine" id="cb81-7" data-line-number="7"><span class="co">#&gt; Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span></a>
+<a class="sourceLine" id="cb81-8" data-line-number="8"><span class="co">#&gt;   (use &quot;git push&quot; to publish your local commits)</span></a>
+<a class="sourceLine" id="cb81-9" data-line-number="9"><span class="co">#&gt; nothing to commit, working directory clean</span></a></code></pre></div>
 </div>
 <p>Getting the updates to the cluster is a two-step process:</p>
 <ul>
@@ -520,29 +520,29 @@ Like before, we’ll use <code>git add .</code> and <code>git commit -m &quot;up
 </ul>
 </div>
 <div class="kclass">
-<div class="sourceCode" id="cb85"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="fu">git</span> push origin master</a>
-<a class="sourceLine" id="cb85-2" data-line-number="2"><span class="co">#&gt; Counting objects: 3, done.</span></a>
-<a class="sourceLine" id="cb85-3" data-line-number="3"><span class="co">#&gt; Delta compression using up to 4 threads.</span></a>
-<a class="sourceLine" id="cb85-4" data-line-number="4"><span class="co">#&gt; Compressing objects: 100% (3/3), done.</span></a>
-<a class="sourceLine" id="cb85-5" data-line-number="5"><span class="co">#&gt; Writing objects: 100% (3/3), 429 bytes | 0 bytes/s, done.</span></a>
-<a class="sourceLine" id="cb85-6" data-line-number="6"><span class="co">#&gt; Total 3 (delta 1), reused 0 (delta 0)</span></a>
-<a class="sourceLine" id="cb85-7" data-line-number="7"><span class="co">#&gt; remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span></a>
-<a class="sourceLine" id="cb85-8" data-line-number="8"><span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span></a>
-<a class="sourceLine" id="cb85-9" data-line-number="9"><span class="co">#&gt;   a9f87c1..c4d6df5  master -&gt; master</span></a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="fu">git</span> push origin master</a>
+<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="co">#&gt; Counting objects: 3, done.</span></a>
+<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="co">#&gt; Delta compression using up to 4 threads.</span></a>
+<a class="sourceLine" id="cb82-4" data-line-number="4"><span class="co">#&gt; Compressing objects: 100% (3/3), done.</span></a>
+<a class="sourceLine" id="cb82-5" data-line-number="5"><span class="co">#&gt; Writing objects: 100% (3/3), 429 bytes | 0 bytes/s, done.</span></a>
+<a class="sourceLine" id="cb82-6" data-line-number="6"><span class="co">#&gt; Total 3 (delta 1), reused 0 (delta 0)</span></a>
+<a class="sourceLine" id="cb82-7" data-line-number="7"><span class="co">#&gt; remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span></a>
+<a class="sourceLine" id="cb82-8" data-line-number="8"><span class="co">#&gt; To https://github.com/k-hench/demo_root_folder.git</span></a>
+<a class="sourceLine" id="cb82-9" data-line-number="9"><span class="co">#&gt;   a9f87c1..c4d6df5  master -&gt; master</span></a></code></pre></div>
 <div class="cluster">
-<div class="sourceCode" id="cb86"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="fu">git</span> pull origin master</a>
-<a class="sourceLine" id="cb86-2" data-line-number="2"><span class="co">#&gt; remote: Enumerating objects: 5, done.</span></a>
-<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="co">#&gt; remote: Counting objects: 100% (5/5), done.</span></a>
-<a class="sourceLine" id="cb86-4" data-line-number="4"><span class="co">#&gt; remote: Compressing objects: 100% (2/2), done.</span></a>
-<a class="sourceLine" id="cb86-5" data-line-number="5"><span class="co">#&gt; remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0</span></a>
-<a class="sourceLine" id="cb86-6" data-line-number="6"><span class="co">#&gt; Unpacking objects: 100% (3/3), done.</span></a>
-<a class="sourceLine" id="cb86-7" data-line-number="7"><span class="co">#&gt; From https://github.com/k-hench/demo_root_folder</span></a>
-<a class="sourceLine" id="cb86-8" data-line-number="8"><span class="co">#&gt;  * branch            master     -&gt; FETCH_HEAD</span></a>
-<a class="sourceLine" id="cb86-9" data-line-number="9"><span class="co">#&gt;    a9f87c1..c4d6df5  master     -&gt; origin/master</span></a>
-<a class="sourceLine" id="cb86-10" data-line-number="10"><span class="co">#&gt; Updating a9f87c1..c4d6df5</span></a>
-<a class="sourceLine" id="cb86-11" data-line-number="11"><span class="co">#&gt; Fast-forward</span></a>
-<a class="sourceLine" id="cb86-12" data-line-number="12"><span class="co">#&gt;  README.md | 6 ++++++</span></a>
-<a class="sourceLine" id="cb86-13" data-line-number="13"><span class="co">#&gt;  1 file changed, 6 insertions(+)</span></a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="fu">git</span> pull origin master</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="co">#&gt; remote: Enumerating objects: 5, done.</span></a>
+<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="co">#&gt; remote: Counting objects: 100% (5/5), done.</span></a>
+<a class="sourceLine" id="cb83-4" data-line-number="4"><span class="co">#&gt; remote: Compressing objects: 100% (2/2), done.</span></a>
+<a class="sourceLine" id="cb83-5" data-line-number="5"><span class="co">#&gt; remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0</span></a>
+<a class="sourceLine" id="cb83-6" data-line-number="6"><span class="co">#&gt; Unpacking objects: 100% (3/3), done.</span></a>
+<a class="sourceLine" id="cb83-7" data-line-number="7"><span class="co">#&gt; From https://github.com/k-hench/demo_root_folder</span></a>
+<a class="sourceLine" id="cb83-8" data-line-number="8"><span class="co">#&gt;  * branch            master     -&gt; FETCH_HEAD</span></a>
+<a class="sourceLine" id="cb83-9" data-line-number="9"><span class="co">#&gt;    a9f87c1..c4d6df5  master     -&gt; origin/master</span></a>
+<a class="sourceLine" id="cb83-10" data-line-number="10"><span class="co">#&gt; Updating a9f87c1..c4d6df5</span></a>
+<a class="sourceLine" id="cb83-11" data-line-number="11"><span class="co">#&gt; Fast-forward</span></a>
+<a class="sourceLine" id="cb83-12" data-line-number="12"><span class="co">#&gt;  README.md | 6 ++++++</span></a>
+<a class="sourceLine" id="cb83-13" data-line-number="13"><span class="co">#&gt;  1 file changed, 6 insertions(+)</span></a></code></pre></div>
 </div>
 </div>
 <p>Also, now our <code>README.md</code> is visible on the github project page (and we can see the new commit):</p>

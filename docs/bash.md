@@ -224,31 +224,31 @@ These are (optional) parameters that alter they way a program operates an are in
 ```bash
 ls -l
 #> total 164
-#> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.nf
-#> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 analysis.Rproj
-#> drwxrwxr-x 2 khench khench   4096 Mai  2 17:07 data
-#> drwxrwxr-x 2 khench khench   4096 Mär  7 15:47 docs
+#> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.nf
+#> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.Rproj
+#> drwxrwxr-x 2 khench khench   4096 Nov 11 17:55 data
+#> drwxrwxr-x 2 khench khench   4096 Mär  7  2019 docs
 #> -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg
-#> -rw-rw-r-- 1 khench khench      0 Mär  7 15:47 nextflow.config
-#> drwxrwxr-x 2 khench khench   4096 Mär  7 15:48 py
-#> drwxrwxr-x 2 khench khench   4096 Mär  7 15:48 R
-#> -rw-rw-r-- 1 khench khench    439 Mär 11 17:13 README.md
-#> drwxrwxr-x 2 khench khench   4096 Mär  7 17:25 sh
+#> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 nextflow.config
+#> drwxrwxr-x 2 khench khench   4096 Mär  7  2019 py
+#> drwxrwxr-x 2 khench khench   4096 Mär  7  2019 R
+#> -rw-rw-r-- 1 khench khench    439 Mär 11  2019 README.md
+#> drwxrwxr-x 2 khench khench   4096 Mär  7  2019 sh
 ```
 
 
 ```bash
 ls -lth
 #> total 164K
-#> drwxrwxr-x 2 khench khench 4,0K Mai  2 17:07 data
-#> -rw-rw-r-- 1 khench khench  439 Mär 11 17:13 README.md
-#> drwxrwxr-x 2 khench khench 4,0K Mär  7 17:25 sh
-#> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 R
-#> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:48 py
-#> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 nextflow.config
-#> drwxrwxr-x 2 khench khench 4,0K Mär  7 15:47 docs
-#> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.Rproj
-#> -rw-rw-r-- 1 khench khench    0 Mär  7 15:47 analysis.nf
+#> drwxrwxr-x 2 khench khench 4,0K Nov 11 17:55 data
+#> -rw-rw-r-- 1 khench khench  439 Mär 11  2019 README.md
+#> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 sh
+#> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 R
+#> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 py
+#> -rw-rw-r-- 1 khench khench    0 Mär  7  2019 nextflow.config
+#> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 docs
+#> -rw-rw-r-- 1 khench khench    0 Mär  7  2019 analysis.Rproj
+#> -rw-rw-r-- 1 khench khench    0 Mär  7  2019 analysis.nf
 #> -rw-rw-r-- 1 khench khench 139K Jul 12  2018 logo.svg
 ```
 
@@ -600,7 +600,8 @@ sed 's/^/>/; s/:\t/\n/' |
 gzip > data/test.fa.gz
 
 zcat data/test.fa.gz & rm data/test.fa.gz
-#> gzip: data/test.fa.gz: No such file or directory
+#> >sequence1
+#> ATGCATAGACATA
 ```
 
 Generally (also eg. when using `grep`), there are two important special characters:

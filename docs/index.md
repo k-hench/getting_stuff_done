@@ -1,7 +1,7 @@
 ---
 title: "Getting Stuff Done"
 author: "Kosmas Hench"
-date: "2019-08-26"
+date: "2019-11-11"
 documentclass: book
 bibliography: [bibliography.bib]
 biblio-style: apalike
