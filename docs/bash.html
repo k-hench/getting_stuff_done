@@ -369,7 +369,7 @@ These are (optional) parameters that alter they way a program operates an are in
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="co">#&gt; total 164</span></a>
 <a class="sourceLine" id="cb14-3" data-line-number="3"><span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.nf</span></a>
 <a class="sourceLine" id="cb14-4" data-line-number="4"><span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.Rproj</span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Nov 11 18:01 data</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Nov 11 18:03 data</span></a>
 <a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7  2019 docs</span></a>
 <a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">#&gt; -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg</span></a>
 <a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co">#&gt; -rw-rw-r-- 1 khench khench      0 Mär  7  2019 nextflow.config</span></a>
@@ -379,7 +379,7 @@ These are (optional) parameters that alter they way a program operates an are in
 <a class="sourceLine" id="cb14-12" data-line-number="12"><span class="co">#&gt; drwxrwxr-x 2 khench khench   4096 Mär  7  2019 sh</span></a></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">ls</span> -lth</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt; total 164K</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Nov 11 18:01 data</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Nov 11 18:03 data</span></a>
 <a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt; -rw-rw-r-- 1 khench khench  439 Mär 11  2019 README.md</span></a>
 <a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 sh</span></a>
 <a class="sourceLine" id="cb15-6" data-line-number="6"><span class="co">#&gt; drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 R</span></a>
@@ -651,7 +651,8 @@ The following commands are equivalent and I believe there are many more options:
 <a class="sourceLine" id="cb37-3" data-line-number="3"><span class="fu">gzip</span> <span class="op">&gt;</span> data/test.fa.gz</a>
 <a class="sourceLine" id="cb37-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb37-5" data-line-number="5"><span class="fu">zcat</span> data/test.fa.gz <span class="kw">&amp;</span> <span class="fu">rm</span> data/test.fa.gz</a>
-<a class="sourceLine" id="cb37-6" data-line-number="6"><span class="co">#&gt; gzip: data/test.fa.gz: No such file or directory</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-6" data-line-number="6"><span class="co">#&gt; &gt;sequence1</span></a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"><span class="co">#&gt; ATGCATAGACATA</span></a></code></pre></div>
 <p>Generally (also eg. when using <code>grep</code>), there are two important special characters:</p>
 <ul>
 <li><code>^</code>: the <em>start</em> of a line</li>

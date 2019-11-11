@@ -59,7 +59,7 @@ I spend days using it and the idea of running plain R seems almost archaic to me
 So during most of the time I will use R code throughout a project.
 
 But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility.
-I already keep this in mind during the process of my scripts.
+I already keep this in mind during the process of writing my scripts.
 This means that every script should run from start to end without interactive intervention.
 No manual loading of data, interaction with other scripts basically only using `source()` (outsourcing definition of needed custom functions might actually be a good idea).
 
