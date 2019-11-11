@@ -226,7 +226,7 @@ ls -l
 #> total 164
 #> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.nf
 #> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 analysis.Rproj
-#> drwxrwxr-x 2 khench khench   4096 Nov 11 17:55 data
+#> drwxrwxr-x 2 khench khench   4096 Nov 11 17:56 data
 #> drwxrwxr-x 2 khench khench   4096 Mär  7  2019 docs
 #> -rw-rw-r-- 1 khench khench 142065 Jul 12  2018 logo.svg
 #> -rw-rw-r-- 1 khench khench      0 Mär  7  2019 nextflow.config
@@ -240,7 +240,7 @@ ls -l
 ```bash
 ls -lth
 #> total 164K
-#> drwxrwxr-x 2 khench khench 4,0K Nov 11 17:55 data
+#> drwxrwxr-x 2 khench khench 4,0K Nov 11 17:56 data
 #> -rw-rw-r-- 1 khench khench  439 Mär 11  2019 README.md
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 sh
 #> drwxrwxr-x 2 khench khench 4,0K Mär  7  2019 R
@@ -600,8 +600,7 @@ sed 's/^/>/; s/:\t/\n/' |
 gzip > data/test.fa.gz
 
 zcat data/test.fa.gz & rm data/test.fa.gz
-#> >sequence1
-#> ATGCATAGACATA
+#> gzip: data/test.fa.gz: No such file or directory
 ```
 
 Generally (also eg. when using `grep`), there are two important special characters:

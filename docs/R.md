@@ -37,7 +37,7 @@ Also, this platform of [**ggplot** extensions](http://www.ggplot2-exts.org/) is 
 ## Know
 
 You should know the **tidyverse**.
-It not *one*, but actually *a collection* of packages which make working in R just so much more pleasant, streamlined readable, fun...
+It not *one*, but actually *a collection* of packages which make working in R just so much more pleasant, streamlined, readable, fun...
 
 The biggest impact so far on my own coding came from four packages that are part of the **tidyverse**.
 I list them below together with those functions from these packages which really made a difference.
@@ -55,7 +55,7 @@ With this package you can easily install R packages from all different kinds of 
 ## Run
 
 Rstudio is a great environment to develop R code.
-I spend days using it the idea of running plain R seems almost archaic to me.
+I spend days using it and the idea of running plain R seems almost archaic to me.
 So during most of the time I will use R code throughout a project.
 
 But when it comes to the final scripts that are going to make it to the publication, I want to drop as much interactivity as possible for the sake of reproducibility.
