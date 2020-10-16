@@ -272,3 +272,15 @@ Reformat vcftools HWE output for R input
 Merging pdf (using [ghost script](https://www.ghostscript.com/))
 
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=full_signed.pdf pages1-8.pdf page9_signed.pdf pages10-11pdf.pdf
+    
+
+Serving on local network
+========================
+
+Serve current folder acessible to other computers (port 80 requires sudo)
+
+    sudo python3 -m http.server 80
+
+Find own IP
+
+    hostname -I
