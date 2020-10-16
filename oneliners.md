@@ -5,7 +5,8 @@
 5.  [Handling .fq files](#fastq)
 6.  [Handling .sam files](#sam)
 7.  [Handling .vcf files](#vcf)
-8.  [Bits and pieces](#bitsNpieces)
+8.  [Server on local Network](#serverStuff)
+9.  [Bits and pieces](#bitsNpieces)
 
 File logistics <a name="datatrans"></a>
 =======================================
@@ -261,6 +262,17 @@ Index bam file
 
     samtools index in_file.sorted.bam
 
+Serving on local network <a name="serverStuff"></a>
+===================================================
+
+Serve current folder acessible to other computers (port 80 requires sudo)
+
+    sudo python3 -m http.server 80
+
+Find own IP
+
+    hostname -I
+
 Bits and pieces <a name="bitsNpieces"></a>
 ==========================================
 
@@ -273,14 +285,3 @@ Merging pdf (using [ghost script](https://www.ghostscript.com/))
 
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=full_signed.pdf pages1-8.pdf page9_signed.pdf pages10-11pdf.pdf
     
-
-Serving on local network
-========================
-
-Serve current folder acessible to other computers (port 80 requires sudo)
-
-    sudo python3 -m http.server 80
-
-Find own IP
-
-    hostname -I
