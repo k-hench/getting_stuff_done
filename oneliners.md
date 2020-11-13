@@ -285,3 +285,6 @@ Merging pdf (using [ghost script](https://www.ghostscript.com/))
 
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=full_signed.pdf pages1-8.pdf page9_signed.pdf pages10-11pdf.pdf
     
+Transforming pdf text into paths (copy-protect)
+   
+    gs -o file_out_paths.pdf -dNoOutputFonts -sDEVICE=pdfwrite file_in_text.pdf
