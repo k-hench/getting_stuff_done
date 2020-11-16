@@ -291,4 +291,4 @@ Transforming pdf text into paths (copy-protect)
 
 Collpsing library notes for TOC
     
-    grep -A 1 "^#" notes_file.md | sed 's/###\(.*\)/- [\1](\1:/g; s/\*$/\*)/' | grep -v "^--" | paste - -
+    grep -A 1 "^#" notes_files.md | sed 's/###\(.*\)/- [\1](\1):/g;' | grep -v "^--" | paste - - | sed 's/[[:space:]]/ /g; s/\([\(\[]\) /\1/g; s/(/(#/'
