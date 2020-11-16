@@ -288,3 +288,7 @@ Merging pdf (using [ghost script](https://www.ghostscript.com/))
 Transforming pdf text into paths (copy-protect)
    
     gs -o file_out_paths.pdf -dNoOutputFonts -sDEVICE=pdfwrite file_in_text.pdf
+
+Collpsing library notes for TOC
+
+   grep -A 1 "^#" notes_file.md | sed 's/###\(.*\)/- [\1](\1:/g; s/\*$/\*)/' | grep -v "^--" | paste - -
