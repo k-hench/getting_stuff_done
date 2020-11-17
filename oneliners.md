@@ -273,6 +273,21 @@ Find own IP
 
     hostname -I
 
+Video editing using ffmpeg
+==========================
+
+Strip audio from mp4 (mute)
+
+    ffmpeg -i in.mp4 -map 0:0 -vcodec copy out.mp4
+
+Crop video (start-time - end-time)
+
+    ffmpeg -i in.mp4 -ss 00:00:12 -t 00:01:19 -async 1 out.mp4
+
+Crop video (width:height:hoizontal_start:vertical_start)
+
+    ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
+
 Bits and pieces <a name="bitsNpieces"></a>
 ==========================================
 
