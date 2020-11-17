@@ -6,7 +6,8 @@
 6.  [Handling .sam files](#sam)
 7.  [Handling .vcf files](#vcf)
 8.  [Server on local Network](#serverStuff)
-9.  [Bits and pieces](#bitsNpieces)
+9.  [Video editing with ffmpeg](#ffmpeg)
+10. [Bits and pieces](#bitsNpieces)
 
 File logistics <a name="datatrans"></a>
 =======================================
@@ -273,8 +274,8 @@ Find own IP
 
     hostname -I
 
-Video editing using ffmpeg
-==========================
+Video editing using ffmpeg <a name="ffmpeg"></a>
+================================================
 
 Strip audio from mp4 (mute)
 
