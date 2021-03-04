@@ -7,7 +7,9 @@
 7.  [Handling .vcf files](#vcf)
 8.  [Server on local Network](#serverStuff)
 9.  [Video editing with ffmpeg](#ffmpeg)
-10. [Bits and pieces](#bitsNpieces)
+10. [Profiling and Singularity](#profiling)
+11. [Bits and pieces](#bitsNpieces)
+
 
 File logistics <a name="datatrans"></a>
 =======================================
@@ -288,6 +290,21 @@ Crop video (start-time - end-time)
 Crop video (width:height:hoizontal_start:vertical_start)
 
     ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
+
+Profiling and Singularity <a name="profiling"></a>
+==========================================
+
+Simple timing of runtime of command
+
+    time sleep 2
+
+Timing and Memory profile
+
+    /usr/bin/time -v time sleep 2
+
+Run within Singularity container
+
+    singularity run container.sif R --version
 
 Bits and pieces <a name="bitsNpieces"></a>
 ==========================================
